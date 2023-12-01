@@ -1,14 +1,19 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "backend api for a react application",
-  "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
-  "keywords": [
-    "reaseachhouse"
-  ],
-  "author": "irfan, basit, yogesh, gaurav",
-  "license": "ISC"
+	"name": "backend",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "backend api for a react application",
+	"main": "index.js",
+	"scripts": {
+		"test": "test"
+	},
+	"keywords": [
+		"reaseachhouse"
+	],
+	"author": "irfan, basit, yogesh, gaurav",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.3.1",
+		"express": "^4.18.2"
+	}
 }
