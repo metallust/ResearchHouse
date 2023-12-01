@@ -21,3 +21,13 @@ Features:
 Tech Stack:
 
 1.
+
+To Run the server
+
+```
+cd server
+
+npm install --save-dev
+
+nodemon index.js
+```
