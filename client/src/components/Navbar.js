@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import permissionContext from "../context/permissionContext";
+import React from "react";
+import { Link} from "react-router-dom";
+// import permissionContext from "../context/permissionContext";
 
 function Navbar() {
-	const { permission } = useContext(permissionContext);
+	// const { permission } = useContext(permissionContext);
 	let nav_btn = [
 		{
 			name: "OPD",
@@ -55,20 +55,19 @@ function Navbar() {
 		},
 	];
 
-	nav_btn = nav_btn.filter((item) => Object.keys(permission).includes(item.url.slice(1)));
+	// nav_btn = nav_btn.filter((item) => Object.keys(permission).includes(item.url.slice(1)));
 
-	let navigate = useNavigate();
-	const handlelogout = () => {
-		localStorage.removeItem("token");
-		navigate("/login");
-	};
-	const pathname = useLocation().pathname;
+	// let navigate = useNavigate();
+	// const handlelogout = () => {
+	// 	localStorage.removeItem("token");
+	// 	navigate("/login");
+	// };
 	return (
 		<nav className="navbar navbar-expand-lg  fixed-top p-0" style={{ backgroundColor: "#9fdfe3" }}>
 			<div className="container-fluid ">
-				<Link className="navbar-brand" to="/">
-					X Hospital
-				</Link>
+				<div className="navbar-brand" to="/">
+					R house
+				</div>
 				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
@@ -80,17 +79,17 @@ function Navbar() {
 									key={id}
 									className="nav-item"
 									style={{
-										borderBottom: pathname.startsWith(btns.url) ? "5px solid #085f63" : "5px solid transparent",
+										borderBottom: "5px solid transparent",
 									}}
 								>
-									<Link className={`nav-link active`} aria-current="page" to={btns.url}>
+									<btn className={`btn`} aria-current="page" to={btns.url}>
 										{btns.name}
-									</Link>
+									</btn>
 								</li>
 							);
 						})}
 					</ul>
-					{localStorage.getItem("token") ? (
+					{/* {localStorage.getItem("token") ? (
 						<>
 							<button className="btn btn-dark mx-1" onClick={handlelogout}>
 								{localStorage.token}
@@ -100,7 +99,7 @@ function Navbar() {
 						<Link className="btn btn-dark mx-1" to="/login" role="button">
 							Login
 						</Link>
-					)}
+					)} */}
 				</div>
 			</div>
 		</nav>
