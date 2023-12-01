@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend api for a react application",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "reaseachhouse"
+  ],
+  "author": "irfan, basit, yogesh, gaurav",
+  "license": "ISC"
+}
