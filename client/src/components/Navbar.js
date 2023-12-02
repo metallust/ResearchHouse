@@ -1,5 +1,6 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import {React, useContext} from "react";
+// import {Link} from "react-router-dom";
+import ThemeContext from "../Context/ThemeContext";
 // import permissionContext from "../context/permissionContext";
 
 function Navbar() {
@@ -19,6 +20,8 @@ function Navbar() {
 		}
 	];
 
+	const context = useContext(ThemeContext);
+    const {theme,changeTheme} = context;
 	// nav_btn = nav_btn.filter((item) => Object.keys(permission).includes(item.url.slice(1)));
 
 	// let navigate = useNavigate();
@@ -46,7 +49,7 @@ function Navbar() {
 										borderBottom: "5px solid transparent",
 									}}
 								>
-									<btn className={`btn `} aria-current="page" to={btns.url}>
+									<btn className={`btn`} style={{color:theme.quaternary}} aria-current="page" to={btns.url}>
 										<b>{btns.name}</b>
 									</btn>
 								</li>
@@ -64,6 +67,10 @@ function Navbar() {
 							Login
 						</Link>
 					)} */}
+				</div>
+				<div className={`form-check form-switch `}  style={{color:`${theme.primary}`}}>
+					<input className="form-check-input" onClick={changeTheme} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+					<label className="form-check-label" htmlFor="flexSwitchCheckDefault">{theme.name} mode</label>
 				</div>
 					<a className="btn btn-dark mx-1" to="#" role="button">
 							Login

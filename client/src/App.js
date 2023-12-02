@@ -1,12 +1,14 @@
+import ThemeState from "./Context/ThemeState";
 import LoginPage from "./components/Loginpage";
+import Navbar from "./components/Navbar";
 //import Navbar from "./components/Navbar";
 
 
 function App() {
   return (
-    <div >
-       <LoginPage />    
-    </div>
+    <ThemeState >
+       <Navbar />    
+    </ThemeState>
   );
 }
 
