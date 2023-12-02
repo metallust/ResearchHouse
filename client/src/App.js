@@ -1,12 +1,11 @@
-//import LoginPage from "./components/Loginpage";
-import SignupPage from "./components/Signuppage";
+import LoginPage from "./components/Loginpage";
 //import Navbar from "./components/Navbar";
 
 
 function App() {
   return (
     <div >
-       <SignupPage />    
+       <LoginPage />    
     </div>
   );
 }
