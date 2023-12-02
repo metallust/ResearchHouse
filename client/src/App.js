@@ -1,3 +1,4 @@
+import ThemeState from "./Context/ThemeState";
 import LoginPage from "./components/Loginpage";
 import Signup from "./components/Signuppage";
 import LandingPage from "./components/LandingPage";
@@ -7,6 +8,7 @@ import Timeline from "./components/Timeline/Index";
 
 function App() {
 	return (
+    <ThemeState >
 		<BrowserRouter>
 			<Routes>
 				<Route path="/login" element={<LoginPage />} />
@@ -42,6 +44,7 @@ function App() {
 				/>
 			</Routes>
 		</BrowserRouter>
+    </ThemeState>
 	);
 }
 
