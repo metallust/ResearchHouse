@@ -1,58 +1,22 @@
 import React from "react";
-import { Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 // import permissionContext from "../context/permissionContext";
 
 function Navbar() {
 	// const { permission } = useContext(permissionContext);
 	let nav_btn = [
 		{
-			name: "OPD",
-			url: "/opd",
+			name: "Home",
+			url: "/home",
 		},
 		{
-			name: "IPD",
-			url: "/ipd",
+			name: "Contact Us",
+			url: "/contact",
 		},
 		{
-			name: "Nursing",
-			url: "/nursing",
-		},
-		{
-			name: "Operation-Theater",
-			url: "/ot",
-		},
-		{
-			name: "Inventory",
-			url: "/inventory",
-		},
-		{
-			name: "MRD",
-			url: "/mrd",
-		},
-		{
-			name: "Wards",
-			url: "/wards",
-		},
-		{
-			name: "Rooms",
-			url: "/rooms",
-		},
-		{
-			name: "ICU",
-			url: "/icu",
-		},
-		{
-			name: "Labs",
-			url: "/labs",
-		},
-		{
-			name: "Billing",
-			url: "/billing",
-		},
-		{
-			name: "Casualty",
-			url: "/casualty",
-		},
+			name: "About US",
+			url: "/about",
+		}
 	];
 
 	// nav_btn = nav_btn.filter((item) => Object.keys(permission).includes(item.url.slice(1)));
@@ -63,27 +27,27 @@ function Navbar() {
 	// 	navigate("/login");
 	// };
 	return (
-		<nav className="navbar navbar-expand-lg  fixed-top p-0" style={{ backgroundColor: "#9fdfe3" }}>
+		<nav className="navbar navbar-expand-lg  fixed-top p-3" style={{ backgroundColor: "transparent" }}>
 			<div className="container-fluid ">
-				<div className="navbar-brand" to="/">
-					R house
+				<div className="navbar-brand " to="/">
+					<b>Research house</b>
 				</div>
 				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5 ">
+				<div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+					<ul className="navbar-nav">
 						{nav_btn.map((btns, id) => {
 							return (
 								<li
 									key={id}
-									className="nav-item"
+									className="nav-item "
 									style={{
 										borderBottom: "5px solid transparent",
 									}}
 								>
-									<btn className={`btn`} aria-current="page" to={btns.url}>
-										{btns.name}
+									<btn className={`btn `} aria-current="page" to={btns.url}>
+										<b>{btns.name}</b>
 									</btn>
 								</li>
 							);
@@ -101,6 +65,9 @@ function Navbar() {
 						</Link>
 					)} */}
 				</div>
+					<a className="btn btn-dark mx-1" to="#" role="button">
+							Login
+					</a>
 			</div>
 		</nav>
 	);
