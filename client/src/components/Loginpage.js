@@ -37,7 +37,7 @@ const LoginPage = () => {
 										</div>
 										{/* Password Input */}
 										<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing">
-											<input placeholder="Password" id="password" type="password" name="password" value="" className="form-control-login input_box" style={{ width: "100%", padding: "10px", marginBottom: "10px" }} />
+											<input placeholder="Password" id="password" type="password" name="password"  className="form-control-login input_box" style={{ width: "100%", padding: "10px", marginBottom: "10px" }} />
 										</div>
 										{/* User Role Select */}
 										<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing">
@@ -58,6 +58,7 @@ const LoginPage = () => {
 												name="op"
 												value="Submit"
 												className="form-control-login btn btn-success btn-lg"
+												
 												style={{
 													width: "100%",
 													padding: "10px",
