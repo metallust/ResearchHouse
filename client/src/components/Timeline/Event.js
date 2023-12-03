@@ -8,7 +8,7 @@ const Point = ({ width, height, padding, fill, bcolor, iscompleted, isActive, ch
 		border: `${bcolor} solid ${padding}`,
 		backgroundColor: `${fill}`,
 		position: "relative",
-		transform: "translate(0%, -50%)",
+		transform: "translate(0%, -45%)",
 	};
 
 	return (
