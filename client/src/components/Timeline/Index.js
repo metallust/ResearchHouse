@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Node from "./Node";
 import ThemeContext from "../../Context/ThemeContext";
+import { motion } from "framer-motion";
 
 const linewidth = 1000;
 const defaultwidth = 30;
@@ -34,9 +35,7 @@ const eventlist = (n, complete) => {
 };
 
 function Index({ n, complete, recentcompleted, customwidth, descriptions }) {
-	const light = {
-		primary: "#1b2d48",
-	};
+	const theme = useContext(ThemeContext).theme;
 
 	const lineStyle = {
 		width: `${linewidth}px`, // Adjust line width as needed
@@ -45,8 +44,10 @@ function Index({ n, complete, recentcompleted, customwidth, descriptions }) {
 		display: "flex",
 		justifyContent: "space-between",
 		backgroundColor: "red",
-		background: `linear-gradient(to right, ${light.primary} ${calculateloadingpercentage(n, complete, customwidth) + 1}%, grey 0%)`,
-		transition: "backgroundColor 1s linear", // Transition the width property over 1 second
+		// background: `linear-gradient(to right, blue 0%, grey 0%)`,
+
+		// background: `linear-gradient(to right, ${theme.primary} ${calculateloadingpercentage(n, complete, customwidth) + 1}%, grey 0%)`,
+		// transition: "backgroundColor 1s linear", // Transition the width property over 1 second
 	};
 
 	return (
@@ -56,15 +57,23 @@ function Index({ n, complete, recentcompleted, customwidth, descriptions }) {
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
-				height: "70vh",
+				height: "50vh",
+				// backgroundColor: "purple",
 			}}
 		>
-			<div style={lineStyle}>
+			<motion.div
+				style={lineStyle}
+				initial={{ background: `linear-gradient(to right, blue 0%, grey 0%)` }}
+				animate={{
+					background: `linear-gradient(to right, blue ${calculateloadingpercentage(n, complete, customwidth) + 1}%, grey 0%)`,
+				}}
+				transition={{ duration: 3, easeing: "easeOut" }}
+			>
 				{eventlist(n, complete).map((type, i) => {
 					let w = customwidth[i] === undefined ? defaultwidth : customwidth[i];
 					return <Node key={type + i} type={type} width={w} desc={descriptions[i]} descy={i % 2 ? -1.2 : 1} />;
 				})}
-			</div>
+			</motion.div>
 		</div>
 	);
 }

@@ -3,11 +3,11 @@ import Timeline from "../Timeline/Index";
 const Dashboard = () => {
 	return (
 		<div className="text-center mt-5">
-			<h1 style={{ fontSize: "50px" }}>Dissertation Progress</h1>
+			<h1 style={{ fontSize: "50px", marginTop: "100px" }}>Dissertation Progress</h1>
 			<span style={{ fontSize: "20px" }}>Timeline</span>
 			<Timeline
 				n={5}
-				complete={1}
+				complete={5}
 				customwidth={{ 2: 60 }}
 				descriptions={[
 					{
