@@ -1,6 +1,6 @@
 import React from "react";
 import { Event, ActiveEvent, CompletedEvent } from "./Event";
-import "./Index.css";
+// import "./Index.css";
 
 function Index() {
 	const lineStyle = {
