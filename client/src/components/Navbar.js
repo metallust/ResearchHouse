@@ -1,6 +1,6 @@
 import {React, useContext} from "react";
-// import {Link} from "react-router-dom";
 import ThemeContext from "../Context/ThemeContext";
+import { Link } from "react-router-dom";
 // import permissionContext from "../context/permissionContext";
 
 function Navbar() {
@@ -72,9 +72,9 @@ function Navbar() {
 					<input className="form-check-input" onClick={changeTheme} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
 					<label className="form-check-label" htmlFor="flexSwitchCheckDefault">{theme.name} mode</label>
 				</div>
-					<a className="btn btn-dark mx-1" to="#" role="button">
-							Login
-					</a>
+					<Link className="btn mx-1 " style={{backgroundColor:theme.btn,color:theme.btntext}} to="/login" role="button">
+							<b>Login</b>
+					</Link>
 			</div>
 		</nav>
 	);
