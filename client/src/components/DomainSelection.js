@@ -1,45 +1,30 @@
-import React from 'react';
-
+import React from "react";
+import Timeline from "./Timeline/Index";
 
 const DomainSelection = () => {
-  return (
-    <section className="cd-h-timeline js-cd-h-timeline margin-bottom-md">
-      <div className="cd-h-timeline__container container">
-        <div className="cd-h-timeline__dates">
-          <div className="cd-h-timeline__line">
-            <ol>
-              <li>
-                <a href="#0" className="cd-h-timeline__date cd-h-timeline__date--selected">
-                  16 Jan
-                </a>
-                <span className="cd-h-timeline__circle"></span> {/* Circle for event */}
-              </li>
-              <li>
-                <a href="#0" className="cd-h-timeline__date">
-                  28 Feb
-                </a>
-                <span className="cd-h-timeline__circle"></span> {/* Circle for event */}
-              </li>
-              {/* Other dates with circles here */}
-            </ol>
-            <span className="cd-h-timeline__filling-line" aria-hidden="true"></span>
-          </div>
-        </div>
-        <ul>
-          <li>
-            <a href="#0" className="text-replace cd-h-timeline__navigation cd-h-timeline__navigation--prev cd-h-timeline__navigation--inactive">
-              Prev
-            </a>
-          </li>
-          <li>
-            <a href="#0" className="text-replace cd-h-timeline__navigation cd-h-timeline__navigation--next">
-              Next
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-  );
+	return (
+		<div>
+			<Timeline
+				n={3}
+				complete={1}
+				linewidth={500}
+				descriptions={[
+					{
+						title: "Domain Selection",
+						position: 1,
+					},
+					{
+						title: "Comfirmation",
+						position: 1,
+					},
+					{
+						title: "Guide allotment",
+						position: 1,
+					},
+				]}
+			/>
+		</div>
+	);
 };
 
 export default DomainSelection;

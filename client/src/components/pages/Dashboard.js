@@ -12,28 +12,53 @@ const Dashboard = () => {
 				descriptions={[
 					{
 						title: "Synopsis",
-						start: "Done on 09 Aug 2021",
-						due: "Due on 05 Sep 2021",
+						subtitle: (
+							<>
+								<p>Done on 09 Aug 2021</p>
+								<p>Due on 05 Sep 2021</p>
+							</>
+						),
+						position: 1,
 					},
 					{
 						title: "Research",
-						start: "Done on 09 Aug 2021",
-						due: "Due on 05 Sep 2021",
+						subtitle: (
+							<>
+								<p>Done on 09 Aug 2021</p>
+								<p>Due on 05 Sep 2021</p>
+							</>
+						),
+						position: -1.3,
 					},
 					{
 						title: "Implementation",
-						start: "Done on 09 Aug 2021",
-						due: "Due on 05 Sep 2021",
+						subtitle: (
+							<>
+								<p>Done on 09 Aug 2021</p>
+								<p>Due on 05 Sep 2021</p>
+							</>
+						),
+						position: 1,
 					},
 					{
 						title: "Reports",
-						start: "Done on 09 Aug 2021",
-						due: "Due on 05 Sep 2021",
+						subtitle: (
+							<>
+								<p>Done on 09 Aug 2021</p>
+								<p>Due on 05 Sep 2021</p>
+							</>
+						),
+						position: -1.3,
 					},
 					{
 						title: "Publication",
-						start: "Done on 09 Aug 2021",
-						due: "Due on 05 Sep 2021",
+						subtitle: (
+							<>
+								<p>Done on 09 Aug 2021</p>
+								<p>Due on 05 Sep 2021</p>
+							</>
+						),
+						position: 1,
 					},
 				]}
 			/>

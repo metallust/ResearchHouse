@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
 import { useContext } from "react";
 import ThemeContext from "./Context/ThemeContext";
+import DomainSelection from "./components/DomainSelection";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -17,6 +18,8 @@ function App() {
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/signup" element={<Signup />} />
 				<Route path="/" element={<LandingPage />} />
+				<Route path="/domain" element={<DomainSelection />} />
+
 				<Route path="/dashboard" element={<Dashboard />} />
 				<Route
 					path="/color"

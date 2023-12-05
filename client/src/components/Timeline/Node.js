@@ -19,20 +19,17 @@ const Point = ({ desc, descy = -1, width, height, padding, fill, bcolor, child }
 				<div
 					className="timeline-card"
 					style={{
-						transform: `translate(-50%, ${-50 + descy * 50}%) scale(0.9)`,
+						transform: `translate(-50%, ${-50 + desc.position * 50}%) scale(0.9)`,
 					}}
 				>
-					{descy > 0 ? (
+					{desc.position > 0 ? (
 						<>
-							{}
-							<h4> {desc.title}</h4>
-							<p>{desc.start}</p>
-							<p>{desc.due}</p>
+							<h5>{desc.title}</h5>
+							{desc.subtitle}
 						</>
 					) : (
 						<>
-							<p>{desc.due}</p>
-							<p>{desc.start}</p>
+							{desc.subtitle}
 							<h5> {desc.title}</h5>
 						</>
 					)}

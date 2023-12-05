@@ -1,12 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import Node from "./Node";
 import ThemeContext from "../../Context/ThemeContext";
-import { easeOut, useAnimate } from "framer-motion";
+import { useAnimate } from "framer-motion";
 
-const linewidth = 800;
 const defaultwidth = 30;
 
-const calculateloadingpercentage = (n, complete, customwidth) => {
+const calculateloadingpercentage = (n, complete, customwidth, linewidth) => {
 	// calculating total width of events
 	let totalwidthofevents = 0;
 	for (let i = 0; i < n - 1; i++) {
@@ -21,10 +20,7 @@ const calculateloadingpercentage = (n, complete, customwidth) => {
 	// calculating loading length
 	let loadinglength = 0;
 	for (let i = 0; i < complete; i++) {
-		let w1 = 0,
-			w2 = 0;
-		w1 = customwidth[i] ? customwidth[i] : defaultwidth;
-		w2 = customwidth[i + 1] ? customwidth[i + 1] : defaultwidth;
+		let w1 = customwidth[i] ? customwidth[i] : defaultwidth;
 		loadinglength += w1 + separation;
 	}
 
@@ -42,7 +38,7 @@ const eventlist = (n, complete) => {
 	return elist;
 };
 
-function Index({ n, complete, recentcompleted, customwidth, descriptions }) {
+function Index({ n, complete, recentcompleted, customwidth = {}, descriptions, lineheight = 6, linewidth = 800 }) {
 	const theme = useContext(ThemeContext).theme;
 	const [scope, animate] = useAnimate();
 
@@ -76,7 +72,7 @@ function Index({ n, complete, recentcompleted, customwidth, descriptions }) {
 			await animate(
 				".progressline",
 				{
-					background: `linear-gradient(to right, blue ${calculateloadingpercentage(n, i, customwidth)}%, ${theme.quaternary} 0%)`,
+					background: `linear-gradient(to right, blue ${calculateloadingpercentage(n, i, customwidth, linewidth)}%, ${theme.quaternary} 0%)`,
 				},
 				{ duration: 0.3, ease: "easeOut" }
 			);
@@ -111,7 +107,7 @@ function Index({ n, complete, recentcompleted, customwidth, descriptions }) {
 
 	const lineStyle = {
 		width: `${linewidth}px`, // Adjust line width as needed
-		height: "6px", // Adjust line height as needed
+		height: `${lineheight}px`, // Adjust line height as needed
 		position: "relative",
 		display: "flex",
 		justifyContent: "space-between",
@@ -137,13 +133,13 @@ function Index({ n, complete, recentcompleted, customwidth, descriptions }) {
 					return (
 						<div className="containar">
 							<div className={`node-${i}`} style={{ position: "absolute" }}>
-								<Node key={type + i} type={"none"} width={w} desc={descriptions[i]} descy={i % 2 ? -1.2 : 1} />
+								<Node key={type + i} type={"none"} width={w} desc={descriptions[i]} />
 							</div>
 							<div className={`active-${i}`} style={{ position: "absolute", opacity: 0 }}>
-								<Node key={type + i} type={"active"} width={w} desc={descriptions[i]} descy={i % 2 ? -1.2 : 1} />
+								<Node key={type + i} type={"active"} width={w} desc={descriptions[i]} />
 							</div>
 							<div className={`complete-${i}`} style={{ position: "absolute", opacity: 0 }}>
-								<Node key={type + i} type={"complete"} width={w} desc={descriptions[i]} descy={i % 2 ? -1.2 : 1} />
+								<Node key={type + i} type={"complete"} width={w} desc={descriptions[i]} />
 							</div>
 						</div>
 					);
