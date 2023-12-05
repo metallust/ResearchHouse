@@ -10,7 +10,7 @@ const Point = ({ desc, descy = -1, width, height, padding, fill, bcolor, child }
 		border: `${bcolor} solid ${padding}`,
 		backgroundColor: `${fill}`,
 		position: "relative",
-		transform: "translate(0%, -45%)",
+		transform: "translate(-50%, -40%)",
 	};
 	return (
 		<>
