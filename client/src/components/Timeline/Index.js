@@ -117,14 +117,13 @@ function Index({ n, complete, recentcompleted, customwidth = {}, descriptions, l
 	return (
 		<div
 			ref={scope}
+			className="p-5 mt-5"
 			style={{
 				position: "relative",
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
-				height: "50vh",
-
-				// backgroundColor: "purple",
+				backgroundColor: "purple",
 			}}
 		>
 			<div className="progressline" style={lineStyle}>
