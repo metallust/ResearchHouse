@@ -34,7 +34,7 @@ const eventlist = (n, complete) => {
 };
 
 function Index({ n, complete, recentcompleted, customwidth, descriptions }) {
-	const light = {
+const light = {
 		primary: "#1b2d48",
 	};
 
@@ -59,7 +59,7 @@ function Index({ n, complete, recentcompleted, customwidth, descriptions }) {
 				height: "70vh",
 			}}
 		>
-			<div style={lineStyle}>
+				<div style={lineStyle}>
 				{eventlist(n, complete).map((type, i) => {
 					let w = customwidth[i] === undefined ? defaultwidth : customwidth[i];
 					return <Node key={type + i} type={type} width={w} desc={descriptions[i]} descy={i % 2 ? -1.2 : 1} />;

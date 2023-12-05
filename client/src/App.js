@@ -4,6 +4,7 @@ import Signup from "./components/Signuppage";
 import LandingPage from "./components/LandingPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
+import DomainSelection from "./components/DomainSelection";
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				</Routes>
 			</BrowserRouter>
 		</ThemeState>
+		
 	);
 }
 
