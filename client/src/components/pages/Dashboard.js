@@ -7,7 +7,7 @@ const Dashboard = () => {
 			<span style={{ fontSize: "20px" }}>Timeline</span>
 			<Timeline
 				n={5}
-				complete={5}
+				complete={3}
 				customwidth={{ 2: 60 }}
 				descriptions={[
 					{
