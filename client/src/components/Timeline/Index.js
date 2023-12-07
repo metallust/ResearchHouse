@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import Node from "./Node";
 import ThemeContext from "../../Context/ThemeContext";
-import { useAnimate } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
 
 const defaultwidth = 30;
 
@@ -38,15 +38,15 @@ const eventlist = (n, complete) => {
 	return elist;
 };
 
-function Index({ n, complete, recentcompleted, customwidth = {}, descriptions, lineheight = 6, linewidth = 800 }) {
+function Index({ n, complete, recentcompleted = 0, customwidth = {}, descriptions, lineheight = 6, linewidth = 800 }) {
 	const theme = useContext(ThemeContext).theme;
 	const [scope, animate] = useAnimate();
 
 	const animatecomplete = async () => {
 		// completed animation
-		for (let i = 0; i <= complete; i++) {
+		const till = Math.max(complete, recentcompleted);
+		for (let i = 0; i <= till; i++) {
 			// change the node from active from completed
-
 			animate([
 				[
 					`.active-${i - 1}`,
@@ -63,24 +63,28 @@ function Index({ n, complete, recentcompleted, customwidth = {}, descriptions, l
 						opacity: 1,
 					},
 					{
-						duration: 0.4,
+						delay: 0,
+						duration: 0.6,
 						ease: "easeOut",
 					},
 				],
 			]);
+
+			// confetti
+
 			// progressline animation
 			await animate(
 				".progressline",
 				{
 					background: `linear-gradient(to right, blue ${calculateloadingpercentage(n, i, customwidth, linewidth)}%, ${theme.quaternary} 0%)`,
 				},
-				{ duration: 0.3, ease: "easeOut" }
+				{ duration: 0.35, ease: "linear" }
 			);
 		}
 		// change the node from none to active
 		animate([
 			[
-				`.node-${complete}`,
+				`.node-${till}`,
 				{
 					opacity: 0,
 				},
@@ -89,7 +93,7 @@ function Index({ n, complete, recentcompleted, customwidth = {}, descriptions, l
 				},
 			],
 			[
-				`.active-${complete}`,
+				`.active-${till}`,
 				{
 					opacity: 1,
 				},
@@ -102,7 +106,6 @@ function Index({ n, complete, recentcompleted, customwidth = {}, descriptions, l
 
 	useEffect(() => {
 		animatecomplete();
-		// animation
 	}, []);
 
 	const lineStyle = {
@@ -117,20 +120,20 @@ function Index({ n, complete, recentcompleted, customwidth = {}, descriptions, l
 	return (
 		<div
 			ref={scope}
-			className="p-5 mt-5"
+			className='p-5 mt-5'
 			style={{
 				position: "relative",
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
-				backgroundColor: "purple",
+				// backgroundColor: "purple",
 			}}
 		>
-			<div className="progressline" style={lineStyle}>
+			<div className='progressline' style={lineStyle}>
 				{eventlist(n, complete).map((type, i) => {
 					let w = customwidth[i] === undefined ? defaultwidth : customwidth[i];
 					return (
-						<div className="containar">
+						<div className='containar'>
 							<div className={`node-${i}`} style={{ position: "absolute" }}>
 								<Node key={type + i} type={"none"} width={w} desc={descriptions[i]} />
 							</div>
@@ -138,7 +141,7 @@ function Index({ n, complete, recentcompleted, customwidth = {}, descriptions, l
 								<Node key={type + i} type={"active"} width={w} desc={descriptions[i]} />
 							</div>
 							<div className={`complete-${i}`} style={{ position: "absolute", opacity: 0 }}>
-								<Node key={type + i} type={"complete"} width={w} desc={descriptions[i]} />
+								<Node key={type + i} type={"complete"} width={w} desc={descriptions[i]} delay={2} />
 							</div>
 						</div>
 					);

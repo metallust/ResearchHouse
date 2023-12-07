@@ -17,20 +17,20 @@ const Point = ({ desc, descy = -1, width, height, padding, fill, bcolor, child }
 			<div style={circleStyle}>
 				{child}
 				<div
-					className="timeline-card"
+					className='timeline-card'
 					style={{
 						transform: `translate(-50%, ${-50 + desc.position * 50}%) scale(0.9)`,
 					}}
 				>
 					{desc.position > 0 ? (
 						<>
-							<h5>{desc.title}</h5>
+							<div className='fs-4'>{desc.title}</div>
 							{desc.subtitle}
 						</>
 					) : (
 						<>
 							{desc.subtitle}
-							<h5> {desc.title}</h5>
+							<div className='fs-4'>{desc.title}</div>
 						</>
 					)}
 				</div>
@@ -57,9 +57,11 @@ const Node = ({ width, type, desc, descy }) => {
 		};
 
 		const child = (
-			<svg xmlns="http://www.w3.org/2000/svg" style={svgStyle} viewBox="0 0 512 512">
-				<path fill={svgfill} d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
-			</svg>
+			<>
+				<svg xmlns='http://www.w3.org/2000/svg' style={svgStyle} viewBox='0 0 512 512'>
+					<path fill={svgfill} d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z' />
+				</svg>
+			</>
 		);
 		return <Point desc={desc} descy={descy} width={width} height={height} padding={padding} fill={fill} bcolor={bcolor} child={child} />;
 	};
