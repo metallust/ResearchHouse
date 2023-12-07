@@ -13,13 +13,14 @@ const DomainSelection = () => {
 	};
 
 	return (
-		<div className='container d-flex justify-content-center pt-5'>
+		<div className='container pt-5'>
 			<div
 				className='p-5'
 				style={{
 					border: "1px solid black",
 					borderRadius: "20px",
 					boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // Adding shadow
+					marginTop: "20px", // Adjusted margin
 				}}
 			>
 				<Timeline
@@ -41,8 +42,8 @@ const DomainSelection = () => {
 						},
 					]}
 				/>
-				<div>
-					<h1>Domain Selection</h1>
+				<div className='mt-3'>
+					<h1 className='mb-4'>Domain Selection</h1>
 					<p>
 						Select the domain you want to work on. Choose your
 						Preferences.
