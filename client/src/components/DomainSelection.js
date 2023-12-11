@@ -13,15 +13,16 @@ const DomainSelection = () => {
 	};
 
 	return (
-		<div className='container d-flex justify-content-center pt-5'>
-			<div
-				className='p-5'
-				style={{
-					border: "1px solid black",
-					borderRadius: "20px",
-					boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // Adding shadow
-				}}
-			>
+		<div
+			className='container d-flex flex-column mt-5'
+			style={{
+				border: "1px solid black",
+				borderRadius: "20px",
+				boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // Adding shadow
+				width: "70%",
+			}}
+		>
+			<div className='px-5 pb-5'>
 				<Timeline
 					n={3}
 					complete={1}
@@ -41,21 +42,23 @@ const DomainSelection = () => {
 						},
 					]}
 				/>
-				<div>
-					<h1>Domain Selection</h1>
-					<p>
-						Select the domain you want to work on. Choose your
-						Preferences.
-					</p>
-				</div>
-
-				{/* New Box for Dropdowns */}
+			</div>
+			<div
+				style={{
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					height: "100%",
+				}}
+			>
 				<div
-					className='p-4 mt-4'
+					className='p-4 m-4'
 					style={{
 						border: "1px solid black",
 						borderRadius: "20px",
 						boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // Adding shadow
+						height: "400px",
+						width: "80%",
 					}}
 				>
 					{/* Dropdowns */}
@@ -72,10 +75,7 @@ const DomainSelection = () => {
 								>
 									Preference {index + 1}:
 								</label>
-								<select
-									className='form-select'
-									id={`dropdown${index + 1}`}
-								>
+								<select className='form-select' id={`dropdown${index + 1}`}>
 									{/* Dropdown Options */}
 								</select>
 							</div>
@@ -84,16 +84,10 @@ const DomainSelection = () => {
 
 					{/* Buttons */}
 					<div className='mt-4 d-flex justify-content-between'>
-						<button
-							className='btn btn-secondary'
-							onClick={handleMakeChanges}
-						>
+						<button className='btn btn-secondary' onClick={handleMakeChanges}>
 							Make Changes
 						</button>
-						<button
-							className='btn btn-primary'
-							onClick={handleConfirm}
-						>
+						<button className='btn btn-primary' onClick={handleConfirm}>
 							Confirm
 						</button>
 					</div>
