@@ -13,16 +13,16 @@ const DomainSelection = () => {
 	};
 
 	return (
-		<div
-			className='container d-flex flex-column mt-5'
-			style={{
-				border: "1px solid black",
-				borderRadius: "20px",
-				boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // Adding shadow
-				width: "70%",
-			}}
-		>
-			<div className='px-5 pb-5'>
+		<div className='container pt-5'>
+			<div
+				className='p-5'
+				style={{
+					border: "1px solid black",
+					borderRadius: "20px",
+					boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // Adding shadow
+					marginTop: "20px", // Adjusted margin
+				}}
+			>
 				<Timeline
 					n={3}
 					complete={1}
@@ -42,15 +42,12 @@ const DomainSelection = () => {
 						},
 					]}
 				/>
-			</div>
-			<div
-				style={{
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					height: "100%",
-				}}
-			>
+				<div>
+					<h1>Domain Selection</h1>
+					<p>Select the domain you want to work on. Choose your Preferences.</p>
+				</div>
+
+				{/* New Box for Dropdowns */}
 				<div
 					className='p-4 m-4'
 					style={{
