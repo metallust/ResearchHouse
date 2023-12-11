@@ -23,6 +23,7 @@ function App() {
 				<Route path='/' element={<LandingPage />} />
 				<Route path='/domain' element={<DomainSelection />} />
 				<Route path='/Home' element={<Dashboard />} />
+				<Route path='/addstudent' element={<Addstudent />} />
 				<Route
 					path='/card'
 					element={

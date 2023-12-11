@@ -126,7 +126,6 @@ function Index({ n, complete, recentcompleted = 0, customwidth = {}, description
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
-				// backgroundColor: "purple",
 			}}
 		>
 			<div className='progressline' style={lineStyle}>

@@ -1,0 +1,17 @@
+/* Hide the scrollbar */
+.todo {
+	scrollbar-width: thin;
+	scrollbar-color: transparent transparent;
+}
+
+.todo::-webkit-scrollbar {
+	width: 6px; /* Adjust the width as needed */
+}
+
+.todo::-webkit-scrollbar-thumb {
+	background-color: transparent;
+}
+
+.todo:hover::-webkit-scrollbar-thumb {
+	background-color: #ffffff; /* Change color on hover if desired */
+}

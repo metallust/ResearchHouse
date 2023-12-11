@@ -7,76 +7,191 @@ const LoginPage = () => {
 	};
 
 	return (
-		<section className="login-box custom" style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
-			<div className="container">
-				<div className="row">
-					{/* SIH Details */}
-					<div className="intro clearfix">
-						<div className="offset-md-2 offset-lg-2 col-lg-8 col-md-8 col-sm-12 col-xs-12">
+		<section
+			className='login-box custom'
+			style={{
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				minHeight: "100vh",
+			}}
+		>
+			<div className='container'>
+				<div className='row'>
+					<div className='intro clearfix'>
+						<div className='offset-md-2 offset-lg-2 col-lg-8 col-md-8 col-sm-12 col-xs-12'>
 							<form
-								className="form-horizontal"
-								role="form"
-								method="POST"
-								action=""
-								id="thisform"
+								className='form-horizontal'
+								role='form'
+								method='POST'
+								action=''
+								id='thisform'
 								onSubmit={handleSubmit}
 								style={{
-									border: "1px solid #ccc",
+									border: "none",
 									padding: "20px",
 									borderRadius: "5px",
-									boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // Adding shadow
+									boxShadow:
+										"0px 4px 4px rgba(0, 0, 0, 0.25)",
+									background: "#E1F8FF",
+									fontFamily: "Roboto, sans-serif",
+									textAlign: "center",
 								}}
 							>
-								{/* Centered and colored heading */}
-								<input type="hidden" name="_token" value="Ryxu4VJXvwNk8YtbUJjaZsMFfDCVtdRmknwOZ1Xx" />
-								<div className="row type_margin">
-									<div className="offset-md-3 offset-md-3 col-lg-7 col-md-7 col-sm-12 col-xs-12">
-										{/* Rest of your form content */}
-										<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing">
-											<input placeholder="Email" type="text" id="email" name="email" value="" className="form-control-login input_box" style={{ width: "100%", padding: "10px", marginBottom: "10px" }} />
-										</div>
-										{/* Password Input */}
-										<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing">
-											<input placeholder="Password" id="password" type="password" name="password"  className="form-control-login input_box" style={{ width: "100%", padding: "10px", marginBottom: "10px" }} />
-										</div>
-										{/* User Role Select */}
-										<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing">
-											<select name="role" className="form-control input_box" style={{ width: "100%", padding: "10px", marginBottom: "10px" }}>
-												<option value="">Please Select User Role</option>
-												{/* Add options here */}
-											</select>
-											{/* Forgot Password Link */}
-											<span style={{ display: "block", marginBottom: "10px" }}>
-												<a href="">Forgot Your Password?</a>
-											</span>
-										</div>
-										{/* Submit Button */}
-										<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing">
-											<input
-												type="submit"
-												id="edit-submit"
-												name="op"
-												value="Submit"
-												className="form-control-login btn btn-success btn-lg"
-												
-												style={{
-													width: "100%",
-													padding: "10px",
-													backgroundColor: "#4285F4", // Button color
-													border: "none",
-													color: "#fff",
-													boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)", // Button shadow
-												}}
-											/>
-										</div>
-										{/* Register Link */}
-										<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing" style={{ textAlign: "center", marginTop: "20px" }}>
-											Don't Have Account?{" "}
-											<a href="javascript:void(0)" data-toggle="modal" data-target="#Registeration_type_modal" style={{ textDecoration: "none", color: "#333", fontWeight: "bold" }}>
-												Register Now
-											</a>
-										</div>
-									</div>
+								<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
+									<p
+										style={{
+											fontSize: "32px",
+											fontWeight: "700",
+											color: "#004257",
+											fontFamily: "Roboto, sans-serif",
+											marginBottom: "5px",
+										}}
+									>
+										ResearchHouse
+									</p>
+									<p
+										style={{
+											fontSize: "48px",
+											fontWeight: "700",
+											color: "#004257",
+											fontFamily: "Roboto, sans-serif",
+											marginBottom: "20px",
+										}}
+									>
+										Login
+									</p>
+									<input
+										placeholder='Email'
+										type='text'
+										id='email'
+										name='email'
+										value=''
+										className='form-control-login input_box'
+										style={{
+											width: "562px",
+											height: "40px",
+											padding: "10px",
+											borderRadius: "10px",
+											boxShadow:
+												"0px 4px 4px rgba(0, 0, 0, 0.25)",
+											border: "none",
+											color: "#004257",
+											fontSize: "16px",
+											fontWeight: "600",
+											fontFamily: "Roboto, sans-serif",
+											marginBottom: "20px",
+										}}
+									/>
+								</div>
+								<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
+									<input
+										placeholder='Password'
+										id='password'
+										type='password'
+										name='password'
+										className='form-control-login input_box'
+										style={{
+											width: "562px",
+											height: "40px",
+											padding: "10px",
+											borderRadius: "10px",
+											boxShadow:
+												"0px 4px 4px rgba(0, 0, 0, 0.25)",
+											border: "none",
+											color: "#004257",
+											fontSize: "16px",
+											fontWeight: "600",
+											fontFamily: "Roboto, sans-serif",
+											marginBottom: "20px",
+										}}
+									/>
+								</div>
+								<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
+									<select
+										name='role'
+										className='form-control input_box'
+										style={{
+											width: "562px",
+											height: "40px",
+											padding: "10px",
+											borderRadius: "10px",
+											boxShadow:
+												"0px 4px 4px rgba(0, 0, 0, 0.25)",
+											border: "none",
+											color: "#004257",
+											fontSize: "16px",
+											fontWeight: "600",
+											fontFamily: "Roboto, sans-serif",
+											marginBottom: "20px",
+											textAlign: "left",
+										}}
+									>
+										<option value=''>
+											Please Select User Role
+										</option>
+										{/* Add options here */}
+									</select>
+									<span
+										style={{
+											display: "block",
+											marginBottom: "20px",
+											color: "#004257",
+											fontSize: "16px",
+											fontWeight: "600",
+											fontFamily: "Roboto, sans-serif",
+										}}
+									>
+										<a href=''>Forgot Your Password?</a>
+									</span>
+								</div>
+								<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
+									<input
+										type='submit'
+										id='edit-submit'
+										name='op'
+										value='Submit'
+										className='form-control-login btn btn-success btn-lg'
+										style={{
+											width: "176px",
+											height: "60px",
+											padding: "10px",
+											backgroundColor: "#004257",
+											borderRadius: "10px",
+											border: "none",
+											color: "#fff",
+											fontSize: "24px",
+											fontWeight: "600",
+											boxShadow:
+												"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+											fontFamily: "Roboto, sans-serif",
+											marginBottom: "20px",
+										}}
+									/>
+								</div>
+								<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
+									<span
+										style={{
+											fontSize: "16px",
+											fontWeight: "500",
+											color: "#004257",
+											fontFamily: "Roboto, sans-serif",
+										}}
+									>
+										Don't Have an Account?{" "}
+										<a
+											href='javascript:void(0)'
+											data-toggle='modal'
+											data-target='#Registeration_type_modal'
+											style={{
+												textDecoration: "none",
+												color: "#004257",
+												fontWeight: "bold",
+											}}
+										>
+											Register Now
+										</a>
+									</span>
 								</div>
 							</form>
 						</div>
