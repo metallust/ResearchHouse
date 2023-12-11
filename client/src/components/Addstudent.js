@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Addstudent = () => {
-	const [inventoryDetails, setInventoryDetails] = useState({
+	const [studentDetails, setstudentDetails] = useState({
 		itemName: "",
 		quantity: 0,
 		minQuantity: 0,
@@ -12,24 +12,24 @@ const Addstudent = () => {
 	const [isSubmitDisabled, setSubmitDisabled] = useState(true);
 
 	const handleAddItem = () => {
-		setItemList((prevList) => [...prevList, inventoryDetails]);
-		setInventoryDetails({
-			itemName: "",
-			quantity: 0,
-			minQuantity: 0,
+		setItemList((prevList) => [...prevList, studentDetails]);
+		setstudentDetails({
+			studentName: "",
+			prn: "",
+			email: "",
 		});
 		setSubmitDisabled(false);
 	};
 
-	const handleNewInventoryRequest = () => {
+	const handleNewStudentRequest = () => {
 		// Add logic to handle the submission of all items
-		console.log("Inventory items submitted:", itemList);
+		console.log("Student Details submitted:", itemList);
 		// You can send this data to your backend or perform further actions
 	};
 
 	const handleChange = (event) => {
 		const { id, value } = event.target;
-		setInventoryDetails((prevDetails) => ({
+		setstudentDetails((prevDetails) => ({
 			...prevDetails,
 			[id]: value,
 		}));
@@ -38,55 +38,54 @@ const Addstudent = () => {
 	return (
 		<div className='container'>
 			<form className='py-2 d-flex flex-column'>
-				<h4 className='my-1'>Add Inventory Item :</h4>
+				<h4 className='my-1'>Add Student Details :</h4>
 
 				<div className='d-flex justify-content-between flex-wrap mb-3'>
 					<div className='d-flex me-3 mb-3'>
 						<label
-							htmlFor='itemName'
+							htmlFor='studentName'
 							className='form-label align-self-center h6'
 						>
-							Item Name:
+							Name :
 						</label>
 						<input
 							type='text'
 							className='form-control ms-4'
-							id='itemName'
-							value={inventoryDetails.itemName}
+							id='studentName'
+							value={studentDetails.studentName}
 							onChange={handleChange}
 						/>
 					</div>
 					<div className='d-flex me-3 mb-3'>
 						<label
-							htmlFor='quantity'
+							htmlFor='prn'
 							className='form-label align-self-center h6'
 						>
-							Quantity:
+							PRN :
 						</label>
 						<input
-							type='number'
+							type='text'
 							className='form-control ms-4'
-							id='quantity'
-							value={inventoryDetails.quantity}
+							id='prn'
+							value={studentDetails.prn}
 							onChange={handleChange}
 						/>
 					</div>
-				</div>
-
-				<div className='d-flex mb-3'>
-					<label
-						htmlFor='minQuantity'
-						className='form-label align-self-center h6'
-					>
-						Minimum Quantity:
-					</label>
-					<input
-						type='number'
-						className='form-control mx-2'
-						id='minQuantity'
-						value={inventoryDetails.minQuantity}
-						onChange={handleChange}
-					/>
+					<div className='d-flex me-3 mb-3'>
+						<label
+							htmlFor='email'
+							className='form-label align-self-center h6'
+						>
+							Email :
+						</label>
+						<input
+							type='text'
+							className='form-control ms-4'
+							id='email'
+							value={studentDetails.email}
+							onChange={handleChange}
+						/>
+					</div>
 				</div>
 
 				<button
@@ -100,21 +99,21 @@ const Addstudent = () => {
 			</form>
 
 			<div className='mt-4'>
-				<h5>Added Inventory Items:</h5>
+				<h5>Added Student Details:</h5>
 				<table className='table'>
 					<thead>
 						<tr>
-							<th>Item Name</th>
-							<th>Quantity</th>
-							<th>Minimum Quantity</th>
+							<th>Student Name</th>
+							<th>PRN</th>
+							<th>Email</th>
 						</tr>
 					</thead>
 					<tbody>
 						{itemList.map((item, index) => (
 							<tr key={index}>
-								<td>{item.itemName}</td>
-								<td>{item.quantity}</td>
-								<td>{item.minQuantity}</td>
+								<td>{item.studentName}</td>
+								<td>{item.prn}</td>
+								<td>{item.email}</td>
 							</tr>
 						))}
 					</tbody>
@@ -122,17 +121,13 @@ const Addstudent = () => {
 
 				<button
 					className='btn btn-primary me-2'
-					onClick={handleNewInventoryRequest}
+					onClick={handleNewStudentRequest}
 					type='button'
 					disabled={isSubmitDisabled}
 				>
 					Submit
 				</button>
-				<Link
-					to={"/Wards/Inventory"}
-					className='btn btn-secondary'
-					role='button'
-				>
+				<Link to={""} className='btn btn-secondary' role='button'>
 					Cancel
 				</Link>
 			</div>
