@@ -10,6 +10,7 @@ import DomainSelection from "./components/DomainSelection";
 import Todo from "./components/Todo";
 import Colors from "./components/Colors";
 import StudentDashboard from "./components/student/StudentDashboard";
+import Addstudent from "./components/pgCoordinator/Addstudent";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);

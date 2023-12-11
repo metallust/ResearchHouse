@@ -9,7 +9,7 @@ function StudentTodo() {
 		borderRadius: "10px",
         overflowY:"scroll",
         padding : "0 10px ",
-        margin : "2rem 0"
+        margin : "2rem 0 0 0"
 
 	};
 	const title = {

@@ -12,11 +12,12 @@ const StudentSidebar = () => {
       <div className='h3 mt-2'>
         Hi {name}
       </div>
-      <div className='container mt-2' style={{ backgroundColor: "#E1F8FF",width:"90%",height:"fit-content",borderRadius:"10px"}}>
+      <div className='container mt-3 py-2' style={{ backgroundColor: "#E1F8FF",width:"90%",height:"fit-content",borderRadius:"10px"}}>
         ongoing {section}
         <div></div>
         deadline : dd/mm/yyyy
       </div>
+      <StudentTodo />
       <StudentTodo />
     </div>
   )
