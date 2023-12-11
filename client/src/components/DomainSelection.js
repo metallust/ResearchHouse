@@ -42,21 +42,20 @@ const DomainSelection = () => {
 						},
 					]}
 				/>
-				<div className='mt-3'>
-					<h1 className='mb-4'>Domain Selection</h1>
-					<p>
-						Select the domain you want to work on. Choose your
-						Preferences.
-					</p>
+				<div>
+					<h1>Domain Selection</h1>
+					<p>Select the domain you want to work on. Choose your Preferences.</p>
 				</div>
 
 				{/* New Box for Dropdowns */}
 				<div
-					className='p-4 mt-4'
+					className='p-4 m-4'
 					style={{
 						border: "1px solid black",
 						borderRadius: "20px",
 						boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // Adding shadow
+						height: "400px",
+						width: "80%",
 					}}
 				>
 					{/* Dropdowns */}
@@ -73,10 +72,7 @@ const DomainSelection = () => {
 								>
 									Preference {index + 1}:
 								</label>
-								<select
-									className='form-select'
-									id={`dropdown${index + 1}`}
-								>
+								<select className='form-select' id={`dropdown${index + 1}`}>
 									{/* Dropdown Options */}
 								</select>
 							</div>
@@ -85,16 +81,10 @@ const DomainSelection = () => {
 
 					{/* Buttons */}
 					<div className='mt-4 d-flex justify-content-between'>
-						<button
-							className='btn btn-secondary'
-							onClick={handleMakeChanges}
-						>
+						<button className='btn btn-secondary' onClick={handleMakeChanges}>
 							Make Changes
 						</button>
-						<button
-							className='btn btn-primary'
-							onClick={handleConfirm}
-						>
+						<button className='btn btn-primary' onClick={handleConfirm}>
 							Confirm
 						</button>
 					</div>

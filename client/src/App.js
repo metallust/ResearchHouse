@@ -8,7 +8,7 @@ import { useContext } from "react";
 import ThemeContext from "./Context/ThemeContext";
 import DomainSelection from "./components/DomainSelection";
 import Todo from "./components/Todo";
-import Addstudent from "./components/Addstudent";
+import Colors from "./components/Colors";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
