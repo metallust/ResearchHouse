@@ -9,6 +9,7 @@ import ThemeContext from "./Context/ThemeContext";
 import DomainSelection from "./components/DomainSelection";
 import Todo from "./components/Todo";
 import Colors from "./components/Colors";
+import StudentDashboard from "./components/student/StudentDashboard";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -42,8 +43,8 @@ function App() {
 				/>
 				<Route path='/color' element={<Colors />} />
 
-				<Route exact path="/student" element={<Colors />}>
-					<Route exact path="/student/myprogress" element={<Colors />}/>
+				<Route exact path="/studentdashboard" element={<StudentDashboard />}>
+					<Route exact path="/studentdashboard/myprogress" element={<Colors />}/>
 				</Route>
 
 			</Routes>
