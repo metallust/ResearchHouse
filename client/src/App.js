@@ -8,7 +8,7 @@ import { useContext } from "react";
 import ThemeContext from "./Context/ThemeContext";
 import DomainSelection from "./components/DomainSelection";
 import Todo from "./components/Todo";
-import Colors from "./components/Colors";
+// import Colors from "./components/Colors";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -22,7 +22,7 @@ function App() {
 				<Route path='/' element={<LandingPage />} />
 				<Route path='/domain' element={<DomainSelection />} />
 				<Route path='/Home' element={<Dashboard />} />
-				<Route path='/addstudent' element={<Addstudent />} />
+				{/* <Route path='/addstudent' element={<Addstudent />} /> */}
 				<Route
 					path='/card'
 					element={
