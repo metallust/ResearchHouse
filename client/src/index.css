@@ -12,7 +12,19 @@ code {
 /* WebKit-based browsers (Chrome, Safari) */
 /* Style the scrollbar track */
 ::-webkit-scrollbar {
-	width: 14px; /* Adjust the width as needed */
+	width: 7px; /* Adjust the width as needed */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.228); /* Change the color of the thumb to your preference */
+	border-radius: 7px; /* Create rounded corners for the thumb */
+	border: 2px solid rgb(255, 255, 255); /* Set the transparent border (1/4 of the width) */
+}
+
+/* Style the scrollbar track when not hovering over the thumb */
+::-webkit-scrollbar-track {
+	background-color: transparent; /* Set the track to transparent */
 }
 
 /* Style the scrollbar thumb (the draggable part) */
