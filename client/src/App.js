@@ -48,8 +48,8 @@ function App() {
 				/>
 				<Route path='/color' element={<Colors />} />
 
-				<Route exact path='/student' element={<StudentDashboard />}>
-					<Route exact path='/student/myprogress' element={<Addstudent />} />
+				<Route exact path='/studentdashboard' element={<StudentDashboard />}>
+					<Route exact path='/studentdashboard/myprogress' element={<Colors />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -69,8 +69,8 @@ const LoginPage = () => {
 										value=''
 										className='form-control-login input_box'
 										style={{
-											width: "562px",
-											height: "40px",
+											width: "80%",
+											height: "40%",
 											padding: "10px",
 											borderRadius: "10px",
 											boxShadow:
@@ -92,8 +92,8 @@ const LoginPage = () => {
 										name='password'
 										className='form-control-login input_box'
 										style={{
-											width: "562px",
-											height: "40px",
+											width: "80%",
+											height: "40%",
 											padding: "10px",
 											borderRadius: "10px",
 											boxShadow:
@@ -108,30 +108,6 @@ const LoginPage = () => {
 									/>
 								</div>
 								<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
-									<select
-										name='role'
-										className='form-control input_box'
-										style={{
-											width: "562px",
-											height: "40px",
-											padding: "10px",
-											borderRadius: "10px",
-											boxShadow:
-												"0px 4px 4px rgba(0, 0, 0, 0.25)",
-											border: "none",
-											color: "#004257",
-											fontSize: "16px",
-											fontWeight: "600",
-											fontFamily: "Roboto, sans-serif",
-											marginBottom: "20px",
-											textAlign: "left",
-										}}
-									>
-										<option value=''>
-											Please Select User Role
-										</option>
-										{/* Add options here */}
-									</select>
 									<span
 										style={{
 											display: "block",
@@ -154,7 +130,7 @@ const LoginPage = () => {
 										className='form-control-login btn btn-success btn-lg'
 										style={{
 											width: "176px",
-											height: "60px",
+											height: "50px",
 											padding: "10px",
 											backgroundColor: "#004257",
 											borderRadius: "10px",
@@ -189,7 +165,7 @@ const LoginPage = () => {
 												fontWeight: "bold",
 											}}
 										>
-											Register Now
+											Register
 										</a>
 									</span>
 								</div>
