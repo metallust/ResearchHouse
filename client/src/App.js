@@ -10,8 +10,10 @@ import DomainSelection from "./components/DomainSelection";
 import Todo from "./components/Todo";
 import Colors from "./components/Colors";
 // import Pdf from "./components/test/Pdf";
+import Navscroll from "./components/test/Navscroll";
 import StudentDashboard from "./components/student/StudentDashboard";
 import Addstudent from "./components/pgCoordinator/Addstudent";
+import Main from "./components/test/Main";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -25,8 +27,9 @@ function App() {
 				<Route path='/' element={<LandingPage />} />
 				<Route path='/domain' element={<DomainSelection />} />
 				<Route path='/Home' element={<Dashboard />} />
+				<Route path='/test' element={<Main />} />
 				<Route
-					path='/card'
+					path='/todo'
 					element={
 						<div
 							style={{
@@ -45,8 +48,8 @@ function App() {
 				/>
 				<Route path='/color' element={<Colors />} />
 
-				<Route exact path='/student' element={<Colors />}>
-					<Route exact path='/student/myprogress' element={<Colors />} />
+				<Route exact path='/student' element={<StudentDashboard />}>
+					<Route exact path='/student/myprogress' element={<Addstudent />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
