@@ -10,6 +10,8 @@ import DomainSelection from "./components/DomainSelection";
 import Todo from "./components/Todo";
 import Colors from "./components/Colors";
 // import Pdf from "./components/test/Pdf";
+import StudentDashboard from "./components/student/StudentDashboard";
+import Addstudent from "./components/pgCoordinator/Addstudent";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -23,7 +25,6 @@ function App() {
 				<Route path='/' element={<LandingPage />} />
 				<Route path='/domain' element={<DomainSelection />} />
 				<Route path='/Home' element={<Dashboard />} />
-				{/* <Route path='/test' element={<Pdf />} /> */}
 				<Route
 					path='/card'
 					element={
