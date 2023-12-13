@@ -7,7 +7,7 @@ const SignupPage = () => {
 	};
 
 	const inputStyle = {
-		width: "80%",
+		// width: "80%",
 		height: "40px",
 		padding: "10px",
 		borderRadius: "10px",
@@ -45,13 +45,14 @@ const SignupPage = () => {
 								onSubmit={handleSubmit}
 								style={{
 									border: "none",
-									padding: "20px",
+									// padding: "20px",
 									borderRadius: "5px",
 									boxShadow:
 										"0px 4px 4px rgba(0, 0, 0, 0.25)",
 									background: "#E1F8FF",
 									fontFamily: "Roboto, sans-serif",
 									textAlign: "center",
+									padding: "20px 15%"
 								}}
 							>
 								<p
@@ -222,6 +223,7 @@ const SignupPage = () => {
 												transform: "translateY(-50%)",
 												color: "#999",
 												fontSize: "14px",
+												zIndex: "1"
 											}}
 										>
 											Add File (PNG, PDF, JPEG)
