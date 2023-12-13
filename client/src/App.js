@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
 import { useContext } from "react";
 import ThemeContext from "./Context/ThemeContext";
-import DomainSelection from "./components/DomainSelection";
+import DomainSelection from "./components/student/DomainSelection";
 import Todo from "./components/Todo";
 import Colors from "./components/Colors";
 import StudentDashboard from "./components/student/StudentDashboard";
