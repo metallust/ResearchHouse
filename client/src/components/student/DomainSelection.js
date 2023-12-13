@@ -34,6 +34,7 @@ const DomainSelection = () => {
 		<>
 		<div className="container border border-0" style={{backgroundColor:"#E1F8FF", width:"57%", height:"83vh",borderRadius:"2rem",minWidth:"820px"}}>
 			<Timeline
+				key={context.progress[1]}
 				n={3}
 				complete={context.progress[1]}
 				linewidth={500}
