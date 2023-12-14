@@ -3,7 +3,7 @@ import React from "react";
 function StudentTodo() {
 	const card = {
 		width: "80%",
-		height: "25vh",
+		height: "200px",
 		backgroundColor: "#E1F8FF",
 		border: "2px solid #E1F8FF",
 		borderRadius: "10px",

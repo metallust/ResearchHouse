@@ -5,7 +5,7 @@ const StudentSidebar = () => {
 	const name = "Basit";
 	const section = "section";
 	return (
-		<div className='d-flex flex-column align-items-center' style={{ height: "100vh" }}>
+		<aside className='d-flex flex-column align-items-center overflow-hidden position-sticky top-0' style={{ height: "100vh" }}>
 			<div className='h2 mt-4 fw-bold'>ResearchHouse</div>
 			<div className='h4 mt-2'>Hi {name}</div>
 			<div
@@ -24,7 +24,8 @@ const StudentSidebar = () => {
 			</div>
 			<StudentTodo />
 			<StudentTodo />
-		</div>
+			<StudentTodo />
+		</aside>
 	);
 };
 

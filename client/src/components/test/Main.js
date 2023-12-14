@@ -20,7 +20,7 @@ function Main() {
 	return (
 		<div className='container-fluid d-flex flex-column' style={{ height: "100vh" }}>
 			<div className='row flex-grow-1'>
-				<div className='col p-0' style={{ minWidth: "250px" }}>
+				<div className='col p-0' style={{ maxWidth: "300px" }}>
 					<StudentSidebar />
 				</div>
 				<div className='col-7 overflow-x-hidden pb-4'>
