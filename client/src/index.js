@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ThemeState from "./Context/ThemeState";
+import GuideAllotmentState from "./Context/GuideAllotmentState";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
-		<ThemeState>
-			<App />
-		</ThemeState>
+		<GuideAllotmentState>
+			<ThemeState>
+				<App />
+			</ThemeState>
+		</GuideAllotmentState>
 	</React.StrictMode>
 );
 
