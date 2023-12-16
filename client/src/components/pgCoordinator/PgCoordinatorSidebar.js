@@ -11,6 +11,12 @@ const PgCoordinatorSidebar = () => {
 	const scheduledate = "05/12/2012";
 	const [showModal, setShowModal] = useState(false);
 	const [inputValue, setInputValue] = useState("");
+	const departments = [
+		"Computer Science",
+		"Information Technology",
+		"Mechanical Engg",
+		"Civil Engineering",
+	];
 
 	const handleSave = () => {
 		// Handle save action with the inputValue
@@ -87,30 +93,12 @@ const PgCoordinatorSidebar = () => {
 				}}
 			>
 				Department
-				<button
-					style={{
-						width: "20px",
-						height: "20px",
-						position: "relative",
-						padding: "0",
-						backgroundColor: "#004257",
-						border: "none",
-					}}
-				>
-					<FontAwesomeIcon
-						icon={faPlus}
-						style={{
-							position: "absolute",
-							top: "50%",
-							left: "50%",
-							transform: "translate(-50%, -50%)",
-							fontSize: "12px",
-							color: "white",
-						}}
-						onClick={() => setShowModal(true)}
-					/>
-				</button>
-				{/* <Buttonbox /> */}
+				<div></div>{" "}
+				<ul>
+					{departments.map((name, index) => (
+						<li key={index}>{name}</li>
+					))}
+				</ul>
 			</div>
 
 			<div
@@ -132,54 +120,6 @@ const PgCoordinatorSidebar = () => {
 				}}
 			>
 				Batch
-				<button
-					style={{
-						width: "20px",
-						height: "20px",
-						position: "relative",
-						padding: "0",
-						backgroundColor: "#004257",
-						border: "none",
-					}}
-					onClick={() => setShowModal(true)}
-				>
-					<FontAwesomeIcon
-						icon={faPlus}
-						style={{
-							position: "absolute",
-							top: "50%",
-							left: "50%",
-							transform: "translate(-50%, -50%)",
-							fontSize: "12px",
-							color: "white",
-						}}
-					/>
-				</button>
-				<div>
-					{/* Modal */}
-					<Modal show={showModal} onHide={handleClose}>
-						<Modal.Header closeButton>
-							<Modal.Title>Enter Text</Modal.Title>
-						</Modal.Header>
-						<Modal.Body>
-							{/* Input field inside the modal */}
-							<input
-								type='text'
-								value={inputValue}
-								onChange={(e) => setInputValue(e.target.value)}
-							/>
-						</Modal.Body>
-						<Modal.Footer>
-							{/* Save and Close buttons */}
-							<Button variant='primary' onClick={handleSave}>
-								Save
-							</Button>
-							<Button variant='secondary' onClick={handleClose}>
-								Close
-							</Button>
-						</Modal.Footer>
-					</Modal>
-				</div>
 			</div>
 		</div>
 	);
