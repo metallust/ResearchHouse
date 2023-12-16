@@ -12,7 +12,7 @@ import Colors from "./components/Colors";
 // import Pdf from "./components/test/Pdf";
 import Navscroll from "./components/test/Navscroll";
 import StudentDashboard from "./components/student/StudentDashboard";
-import Addstudenttest from "./components/pgCoordinator/Addstudenttest";
+import Addstudent from "./components/pgCoordinator/Addstudent";
 import Main from "./components/test/Main";
 import PgCoordinatorDashboard from "./components/pgCoordinator/PgCoordinatorDashboard";
 
@@ -25,7 +25,7 @@ function App() {
 			<Routes>
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/signup' element={<Signup />} />
-				<Route path='/addstudenttest' element={<Addstudenttest />} />
+				<Route path='/addstudent' element={<Addstudent />} />
 				<Route path='/' element={<LandingPage />} />
 				<Route path='/domain' element={<DomainSelection />} />
 				<Route path='/Home' element={<Dashboard />} />
