@@ -14,6 +14,7 @@ import Navscroll from "./components/test/Navscroll";
 import StudentDashboard from "./components/student/StudentDashboard";
 import Addstudent from "./components/pgCoordinator/Addstudent";
 import Main from "./components/test/Main";
+import PgCoordinatorDashboard from "./components/pgCoordinator/PgCoordinatorDashboard";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -24,10 +25,11 @@ function App() {
 			<Routes>
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/signup' element={<Signup />} />
+				<Route path='/addstudent' element={<Addstudent />} />
 				<Route path='/' element={<LandingPage />} />
 				<Route path='/domain' element={<DomainSelection />} />
 				<Route path='/Home' element={<Dashboard />} />
-				<Route path='/test' element={<Main />} />
+				<Route path='/test' element={<Main />} />s
 				<Route
 					path='/todo'
 					element={
@@ -47,9 +49,27 @@ function App() {
 					}
 				/>
 				<Route path='/color' element={<Colors />} />
-
-				<Route exact path='/studentdashboard' element={<StudentDashboard />}>
-					<Route exact path='/studentdashboard/myprogress' element={<Colors />} />
+				<Route
+					exact
+					path='/studentdashboard'
+					element={<StudentDashboard />}
+				>
+					<Route
+						exact
+						path='/studentdashboard/myprogress'
+						element={<Colors />}
+					/>
+				</Route>
+				<Route
+					exact
+					path='/pgcoordinatordashboard'
+					element={<PgCoordinatorDashboard />}
+				>
+					{/* <Route
+						exact
+						path='/pgcoordinatordashboard/myprogress'
+						element={<Colors />}
+					/> */}
 				</Route>
 			</Routes>
 		</BrowserRouter>

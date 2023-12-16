@@ -1,135 +1,201 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import StudentSidebar from "../student/StudentSidebar";
 
 const Addstudent = () => {
-	const [studentDetails, setstudentDetails] = useState({
-		itemName: "",
-		quantity: 0,
-		minQuantity: 0,
-	});
-
-	const [itemList, setItemList] = useState([]);
-	const [isSubmitDisabled, setSubmitDisabled] = useState(true);
-
-	const handleAddItem = () => {
-		setItemList((prevList) => [...prevList, studentDetails]);
-		setstudentDetails({
-			studentName: "",
-			prn: "",
-			email: "",
-		});
-		setSubmitDisabled(false);
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		// Add logic for form submission here
 	};
-
-	const handleNewStudentRequest = () => {
-		// Add logic to handle the submission of all items
-		console.log("Student Details submitted:", itemList);
-		// You can send this data to your backend or perform further actions
-	};
-
-	const handleChange = (event) => {
-		const { id, value } = event.target;
-		setstudentDetails((prevDetails) => ({
-			...prevDetails,
-			[id]: value,
-		}));
-	};
-
 	return (
-		<div className='container'>
-			<form className='py-2 d-flex flex-column'>
-				<h4 className='my-1'>Add Student Details :</h4>
-
-				<div className='d-flex justify-content-between flex-wrap mb-3'>
-					<div className='d-flex me-3 mb-3'>
-						<label
-							htmlFor='studentName'
-							className='form-label align-self-center h6'
-						>
-							Name :
-						</label>
-						<input
-							type='text'
-							className='form-control ms-4'
-							id='studentName'
-							value={studentDetails.studentName}
-							onChange={handleChange}
-						/>
-					</div>
-					<div className='d-flex me-3 mb-3'>
-						<label
-							htmlFor='prn'
-							className='form-label align-self-center h6'
-						>
-							PRN :
-						</label>
-						<input
-							type='text'
-							className='form-control ms-4'
-							id='prn'
-							value={studentDetails.prn}
-							onChange={handleChange}
-						/>
-					</div>
-					<div className='d-flex me-3 mb-3'>
-						<label
-							htmlFor='email'
-							className='form-label align-self-center h6'
-						>
-							Email :
-						</label>
-						<input
-							type='text'
-							className='form-control ms-4'
-							id='email'
-							value={studentDetails.email}
-							onChange={handleChange}
-						/>
-					</div>
+		<div>
+			<div>
+				<div
+					style={{
+						backgroundColor: "transparent",
+						minHeight: "100vh",
+						width: "21%",
+					}}
+				>
+					<StudentSidebar />
 				</div>
 
-				<button
-					className='btn btn-outline-success me-2 align-self-center'
-					style={{ width: "10rem" }}
-					onClick={handleAddItem}
-					type='button'
+				<section
+					className='login-box custom'
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						minHeight: "100vh",
+					}}
 				>
-					Add
-				</button>
-			</form>
-
-			<div className='mt-4'>
-				<h5>Added Student Details:</h5>
-				<table className='table'>
-					<thead>
-						<tr>
-							<th>Student Name</th>
-							<th>PRN</th>
-							<th>Email</th>
-						</tr>
-					</thead>
-					<tbody>
-						{itemList.map((item, index) => (
-							<tr key={index}>
-								<td>{item.studentName}</td>
-								<td>{item.prn}</td>
-								<td>{item.email}</td>
-							</tr>
-						))}
-					</tbody>
-				</table>
-
-				<button
-					className='btn btn-primary me-2'
-					onClick={handleNewStudentRequest}
-					type='button'
-					disabled={isSubmitDisabled}
-				>
-					Submit
-				</button>
-				<Link to={""} className='btn btn-secondary' role='button'>
-					Cancel
-				</Link>
+					<div className='container'>
+						<div className='row'>
+							<div className='intro clearfix'>
+								<div className='offset-md-2 offset-lg-2 col-lg-8 col-md-8 col-sm-12 col-xs-12'>
+									<form
+										className='form-horizontal'
+										role='form'
+										method='POST'
+										action=''
+										id='thisform'
+										onSubmit={handleSubmit}
+										style={{
+											border: "none",
+											padding: "20px",
+											borderRadius: "5px",
+											boxShadow:
+												"0px 4px 4px rgba(0, 0, 0, 0.25)",
+											background: "#E1F8FF",
+											fontFamily: "Roboto, sans-serif",
+											textAlign: "center",
+										}}
+									>
+										<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
+											<p
+												style={{
+													fontSize: "32px",
+													fontWeight: "700",
+													color: "#004257",
+													fontFamily:
+														"Roboto, sans-serif",
+													marginBottom: "5px",
+												}}
+											>
+												ResearchHouse
+											</p>
+											<p
+												style={{
+													fontSize: "48px",
+													fontWeight: "700",
+													color: "#004257",
+													fontFamily:
+														"Roboto, sans-serif",
+													marginBottom: "20px",
+												}}
+											>
+												Login
+											</p>
+											<input
+												placeholder='Email'
+												type='text'
+												id='email'
+												name='email'
+												value=''
+												className='form-control-login input_box'
+												style={{
+													width: "80%",
+													height: "40%",
+													padding: "10px",
+													borderRadius: "10px",
+													boxShadow:
+														"0px 4px 4px rgba(0, 0, 0, 0.25)",
+													border: "none",
+													color: "#004257",
+													fontSize: "16px",
+													fontWeight: "600",
+													fontFamily:
+														"Roboto, sans-serif",
+													marginBottom: "20px",
+												}}
+											/>
+										</div>
+										<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
+											<input
+												placeholder='Password'
+												id='password'
+												type='password'
+												name='password'
+												className='form-control-login input_box'
+												style={{
+													width: "80%",
+													height: "40%",
+													padding: "10px",
+													borderRadius: "10px",
+													boxShadow:
+														"0px 4px 4px rgba(0, 0, 0, 0.25)",
+													border: "none",
+													color: "#004257",
+													fontSize: "16px",
+													fontWeight: "600",
+													fontFamily:
+														"Roboto, sans-serif",
+													marginBottom: "20px",
+												}}
+											/>
+										</div>
+										<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
+											<span
+												style={{
+													display: "block",
+													marginBottom: "20px",
+													color: "#004257",
+													fontSize: "16px",
+													fontWeight: "600",
+													fontFamily:
+														"Roboto, sans-serif",
+												}}
+											>
+												<a href=''>
+													Forgot Your Password?
+												</a>
+											</span>
+										</div>
+										<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
+											<input
+												type='submit'
+												id='edit-submit'
+												name='op'
+												value='Submit'
+												className='form-control-login btn btn-success btn-lg'
+												style={{
+													width: "176px",
+													height: "50px",
+													padding: "10px",
+													backgroundColor: "#004257",
+													borderRadius: "10px",
+													border: "none",
+													color: "#fff",
+													fontSize: "24px",
+													fontWeight: "600",
+													boxShadow:
+														"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+													fontFamily:
+														"Roboto, sans-serif",
+													marginBottom: "20px",
+												}}
+											/>
+										</div>
+										<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
+											<span
+												style={{
+													fontSize: "16px",
+													fontWeight: "500",
+													color: "#004257",
+													fontFamily:
+														"Roboto, sans-serif",
+												}}
+											>
+												Don't Have an Account?{" "}
+												<a
+													href='javascript:void(0)'
+													data-toggle='modal'
+													data-target='#Registeration_type_modal'
+													style={{
+														textDecoration: "none",
+														color: "#004257",
+														fontWeight: "bold",
+													}}
+												>
+													Register
+												</a>
+											</span>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 		</div>
 	);
