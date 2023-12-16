@@ -22,7 +22,6 @@ const Selection = () => {
     // const {progress,domain} = context
     const handleDropdownChange = (event, dropdownNo) => {
         const { value } = event.target;
-        console.log(value)
     };
 
     const handleSelectNext = async () => {
@@ -63,7 +62,7 @@ const Selection = () => {
                             id={`p${index + 1}`}
                         >
                             <label
-                                htmlFor={`dropdown${index + 1}`}
+                                htmlFor={`preference${index + 1}`}
                                 className='form-label'
                                 style={{
                                     minWidth: "150px",
