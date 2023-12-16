@@ -94,11 +94,25 @@ const PgCoordinatorSidebar = () => {
 			>
 				Department
 				<div></div>{" "}
-				<ul>
+				<div
+					style={{
+						height: "25vh",
+					}}
+				>
 					{departments.map((name, index) => (
-						<li key={index}>{name}</li>
+						<div
+							className='btn mt-2'
+							style={{
+								backgroundColor: "#004257",
+								width: "90%",
+								color: "white",
+							}}
+							key={index}
+						>
+							{name}
+						</div>
 					))}
-				</ul>
+				</div>
 			</div>
 
 			<div
@@ -120,6 +134,7 @@ const PgCoordinatorSidebar = () => {
 				}}
 			>
 				Batch
+				<div></div>{" "}
 			</div>
 		</div>
 	);
