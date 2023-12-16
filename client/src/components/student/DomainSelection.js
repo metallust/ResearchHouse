@@ -8,12 +8,12 @@ const DomainSelection = () => {
 	const context = useContext(GuideAllotmentContext)
 	let progressContent;
 
-	if (context.progress[0]==="selection") {
-		progressContent = <Selection/>;
-	} else if (context.progress[0]==="confirm") {
-		progressContent = <DomainConfirm/>;
+	if (context.progress[0] === "selection") {
+		progressContent = <Selection />;
+	} else if (context.progress[0] === "confirm") {
+		progressContent = <DomainConfirm />;
 	} else {
-		progressContent = <>{}</>;
+		progressContent = <b style={{ fontSize: "25px" }}>Waiting for pg coordinator to allocate a guide</b>;
 	}
 
 	// const dropdown = {
@@ -32,38 +32,38 @@ const DomainSelection = () => {
 
 	return (
 		<>
-		<div className="container border border-0" style={{backgroundColor:"#E1F8FF", width:"57%", height:"83vh",borderRadius:"2rem",minWidth:"820px"}}>
-			<Timeline
-				key={context.progress[1]}
-				n={3}
-				complete={context.progress[1]}
-				linewidth={500}
-				descriptions={[
-					{
-						title: "Select Domain",
-						position: 1,
-					},
-					{
-						title: "Confirmation",
-						position: 1,
-					},
-					{
-						title: "Guide Allotment",
-						position: 1,
-					},
-				]}
+			<div className="container border border-0" style={{ backgroundColor: "#E1F8FF", width: "57%", height: "83vh", borderRadius: "2rem", minWidth: "820px" }}>
+				<Timeline
+					key={context.progress[1]}
+					n={3}
+					complete={context.progress[1]}
+					linewidth={500}
+					descriptions={[
+						{
+							title: "Select Domain",
+							position: 1,
+						},
+						{
+							title: "Confirmation",
+							position: 1,
+						},
+						{
+							title: "Guide Allotment",
+							position: 1,
+						},
+					]}
 				/>
 
-				<div className="container" style={{padding:"0 17%",marginTop:"10%"}}>
+				<div className="container" style={{ padding: "0 17%", marginTop: "10%" }}>
 					{progressContent}
 				</div>
 
 
 			</div>
-		
-		
-		
-		
+
+
+
+
 		</>
 
 

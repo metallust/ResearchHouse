@@ -25,17 +25,42 @@ const Selection = () => {
         console.log(value)
     };
 
-    const handleSelectNext = () => {
-        context.changeProgress("domainConfirm");
+    const handleSelectNext = async () => {
+        var flag = true;
+        var newParagraph = document.createElement("p");
+        newParagraph.textContent = "Please Select a domain";
+        var tempDomain = [];
+        [1, 2, 3, 4].forEach(element => {
+            let p = document.getElementById(`preference${element}`)
+            if (p.value === "Select Domain") {
+                flag = false
+            }
+            tempDomain.push(p.value)
+        });
+        console.log(tempDomain)
+        if (flag) {
+            await context.addDomain(tempDomain)
+            context.changeProgress("domainConfirm");
+        }
+        else {
+            var node = document.getElementById("selectDomain");
+            node.appendChild(newParagraph);
+            
+            console.log(node.lastChild);
+            
+        }
     }
+
+
     return (
         <div>
-            <form action="submit" method='post'>
-                <div className='d-flex flex-column'>
+            <form action="submit" method='post' id='selectDomain'>
+                <div className='d-flex flex-column' >
                     {dropdowns.map((index) => (
                         <div
                             className='d-flex mb-3'
                             key={index}
+                            id={`p${index + 1}`}
                         >
                             <label
                                 htmlFor={`dropdown${index + 1}`}
@@ -49,7 +74,7 @@ const Selection = () => {
                             </label>
                             <select
                                 className='form-select'
-                                id={`dropdown${index + 1}`}
+                                id={`preference${index + 1}`}
                                 onClick={(e) => handleDropdownChange(e, `${index + 1}`)}
                             >
                                 {
@@ -58,8 +83,6 @@ const Selection = () => {
                                     })
                                 }
 
-                                {/* <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option> */}
                             </select>
                         </div>
                     ))}

@@ -36,7 +36,7 @@ function StudentTodo() {
 			<div style={body}>
 				<ul className='list-group'>
 					<li className='d-flex justify-content-between'>
-						Todo 1{" "}
+						1.{"Max 28 characters"}
 						<input
 							type='checkbox'
 							name='a'
