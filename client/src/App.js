@@ -13,7 +13,7 @@ import Colors from "./components/Colors";
 import Main from "./components/test/Index";
 import Flow from "./components/test2/Index";
 import StudentDashboard from "./components/student/StudentDashboard";
-import Addstudent from "./components/pgCoordinator/AddStudent";
+import AddStudent from "./components/pgCoordinator/AddStudent";
 import PgCoordinatorDashboard from "./components/pgCoordinator/PgCoordinatorDashboard";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
 			<Routes>
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/signup' element={<Signup />} />
-				<Route path='/addstudent' element={<Addstudent />} />
+				<Route path='/addstudent' element={<AddStudent />} />
 				<Route path='/' element={<LandingPage />} />
 				<Route path='/domain' element={<DomainSelection />} />
 				<Route path='/Home' element={<Dashboard />} />
