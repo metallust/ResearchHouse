@@ -13,7 +13,8 @@ import Colors from "./components/Colors";
 import Navscroll from "./components/test/Navscroll";
 import StudentDashboard from "./components/student/StudentDashboard";
 import Addstudent from "./components/pgCoordinator/Addstudent";
-import Main from "./components/test/Main";
+import Main from "./components/test/Index";
+import Flow from "./components/test2/Index";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -28,6 +29,7 @@ function App() {
 				<Route path='/domain' element={<DomainSelection />} />
 				<Route path='/Home' element={<Dashboard />} />
 				<Route path='/test' element={<Main />} />
+				<Route path='/test2' element={<Flow />} />
 				<Route
 					path='/todo'
 					element={

@@ -1,9 +1,9 @@
 import React from "react";
 import "./Node.css";
 
-const height = 15;
+const height = 16;
 
-const Point = ({ desc, descy = -1, width, height, padding, fill, bcolor, child }) => {
+const Point = ({ desc, width, height, padding, fill, bcolor, child }) => {
 	const circleStyle = {
 		width: `${width}px`,
 		height: `${height}px`,
@@ -12,31 +12,10 @@ const Point = ({ desc, descy = -1, width, height, padding, fill, bcolor, child }
 		backgroundColor: `${fill}`,
 		position: "relative",
 		transform: "translate(-50%, -35%)",
-		boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
 	};
 	return (
 		<>
-			<div style={circleStyle}>
-				{child}
-				<div
-					className='timeline-card'
-					style={{
-						transform: `translate(-55%, ${-50 + desc.position * 50}%)`,
-					}}
-				>
-					{desc.position > 0 ? (
-						<>
-							<div className='fs-6'>{desc.title}</div>
-							{desc.subtitle}
-						</>
-					) : (
-						<>
-							{desc.subtitle}
-							<div className='fs-6'>{desc.title}</div>
-						</>
-					)}
-				</div>
-			</div>
+			<div style={circleStyle}>{child}</div>
 		</>
 	);
 };

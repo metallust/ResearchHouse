@@ -1,0 +1,27 @@
+:root {
+	--size: 50px;
+	--gap: 1.15em;
+	--primary: #442288;
+	--secondary-text: #888;
+	--bg-lighter: #eee;
+}
+
+.avatar {
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+	object-fit: center;
+	flex-shrink: 0;
+	margin: 5px;
+}
+
+.message .name {
+	font-weight: bold;
+}
+
+.msgcard {
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	border: 2px solid #878787;
+}
