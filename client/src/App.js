@@ -10,11 +10,10 @@ import DomainSelection from "./components/student/DomainSelection";
 import Todo from "./components/Todo";
 import Colors from "./components/Colors";
 // import Pdf from "./components/test/Pdf";
-import Navscroll from "./components/test/Navscroll";
-import StudentDashboard from "./components/student/StudentDashboard";
-import Addstudent from "./components/pgCoordinator/Addstudent";
 import Main from "./components/test/Index";
 import Flow from "./components/test2/Index";
+import StudentDashboard from "./components/student/StudentDashboard";
+import Addstudent from "./components/pgCoordinator/AddStudent";
 import PgCoordinatorDashboard from "./components/pgCoordinator/PgCoordinatorDashboard";
 
 function App() {
@@ -51,22 +50,10 @@ function App() {
 					}
 				/>
 				<Route path='/color' element={<Colors />} />
-				<Route
-					exact
-					path='/studentdashboard'
-					element={<StudentDashboard />}
-				>
-					<Route
-						exact
-						path='/studentdashboard/myprogress'
-						element={<Colors />}
-					/>
+				<Route exact path='/studentdashboard' element={<StudentDashboard />}>
+					<Route exact path='/studentdashboard/myprogress' element={<Colors />} />
 				</Route>
-				<Route
-					exact
-					path='/pgcoordinatordashboard'
-					element={<PgCoordinatorDashboard />}
-				>
+				<Route exact path='/pgcoordinatordashboard' element={<PgCoordinatorDashboard />}>
 					{/* <Route
 						exact
 						path='/pgcoordinatordashboard/myprogress'
