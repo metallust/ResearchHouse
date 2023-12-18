@@ -2,7 +2,7 @@ import React from 'react'
 import StudentSidebar from './StudentSidebar'
 import DomainSelection from './DomainSelection'
 const StudentDashboard = () => {
-  var guide = "null";
+  var guide = null;
   return (
     <div>
       {guide === null ? <DomainSelection /> :

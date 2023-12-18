@@ -1,0 +1,16 @@
+{
+  "name": "ml",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "SummarizePdf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-summary": "^1.2.0"
+  }
+}

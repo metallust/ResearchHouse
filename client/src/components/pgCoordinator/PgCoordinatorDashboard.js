@@ -1,10 +1,10 @@
 import React from "react";
-import StudentSidebar from "../student/StudentSidebar";
+// import StudentSidebar from "../student/StudentSidebar";
 import PgCoordinatorSidebar from "./PgCoordinatorSidebar";
 
 const PgCoordinatorDashboard = () => {
 	return (
-		<div>
+		<div className='d-flex'>
 			<div
 				style={{
 					backgroundColor: "transparent",
@@ -12,7 +12,9 @@ const PgCoordinatorDashboard = () => {
 					width: "21%",
 				}}
 			>
-				<PgCoordinatorSidebar />
+				<div>
+					<PgCoordinatorSidebar />
+				</div>
 			</div>
 		</div>
 	);
