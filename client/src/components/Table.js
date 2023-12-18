@@ -3,7 +3,7 @@ import React from "react";
 // limit of columns is 12
 const Table = (props) => {
 	const header = props.header;
-	const body = props.tempStudent;
+	const body = props.body;
 	return (
 		<div className='overflow-x-scroll container'>
 			<table className='table mt-2' style={{ whiteSpace: "nowrap" }}>
@@ -22,7 +22,6 @@ const Table = (props) => {
 						}}
 					>
 						{header.map((element, id) => {
-							console.log(element, id);
 							return (
 								<th
 									key={id}
@@ -36,27 +35,25 @@ const Table = (props) => {
 					</tr>
 				</thead>
 				<tbody>
-					{
-						console.log(body)
-}{
-					body.map((person,id) => {
-						// let rowcolor = apmt[0];
-						// apmt = apmt.slice(1);
-					
+					{body.map((apmt, id) => {
+						let rowcolor = apmt[0];
+						apmt = apmt.slice(1);
 						return (
 							<tr key={id}>
 								<th
 									scope='row'
 									className='text-center'
+									style={{ color: rowcolor }}
 								>
 									{id + 1}
 								</th>
-								{person.map((element, id2) => {
+								{apmt.map((element, id2) => {
 									return (
 										<td
 											key={id2}
 											scope='row'
 											className='text-center'
+											style={{ color: rowcolor }}
 										>
 											{element}
 										</td>
