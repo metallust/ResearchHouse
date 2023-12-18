@@ -10,8 +10,7 @@ const AddStudent = () => {
   }
   return (
     <div>
-      <div className="btn btn-dark" onClick={()=>{document.getElementById("AddStudentModal").showModal()}}>Add Student</div>
-      <dialog id='AddStudentModal' style={{borderRadius:"12px",height:"75vh",width:"55%",minWidth:"350px",}}>
+      <div id='AddStudentModal' style={{borderRadius:"12px",height:"75vh",width:"55%",minWidth:"350px",}}>
       <ul className='nav nav-tabs static'>
 						<li className='nav-item w-50'>
 							<a
@@ -42,10 +41,9 @@ const AddStudent = () => {
             {tab === 0 ? <AddStdManually/> : <AddStdFile/>}
           </div>
             <div className='container d-flex justify-content-between '> 
-              <div className="btn btn-dark" onClick={()=>{document.getElementById("AddStudentModal").close()}}>Close</div>
               <div className="btn btn-dark" onClick={handleSave}>Send Credentials and Save</div>
             </div>
-      </dialog>
+      </div>
     </div>
   )
 }
