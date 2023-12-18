@@ -23,9 +23,18 @@
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+	align-self: center;
 }
 
 .node:hover {
 	background-color: rgb(254, 142, 142);
 	transform: scale(1.1);
+}
+
+.node-title {
+	font-size: 12px;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+	transform: translate(-40%, 0%);
+	text-wrap: nowrap;
 }

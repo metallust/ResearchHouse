@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import AddNode from "./AddNode";
 import Node from "./Node";
+import "./Index.css";
 
 function Index() {
 	const [timeline, setTimeline] = useState([]);
@@ -33,11 +34,12 @@ function Index() {
 		height: "5px",
 		position: "flex",
 		alignItems: "center",
+		gap: "80px",
 	};
 
 	return (
 		<div className='d-flex justify-content-center align-items-center pt-5'>
-			<div className='d-flex gap-5' style={linestyle}>
+			<div className='d-flex' style={linestyle}>
 				<AddNode addNode={addNode} position={0} />
 				{timeline.flatMap((node, index) => {
 					return [<Node name={node.name} due={node.due} position={index} removenode={removeNode} />, <AddNode addNode={addNode} position={index + 1} />];

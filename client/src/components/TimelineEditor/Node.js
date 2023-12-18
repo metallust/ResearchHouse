@@ -8,11 +8,10 @@ function Node({ position, name, due, removenode }) {
 
 	return (
 		<div style={{ position: "relative" }}>
-			<div className='node' onClick={handleClick}>
-				-
-			</div>
-			<div className='fw-semibold' style={{ position: "absolute", fontSize: "16px", transform: "translate(50%, 0%)" }}>
-				{name}
+			<div className='node' onClick={handleClick}></div>
+			<div style={{ position: "absolute" }}>
+				<div className='node-title'>{name}</div>
+				<div className='node-subtitle'>{due}</div>
 			</div>
 		</div>
 	);
