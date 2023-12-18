@@ -5,10 +5,7 @@ const AddStdManually = () => {
 	const dropdowns = [0, 1];
 	const branch = ["a", "b", "c", "d"]; // fetch all branchs set by pg coordinator
 	const batch = ["2023-24", "2024-25"]; // fetch all branchs set by pg coordinator
-	var [tempStudent, setTempStudent] = useState([
-		[1, 2, 3, 4],
-		[1, 2, 3, 4],
-	]);
+	var [tempStudent, setTempStudent] = useState([]);
 	const header = ["#", "PRN", "Email Address", "Branch", "Batch"];
 
 	const handleAddStudent = (e) => {
@@ -17,9 +14,11 @@ const AddStdManually = () => {
 		let studentemail = document.getElementById("studentemail");
 		let AddStudentBranch = document.getElementById("AddStudentBranch");
 		let AddStudentBatch = document.getElementById("AddStudentBatch");
+		let i=1;
 		setTempStudent((prevTempStudent) => [
 			...prevTempStudent,
-			[
+			[	
+				i++,
 				prn.value,
 				studentemail.value,
 				AddStudentBranch.value,
@@ -27,7 +26,7 @@ const AddStdManually = () => {
 			],
 		]);
 
-		console.log(tempStudent);
+		// console.log(tempStudent);
 	};
 
 	return (
@@ -102,7 +101,7 @@ const AddStdManually = () => {
 				</button>
 			</form>
 			<div className='my-4'>
-				<Table header={header} tempStudent={tempStudent} />
+				<Table header={header} body={tempStudent} />
 			</div>
 		</div>
 	);
