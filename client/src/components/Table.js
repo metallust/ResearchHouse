@@ -39,7 +39,7 @@ const Table = (props) => {
 						let rowcolor = apmt[0];
 						apmt = apmt.slice(1);
 						return (
-							<tr key={id}>
+							<tr >
 								<th
 									scope='row'
 									className='text-center'

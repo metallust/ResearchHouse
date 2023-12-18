@@ -14,7 +14,7 @@ import Main from "./components/test/Index";
 import Flow from "./components/test2/Index";
 import StudentDashboard from "./components/student/StudentDashboard";
 import AddStudent from "./components/pgCoordinator/AddStudent";
-import PgCoordinatorDashboard from "./components/pgCoordinator/PgCoordinatorDashboard";
+import PgCoordinatorDashboard from "./components/pgCoordinator/Index";
 
 import Editor from "./components/TimelineEditor/Index";
 
@@ -72,10 +72,22 @@ function App() {
 					}
 				/>
 				<Route path='/color' element={<Colors />} />
-				<Route exact path='/studentdashboard' element={<StudentDashboard />}>
-					<Route exact path='/studentdashboard/myprogress' element={<Colors />} />
+				<Route
+					exact
+					path='/studentdashboard'
+					element={<StudentDashboard />}
+				>
+					<Route
+						exact
+						path='/studentdashboard/myprogress'
+						element={<Colors />}
+					/>
 				</Route>
-				<Route exact path='/pgcoordinatordashboard' element={<PgCoordinatorDashboard />}>
+				<Route
+					exact
+					path='/pgcoordinatordashboard'
+					element={<PgCoordinatorDashboard />}
+				>
 					{/* <Route
 						exact
 						path='/pgcoordinatordashboard/myprogress'
