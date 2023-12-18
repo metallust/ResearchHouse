@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 // limit of columns is 12
 const Table = (props) => {
 	const header = props.header;
 	const body = props.body;
-	useEffect(()=>{
-		console.log(header,body);
-	})
 	return (
 		<div className='overflow-x-scroll container'>
 			<table className='table mt-2' style={{ whiteSpace: "nowrap" }}>
