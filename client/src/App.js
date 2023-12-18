@@ -72,22 +72,10 @@ function App() {
 					}
 				/>
 				<Route path='/color' element={<Colors />} />
-				<Route
-					exact
-					path='/studentdashboard'
-					element={<StudentDashboard />}
-				>
-					<Route
-						exact
-						path='/studentdashboard/myprogress'
-						element={<Colors />}
-					/>
+				<Route exact path='/studentdashboard' element={<StudentDashboard />}>
+					<Route exact path='/studentdashboard/myprogress' element={<Colors />} />
 				</Route>
-				<Route
-					exact
-					path='/pgcoordinatordashboard'
-					element={<PgCoordinatorDashboard />}
-				>
+				<Route exact path='/pg' element={<PgCoordinatorDashboard />}>
 					{/* <Route
 						exact
 						path='/pgcoordinatordashboard/myprogress'
