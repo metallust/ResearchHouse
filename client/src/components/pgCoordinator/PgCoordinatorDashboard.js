@@ -16,6 +16,17 @@ const PgCoordinatorDashboard = () => {
 					<PgCoordinatorSidebar />
 				</div>
 			</div>
+			<div
+				style={{
+					backgroundColor: "transparent",
+					minHeight: "100vh",
+					width: "21%",
+				}}
+			>
+				<div>
+					<PgCoordinatorRightSidebar />
+				</div>
+			</div>
 		</div>
 	);
 };

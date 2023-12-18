@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 const JWT_SECRET = "bittersweetjoy";
 
 const fetchuser = (req, res, next) => {
@@ -14,4 +14,4 @@ const fetchuser = (req, res, next) => {
 	}
 };
 
-module.exports = fetchuser;
+export default fetchuser;

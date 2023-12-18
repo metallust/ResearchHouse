@@ -66,3 +66,4 @@ CREATE TABLE committee (
     profile_pic VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+ 

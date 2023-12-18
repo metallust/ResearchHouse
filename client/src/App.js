@@ -4,7 +4,7 @@ import Signup from "./components/Signuppage";
 import LandingPage from "./components/LandingPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import ThemeContext from "./Context/ThemeContext";
 import DomainSelection from "./components/student/DomainSelection";
 import Todo from "./components/Todo";
@@ -17,12 +17,12 @@ import AddStudent from "./components/pgCoordinator/AddStudent";
 import PgCoordinatorDashboard from "./components/pgCoordinator/PgCoordinatorDashboard";
 
 import Editor from "./components/TimelineEditor/Index";
-import Textfield from "./components/videoCall/Textfield";
-import Room from "./components/videoCall/Room";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
 	console.log(theme);
+
+	const modalref = useRef(null);
 
 	return (
 		<BrowserRouter>
@@ -36,7 +36,23 @@ function App() {
 				<Route path='/test' element={<Main />} />
 				<Route path='/test2' element={<Flow />} />
 
-				<Route path='/editor' element={<Editor />} />
+				<Route
+					path='/editor'
+					element={
+						<>
+							<button
+								type='button'
+								className='btn btn-primary'
+								onClick={() => {
+									modalref.current.click();
+								}}
+							>
+								Open Timeline Editor
+							</button>
+							<Editor reference={modalref} />
+						</>
+					}
+				/>
 				<Route
 					path='/todo'
 					element={
@@ -69,8 +85,8 @@ function App() {
 
 				{/* Route required from video call */}
 
-				<Route exact path='/videocall' element={<Textfield />} />
-				<Route exact path='/videocall/:roomid' element={<Room />} />
+				{/* <Route exact path='/videocall' element={<Textfield />} />
+				<Route exact path='/videocall/:roomid' element={<Room />} /> */}
 			</Routes>
 		</BrowserRouter>
 	);

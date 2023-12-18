@@ -2,8 +2,10 @@ import express from "express";
 import cors from "cors";
 import logger from "./utils/logger.js";
 import Response from "./utils/response.js";
-import videocall from "./routes/VideoCall/Index.js";
 import { Server } from "socket.io";
+
+import admin from "./routes/Admin/Index.js";
+// import auth from "./routes/Admin/auth.js";
 
 const io = new Server({ cors: true });
 const app = express();
@@ -41,8 +43,8 @@ io.on("connection", (socket) => {
 app.use(cors());
 app.use(express.json());
 
-// Routes
-app.use("/api/vc", videocall);
+// Routes admin
+app.use("/api/admin", admin);
 
 // Check
 app.get("/", (req, res) => {

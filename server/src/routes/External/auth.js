@@ -1,23 +1,17 @@
 import express from "express";
 import { body, validationResult } from "express-validator";
+import fetchuser from "../middleware/fetchuser";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
-
-import fetchuser from "../../middleware/fetchuser.js";
-import logger from "../../utils/logger.js";
-import Response from "../../utils/response.js";
-import pool from "../../config/mysql.config.js";
+import logger from "../../utils/logger";
+import Response from "../../utils/response";
+import pool from "../../config/mysql.config";
 
 const JWT_SECREAT = "bittersweetjoy";
 const router = express.Router();
-// define the router after api/admin/auth/
+// define the router after api/external/auth/
 
-// test
-router.get("/", (req, res) => {
-	res.status(200).json(new Response(200, "Dont worry mate you are good enough 🗿", null));
-});
-
-// Router 1: this is for creating the new admin
+// Router 1: this is for creating the new external
 router.post(
 	"/createuser",
 
@@ -46,11 +40,11 @@ router.post(
 			// creating a authtoken using jsonwebtoken
 			data = {
 				user: req.body.email,
-				type: "admin",
+				type: "external",
 			};
 			const authtoken = jwt.sign(data, JWT_SECREAT);
-			res.status(200).json(new Response(200, "Admin created", { authtoken }));
-			logger.info("Admin created");
+			res.status(200).json(new Response(200, "external created", { authtoken }));
+			logger.info("external created");
 		} catch (error) {
 			logger.error(error);
 			res.status(500).json(new Response(500, "Internal server error", error.message));
@@ -83,12 +77,12 @@ router.post(
 			// creating a authtoken using jsonwebtoken
 			const data = {
 				user: user.id,
-				type: "admin",
+				type: "external",
 			};
 			const authtoken = jwt.sign(data, JWT_SECREAT);
-			res.status(200).json(new Response(200, "Admin logged in", { authtoken }));
+			res.status(200).json(new Response(200, "external logged in", { authtoken }));
 
-			logger.info("Admin logged in");
+			logger.info("external logged in");
 		} catch (error) {
 			logger.error(error);
 			res.status(500).json(new Response(500, "Internal server error", error.message));
@@ -108,4 +102,4 @@ router.post("/getuser", fetchuser, async (req, res) => {
 	}
 });
 
-export default router;
+module.exports = router;
