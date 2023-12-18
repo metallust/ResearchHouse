@@ -1,0 +1,31 @@
+.addnode {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: rgb(209, 209, 209);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.addnode:hover {
+	background-color: rgb(143, 143, 143);
+	transform: scale(1.1);
+}
+
+.node {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: rgb(49, 213, 153);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.node:hover {
+	background-color: rgb(254, 142, 142);
+	transform: scale(1.1);
+}

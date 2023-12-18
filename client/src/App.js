@@ -16,6 +16,10 @@ import StudentDashboard from "./components/student/StudentDashboard";
 import AddStudent from "./components/pgCoordinator/AddStudent";
 import PgCoordinatorDashboard from "./components/pgCoordinator/PgCoordinatorDashboard";
 
+import Editor from "./components/TimelineEditor/Index";
+import Textfield from "./components/videoCall/Textfield";
+import Room from "./components/videoCall/Room";
+
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
 	console.log(theme);
@@ -31,6 +35,8 @@ function App() {
 				<Route path='/Home' element={<Dashboard />} />
 				<Route path='/test' element={<Main />} />
 				<Route path='/test2' element={<Flow />} />
+
+				<Route path='/editor' element={<Editor />} />
 				<Route
 					path='/todo'
 					element={
@@ -60,6 +66,11 @@ function App() {
 						element={<Colors />}
 					/> */}
 				</Route>
+
+				{/* Route required from video call */}
+
+				<Route exact path='/videocall' element={<Textfield />} />
+				<Route exact path='/videocall/:roomid' element={<Room />} />
 			</Routes>
 		</BrowserRouter>
 	);
