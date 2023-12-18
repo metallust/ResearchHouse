@@ -3,7 +3,7 @@ import XLSX from 'xlsx';
 import Table from '../Table';
 
 const AddStdFile = () => {
-  const [fileContent, setFileContent] = useState(null);
+  const [fileContent, setFileContent] = useState([]);
   const headers = ["#", "PRN", "Email", "Branch", "Batch"];
   const handleFileSelect = (event) => {
     const file = event.target.files[0];
@@ -25,7 +25,7 @@ const AddStdFile = () => {
       // Now, you can set the file content using the state
       console.log(rows);
       setFileContent(rows);
-
+      // console.log(Object.values(fileContent).length);
       // Reset the value of the file input to clear the selected file
       // event.target.value = null;
     };
@@ -33,21 +33,22 @@ const AddStdFile = () => {
     reader.readAsArrayBuffer(file);
   };
 
-  const handleShowContent = () => {
-    // Access the file content from the state and do something with it
-    console.log(Object.keys(fileContent), Object.values(fileContent)[0]);
-  };
+  // const handleShowContent = () => {
+  //   // Access the file content from the state and do something with it
+  //   console.log(Object.keys(fileContent), Object.values(fileContent)[0]);
+  // };
 
   return (
     <div>
       <input type="file" id="AddStudentFile" onChange={handleFileSelect} />
-      <button onClick={handleShowContent}>Show Content</button>
+      {/* <button onClick={handleShowContent}>Show Content</button> */}
 
       {/* Display the content of the file */}
       {fileContent && (
+
         <div>
           <h3>File Content:</h3>
-          <Table header={headers} tempStudent={Object.values(fileContent).slice(1, Object.values(fileContent).length)} />
+          <Table header={headers} body={Object.values(fileContent).slice(0, Object.values(fileContent).length)} />
         </div>
       )}
     </div>

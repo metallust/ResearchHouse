@@ -4,13 +4,13 @@ import AddStdManually from './AddStdManually';
 import AddStdFile from './AddStdFile'
 
 const AddStudent = () => {
-	const [tab, setTab] = useState(0);
+	const [tab, setTab] = useState(1);
 	const handleSave = () => {
 
 	}
 	return (
 		<div>
-			<div id='AddStudentModal' style={{ borderRadius: "12px", width: "55%", }}>
+			<div id='AddStudentModal'>
 				<ul className='nav nav-tabs static'>
 					<li className='nav-item w-50'>
 						<a

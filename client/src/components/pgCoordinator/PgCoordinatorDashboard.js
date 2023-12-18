@@ -1,6 +1,8 @@
 import React from "react";
 // import StudentSidebar from "../student/StudentSidebar";
 import PgCoordinatorSidebar from "./PgCoordinatorSidebar";
+import AddStudent from "./AddStudent";
+import { Outlet } from "react-router";
 
 const PgCoordinatorDashboard = () => {
 	return (
@@ -12,8 +14,9 @@ const PgCoordinatorDashboard = () => {
 					width: "21%",
 				}}
 			>
-				<div>
+				<div className="d-flex">
 					<PgCoordinatorSidebar />
+					<Outlet/>
 				</div>
 			</div>
 		</div>
