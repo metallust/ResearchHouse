@@ -14,10 +14,10 @@ const AddStdManually = () => {
 		let studentemail = document.getElementById("studentemail");
 		let AddStudentBranch = document.getElementById("AddStudentBranch");
 		let AddStudentBatch = document.getElementById("AddStudentBatch");
-		let i=1;
+		let i = 1;
 		setTempStudent((prevTempStudent) => [
 			...prevTempStudent,
-			[	
+			[
 				i++,
 				prn.value,
 				studentemail.value,
@@ -28,6 +28,14 @@ const AddStdManually = () => {
 
 		// console.log(tempStudent);
 	};
+	const inputstyle = {
+		fontFamily: "Roboto, sans-serif",
+		textAlign: "center",
+		fontSize: "15px",
+		fontWeight: "550",
+		color: "#004257",
+		width: "20%",
+	};
 
 	return (
 		<div>
@@ -36,7 +44,7 @@ const AddStdManually = () => {
 					<label
 						htmlFor='prn'
 						className='form-label me-2'
-						style={{ width: "20%" }}
+						style={inputstyle}
 					>
 						PRN Number
 					</label>
@@ -51,7 +59,7 @@ const AddStdManually = () => {
 					<label
 						htmlFor='studentemail'
 						className='form-label me-2'
-						style={{ width: "20%" }}
+						style={inputstyle}
 					>
 						Email:
 					</label>
@@ -67,9 +75,7 @@ const AddStdManually = () => {
 					<label
 						htmlFor={`AddStudentBranch`}
 						className='form-label me-2'
-						style={{
-							width: "20%",
-						}}
+						style={inputstyle}
 					>
 						Branch:
 					</label>
@@ -83,9 +89,7 @@ const AddStdManually = () => {
 					<label
 						htmlFor={`AddStudentBatch`}
 						className='form-label me-2'
-						style={{
-							width: "20%",
-						}}
+						style={inputstyle}
 					>
 						Batch:
 					</label>
@@ -96,9 +100,30 @@ const AddStdManually = () => {
 					</select>
 				</div>
 
-				<button type='submit' className='btn btn-secondary'>
-					Add Student
-				</button>
+				<div className='d-flex justify-content-center col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing '>
+					<input
+						type='submit'
+						id='edit-submit'
+						name='op'
+						value='Submit'
+						className='form-control-login btn btn-success btn-lg'
+						style={{
+							width: "176px",
+							height: "50px",
+							padding: "10px",
+							backgroundColor: "#004257",
+							borderRadius: "10px",
+							border: "none",
+							color: "#fff",
+							fontSize: "24px",
+							fontWeight: "600",
+							boxShadow:
+								"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+							fontFamily: "Roboto, sans-serif",
+							marginBottom: "20px",
+						}}
+					/>
+				</div>
 			</form>
 			<div className='my-4'>
 				<Table header={header} body={tempStudent} />
