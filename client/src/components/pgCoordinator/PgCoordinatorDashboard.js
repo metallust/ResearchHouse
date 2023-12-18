@@ -15,9 +15,9 @@ const PgCoordinatorDashboard = () => {
 					width: "21%",
 				}}
 			>
-				<div className="d-flex">
+				<div className='d-flex'>
 					<PgCoordinatorSidebar />
-					<Outlet/>
+					<Outlet />
 				</div>
 			</div>
 			<div
@@ -28,8 +28,8 @@ const PgCoordinatorDashboard = () => {
 				}}
 			>
 				<div>
-					<PgCoordinatorSidebar />
-					<Outlet/>
+					<AddStudent />
+					<Outlet />
 				</div>
 			</div>
 			<div
