@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CoordinatorContext from "../Context/Coordinator/CoordinatorContext";
+import { useContext } from "react";
 
 const LoginPage = () => {
+	const { login } = useContext(CoordinatorContext);
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		// Add logic for form submission here
+		const email = document.getElementById("email").value;
+		// const password = document.getElementById('password').value;
+		login(email);
 	};
 
 	return (
@@ -67,7 +73,6 @@ const LoginPage = () => {
 										type='text'
 										id='email'
 										name='email'
-										
 										className='form-control-login input_box'
 										style={{
 											width: "80%",

@@ -24,6 +24,7 @@ import Textfield from "./videoCall/Init";
 import Room from "./videoCall/Room";
 import GuideSetup from "./components/guide/GuideSetup";
 import CommitteeSetup from "./components/committee/CommitteeSetup";
+import CommitteeDashboard from "./components/committee/CommitteeDashboard";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -86,6 +87,11 @@ function App() {
 						element={<Colors />}
 					/>
 				</Route>
+				<Route
+					exact
+					path='/committeedashboard'
+					element={<CommitteeDashboard />}
+				></Route>
 				<Route exact path='/pg' element={<PgCoordinatorDashboard />}>
 					{/* <Route
 						exact

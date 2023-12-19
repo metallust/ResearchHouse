@@ -98,7 +98,7 @@ const CommitteeSetup = () => {
 									/>
 								</div>
 								<div
-									className='d-flex justify-content-center mb-2'
+									className='d-flex justify-content-center mb-1'
 									style={{
 										color: "#004257",
 										fontSize: "16px",

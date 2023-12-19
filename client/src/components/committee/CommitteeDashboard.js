@@ -5,12 +5,11 @@ import React from "react";
 // import AddStudent from "./AddStudent";
 
 import { Outlet } from "react-router";
-import GuideSidebar from "./GuideSidebar";
-import AddGuides from "../pgCoordinator/AddGuides";
-import GuideRightbar from "./GuideRightbar";
-import GuideAnalytics from "./GuideAnalytics";
 
-function GuideDashboard(props) {
+import CommitteeSidebar from "./CommitteeSidebar";
+import CommitteeRightbar from "./CommitteeRightbar";
+
+function CommitteeDashboard(props) {
 	const sidebar = {
 		display: "block",
 		/* background: rgba(0, 0, 0, 0.2), */
@@ -42,7 +41,7 @@ function GuideDashboard(props) {
 		<div style={main}>
 			<div style={sidebar}>
 				<div className='d-flex'>
-					<GuideSidebar />
+					<CommitteeSidebar />
 					<Outlet />
 				</div>
 			</div>
@@ -50,15 +49,11 @@ function GuideDashboard(props) {
 				<AddGuides />
 				<Outlet />
 			</div> */}
-			<div style={content}>
-				<GuideAnalytics />
-				<Outlet />
-			</div>
 			<div style={rightbar}>
-				<GuideRightbar />
+				<CommitteeRightbar />
 			</div>
 		</div>
 	);
 }
 
-export default GuideDashboard;
+export default CommitteeDashboard;
