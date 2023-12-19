@@ -1,22 +1,9 @@
 import React from "react";
 
-const StudentSetup = () => {
+const GuideSetup = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		// Add logic for form submission here
-	};
-	const inputStyle = {
-		// width: "80%",
-		height: "40px",
-		padding: "10px",
-		borderRadius: "10px",
-		boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-		border: "none",
-		color: "#004257",
-		fontSize: "16px",
-		fontWeight: "600",
-		fontFamily: "Roboto, sans-serif",
-		marginBottom: "20px",
 	};
 
 	return (
@@ -137,7 +124,6 @@ const StudentSetup = () => {
 										}}
 									/>
 								</div>
-
 								<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
 									<input
 										type='submit'
@@ -171,4 +157,4 @@ const StudentSetup = () => {
 	);
 };
 
-export default StudentSetup;
+export default GuideSetup;

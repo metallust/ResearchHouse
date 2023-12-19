@@ -33,17 +33,69 @@ const LobbyScreen = () => {
 	}, [socket, handleJoinRoom]);
 
 	return (
-		<div>
-			<h1>Lobby</h1>
+		<div className='d-flex flex-column align-items-center'>
+			<p
+				style={{
+					fontSize: "48px",
+					fontWeight: "700",
+					color: "#004257",
+					fontFamily: "Roboto, sans-serif",
+					marginTop: "30px",
+					marginBottom: "20px",
+				}}
+			>
+				Ready To Connect
+			</p>
 			<form onSubmit={handleSubmitForm}>
-				<div style={{ width: "200px", height: "200px", backgroundColor: " black" }}></div>
+				<div
+					style={{
+						width: "500px",
+						height: "350px",
+						backgroundColor: " black",
+						borderRadius: "10px",
+					}}
+				></div>
 				<label htmlFor='email'>Email ID</label>
-				<input type='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+				<input
+					type='email'
+					id='email'
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+				/>
 				<br />
 				<label htmlFor='room'>Room Number</label>
-				<input type='text' id='room' value={room} onChange={(e) => setRoom(e.target.value)} />
+				<input
+					type='text'
+					id='room'
+					value={room}
+					onChange={(e) => setRoom(e.target.value)}
+				/>
 				<br />
-				<button>Join</button>
+				<div className='d-flex justify-content-center'>
+					<input
+						type='submit'
+						id='join'
+						name='join'
+						value='Join'
+						onClick={handleSubmitForm}
+						className='form-control-login btn btn-success btn-lg'
+						style={{
+							width: "176px",
+							height: "50px",
+							padding: "10px",
+							backgroundColor: "#004257",
+							borderRadius: "10px",
+							border: "none",
+							color: "#fff",
+							fontSize: "24px",
+							fontWeight: "600",
+							boxShadow:
+								"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+							fontFamily: "Roboto, sans-serif",
+							marginBottom: "20px",
+						}}
+					/>
+				</div>
 			</form>
 		</div>
 	);

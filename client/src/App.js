@@ -22,6 +22,8 @@ import StudentSetup from "./components/student/StudentSetup";
 
 import Textfield from "./videoCall/Init";
 import Room from "./videoCall/Room";
+import GuideSetup from "./components/guide/GuideSetup";
+import CommitteeSetup from "./components/committee/CommitteeSetup";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -39,6 +41,8 @@ function App() {
 				<Route path='/test' element={<Main />} />
 				<Route path='/test2' element={<Flow />} />
 				<Route path='/studentsetup' element={<StudentSetup />} />
+				<Route path='/guidesetup' element={<GuideSetup />} />
+				<Route path='/committeesetup' element={<CommitteeSetup />} />
 
 				<Route path='/editor' element={<Editor />} />
 				<Route
