@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import CoordinatorContext from "../Context/Coordinator/CoordinatorContext";
 
 const SignupPage = () => {
+	const context = useContext(CoordinatorContext)
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const aishe = document.getElementById('aisheCode');
@@ -14,6 +16,7 @@ const SignupPage = () => {
 		const password = document.getElementById('password');
 		const confirmPassword = document.getElementById('confirmPassword');
 		const consentLetter = document.getElementById('consentLetter');
+		context.createUser([aishe, collegeName, state, district, city, fullName, email, phone, password, confirmPassword, consentLetter])
 	};
 
 	const inputStyle = {
