@@ -25,6 +25,7 @@ import Room from "./videoCall/Room";
 import GuideSetup from "./components/guide/GuideSetup";
 import CommitteeSetup from "./components/committee/CommitteeSetup";
 import CommitteeDashboard from "./components/committee/CommitteeDashboard";
+import IdeaModal from "./components/test/IdeaModal";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -44,6 +45,7 @@ function App() {
 				<Route path='/studentsetup' element={<StudentSetup />} />
 				<Route path='/guidesetup' element={<GuideSetup />} />
 				<Route path='/committeesetup' element={<CommitteeSetup />} />
+				<Route path='/idemodal' element={<IdeaModal />} />
 
 				<Route path='/editor' element={<Editor />} />
 				<Route
