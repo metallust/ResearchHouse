@@ -1,22 +1,34 @@
 import React, { useState } from "react";
-import Buttonbox from "./Buttonbox";
 
 const PgCoordinatorSidebar = () => {
-	const branch = "Computer Science";
-	const batch = "2022-2023";
-	const schedule = "Presentation";
-	const scheduledate = "05/12/2012";
+	const card = {
+		height: "150px",
+		width: "100%",
+		maxWidth: "300px",
+		backgroundColor: "#E1F8FF",
+		borderRadius: "6px",
+		padding: "0 10px ",
+		margin: "10px 10px 10px 10px",
+		boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
+		position: "relative",
+		overflow: "hidden",
+	};
 
-	const departments = [
-		"Computer Science",
-		"Information Technology",
-		"Mechanical Engg",
-		"Civil Engineering",
-		"Artificial Intelligence",
-		"Data Science",
-	];
+	const title = {
+		fontSize: "15px",
+		fontWeight: "bold",
+		top: "0",
+		left: "0",
+		position: "absolute",
+		width: "100%",
+		padding: "15px",
+	};
 
-	const batches = ["2022-23", "2021-22"];
+	const body = {
+		height: "100%",
+		overflowY: "scroll",
+		paddingY: "15px",
+	};
 
 	const [activeDepartment, setActiveDepartment] = useState(null);
 	const [activeBatch, setActiveBatch] = useState(null);
@@ -28,6 +40,17 @@ const PgCoordinatorSidebar = () => {
 	const handleBatchClick = (index) => {
 		setActiveBatch(index);
 	};
+
+	const departments = [
+		"Computer Science",
+		"Information Technology",
+		"Mechanical Engg",
+		"Civil Engineering",
+		"Artificial Intelligence",
+		"Data Science",
+	];
+
+	const batches = ["2022-23", "2021-22"];
 
 	return (
 		<div className='container d-flex flex-column align-items-center'>
@@ -44,134 +67,81 @@ const PgCoordinatorSidebar = () => {
 			>
 				ResearchHouse
 			</div>
+
 			<div
-				className='container py-2'
-				style={{
-					backgroundColor: "#E1F8FF",
-					width: "90%",
-					height: "fit-content",
-					borderRadius: "10px",
-					border: "none",
-					padding: "20px",
-					boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-					background: "#E1F8FF",
-					fontFamily: "Roboto, sans-serif",
-					textAlign: "center",
-					fontSize: "15px",
-					fontWeight: "550",
-					color: "#004257",
-				}}
+				className='d-flex flex-column justify-content-center'
+				style={card}
 			>
-				{branch}
-				<div></div>
-				{batch}
-				<div></div>
-				<div
-					style={{
-						fontSize: "12px",
-					}}
-				>
-					Upcoming: {schedule} ({scheduledate})
+				<div className='text-center fw-bold'>
+					Computer Science
+					<div></div>
+					2022-2023
+					<div></div>
+				</div>
+				<p className='fw-semibold'>
+					Upcoming: Presentation (05/12/2012)
+				</p>
+			</div>
+
+			<div style={card}>
+				<div style={title}>Departments</div>
+				<div style={{ height: "40px" }}></div>
+				<div style={body}>
+					<ul className='list-group px-2'>
+						{departments.map((dept, index) => {
+							return (
+								<div
+									key={dept}
+									className='d-flex justify-content-between my-1 p-2 rounded'
+									style={{
+										backgroundColor:
+											activeDepartment === index
+												? "#004257"
+												: "",
+										color:
+											activeDepartment === index
+												? "white"
+												: "",
+									}}
+									onClick={() => handleDepartmentClick(index)}
+									type='button'
+								>
+									{dept}
+								</div>
+							);
+						})}
+					</ul>
 				</div>
 			</div>
-			<div
-				className='container mt-3 py-2'
-				style={{
-					backgroundColor: "#E1F8FF",
-					width: "90%",
-					height: "180px",
-					borderRadius: "10px",
-					border: "none",
-					padding: "20px",
-					boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-					fontFamily: "Roboto, sans-serif",
-					textAlign: "center",
-					fontSize: "15px",
-					fontWeight: "550",
-					color: "#004257",
-					overflowY: "scroll",
-				}}
-			>
-				Departments
-				<div></div>{" "}
-				<div
-					style={{
-						height: "fit-content",
-					}}
-				>
-					{departments.map((name, index) => (
-						<div
-							className='btn mt-2'
-							style={{
-								width: "90%",
-								color:
-									activeDepartment === index
-										? "#E1F8FF"
-										: "#004257",
-								backgroundColor:
-									activeDepartment === index
-										? "#004257"
-										: "transparent",
-								border: "1px solid #004257",
-								cursor: "pointer",
-								transition: "background-color 0.3s, color 0.3s",
-							}}
-							key={index}
-							onClick={() => handleDepartmentClick(index)}
-						>
-							{name}
-						</div>
-					))}
-				</div>
-			</div>
-			<div
-				className='container mt-3 py-2'
-				style={{
-					backgroundColor: "#E1F8FF",
-					width: "90%",
-					height: "180px",
-					borderRadius: "10px",
-					border: "none",
-					padding: "20px",
-					boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-					fontFamily: "Roboto, sans-serif",
-					textAlign: "center",
-					fontSize: "15px",
-					fontWeight: "550",
-					color: "#004257",
-					overflowY: "scroll",
-				}}
-			>
-				Batches
-				<div></div>{" "}
-				<div
-					style={{
-						height: "fit-content",
-					}}
-				>
-					{batches.map((name, index) => (
-						<div
-							className='btn mt-2'
-							style={{
-								width: "90%",
-								color:
-									activeBatch === index
-										? "#E1F8FF"
-										: "#004257",
-								backgroundColor:
-									activeBatch === index
-										? "#004257"
-										: "transparent",
-								border: "1px solid #004257",
-								cursor: "pointer",
-								transition: "background-color 0.3s, color 0.3s",
-							}}
-							key={index}
-							onClick={() => handleBatchClick(index)}
-						>
-							{name}
-						</div>
-					))}
+
+			<div style={card}>
+				<div style={title}>Batches</div>
+				<div style={{ height: "40px" }}></div>
+				<div style={body}>
+					<ul className='list-group px-2'>
+						{batches.map((batch, index) => {
+							return (
+								<div
+									key={batch}
+									className='d-flex justify-content-between my-1 p-2 rounded'
+									style={{
+										backgroundColor:
+											activeBatch === index
+												? "#004257"
+												: "",
+										color:
+											activeBatch === index
+												? "white"
+												: "",
+									}}
+									onClick={() => handleBatchClick(index)}
+									type='button'
+								>
+									{batch}
+								</div>
+							);
+						})}
+					</ul>
 				</div>
 			</div>
 		</div>

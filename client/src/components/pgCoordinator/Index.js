@@ -52,7 +52,7 @@ function Index(props) {
 				</div>
 			</div>
 			<div style={content}>
-				<AddCom />
+				<AddStudent />
 				<Outlet />
 			</div>
 			<div style={rightbar}>

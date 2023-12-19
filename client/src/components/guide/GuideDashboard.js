@@ -3,10 +3,11 @@ import React from "react";
 // import PgCoordinatorSidebar from "./PgCoordinatorSidebar";
 // import Rightbar from "./Rightbar";
 // import AddStudent from "./AddStudent";
+import Timeline from "../test/Timeline";
 
 import { Outlet } from "react-router";
 import GuideSidebar from "./GuideSidebar";
-import AddGuides from "../pgCoordinator/AddGuides";
+// import AddGuides from "../pgCoordinator/AddGuides";
 import GuideRightbar from "./GuideRightbar";
 import GuideAnalytics from "./GuideAnalytics";
 
@@ -51,6 +52,32 @@ function GuideDashboard(props) {
 				<Outlet />
 			</div> */}
 			<div style={content}>
+				<Timeline
+					n={5}
+					complete={3}
+					descriptions={[
+						{
+							title: "Synopsis",
+							position: 1,
+						},
+						{
+							title: "Research",
+							position: 1,
+						},
+						{
+							title: "Implementation",
+							position: 1,
+						},
+						{
+							title: "Reports",
+							position: 1,
+						},
+						{
+							title: "Publication",
+							position: 1,
+						},
+					]}
+				/>
 				<GuideAnalytics />
 				<Outlet />
 			</div>

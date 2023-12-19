@@ -24,7 +24,7 @@ function Index(props) {
 	return (
 		<div className='main'>
 			<div className='sidebar'>
-				<div className='h2 my-3 py-4 fw-bold d-flex justify-content-center position' style={{ color: "#004256" }}>
+				<div className='h3 my-3 py-2 fw-bold d-flex justify-content-center position' style={{ color: "#004256" }}>
 					ResearchHouse
 				</div>
 				<div

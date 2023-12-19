@@ -10,26 +10,19 @@ function GuideRightbar() {
 			<div
 				style={{
 					backgroundColor: "#E1F8FF",
-					height: "fit-content",
+					marginTop: "10px",
 					borderRadius: "10px",
-					border: "none",
-					padding: "10px",
-					boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-					background: "#E1F8FF",
-					fontFamily: "Roboto, sans-serif",
-					textAlign: "center",
-					fontSize: "15px",
-					fontWeight: "550",
-					color: "#004257",
+					padding: "20px",
+					margin: "10px",
 					display: "flex",
 					justifyContent: "space-between",
-					margin: "10px 10px 10px 10px",
+					boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 				}}
 			>
 				<button style={buttonstyle}>
 					<svg
-						width='30'
-						height='30'
+						width='20'
+						height='20'
 						viewBox='0 0 30 30'
 						fill='none'
 						xmlns='http://www.w3.org/2000/svg'
@@ -44,8 +37,8 @@ function GuideRightbar() {
 				</button>
 				<button style={buttonstyle}>
 					<svg
-						width='30'
-						height='34'
+						width='20'
+						height='20'
 						viewBox='0 0 30 34'
 						fill='none'
 						xmlns='http://www.w3.org/2000/svg'
@@ -58,8 +51,8 @@ function GuideRightbar() {
 				</button>
 				<button style={buttonstyle}>
 					<svg
-						width='30'
-						height='30'
+						width='20'
+						height='20'
 						viewBox='0 0 30 30'
 						fill='none'
 						xmlns='http://www.w3.org/2000/svg'
@@ -74,29 +67,28 @@ function GuideRightbar() {
 				</button>
 			</div>
 			<div
-				className='container d-flex flex-column justify-content-between'
+				className='container d-flex flex-column align-items-center '
 				style={{
 					backgroundColor: "#E1F8FF",
-					height: "70vh",
+					maxWidth: "130px",
+					height: "60vh",
 					borderRadius: "10px",
 					border: "none",
 					padding: "10px",
 					boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 					background: "#E1F8FF",
-					fontFamily: "Roboto, sans-serif",
 					textAlign: "center",
-					fontSize: "15px",
+
 					fontWeight: "550",
 					color: "#004257",
 					display: "flex",
-					justifyContent: "center",
-					margin: "10px 10px 10px 10px",
+					justifyContent: "space-between",
 				}}
 			>
-				<div className='btn btn-transparent'>
+				<div className='btn btn-transparent d-flex flex-column align-items-center fs-7 '>
 					<svg
-						width='27'
-						height='26'
+						width='25'
+						height='25'
 						viewBox='0 0 27 26'
 						fill='none'
 						xmlns='http://www.w3.org/2000/svg'
@@ -106,9 +98,9 @@ function GuideRightbar() {
 							fill='#004257'
 						/>
 					</svg>
+					Announcements
 				</div>
-				Announcements
-				<div className='btn'>
+				<div className='btn btn-transparent d-flex flex-column align-items-center fs-7'>
 					<svg
 						width='26'
 						height='26'
@@ -121,9 +113,9 @@ function GuideRightbar() {
 							fill='#004257'
 						/>
 					</svg>
+					Virtual Meet
 				</div>
-				Virtual Meet
-				<div className='btn'>
+				<div className='btn btn-transparent d-flex flex-column align-items-center fs-7'>
 					<svg
 						width='24'
 						height='28'
@@ -139,9 +131,9 @@ function GuideRightbar() {
 							stroke-linejoin='round'
 						/>
 					</svg>
+					Timeline
 				</div>
-				Timeline
-				<div className='btn'>
+				<div className='btn btn-transparent d-flex flex-column align-items-center fs-7'>
 					<svg
 						width='26'
 						height='19'
@@ -154,8 +146,8 @@ function GuideRightbar() {
 							fill='#004257'
 						/>
 					</svg>
+					Student
 				</div>
-				Student
 			</div>
 		</div>
 	);
