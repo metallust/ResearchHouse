@@ -44,13 +44,21 @@ router.post("/createuser", async (req, res) => {
 	}
 });
 
-
 router.post("/addstudent", async (req, res) => {
-	const { student } = req.body;
+	const { student, token } = req.body;
+	const password = "12345678";
 	try {
-	
+		for (let i = 0; i < student.length; i++) {
+			const [prn, email, branch, batch] = student[i];
 
-		return res.send({ student })
+			let college_id = await pool.query("SELECT college_id FROM coordinator WHERE email = ?", [token]);
+			college_id = college_id[0];
+			logger.info(college_id);
+			await pool.query("INSERT INTO student (college_id, student_id, email, password, branch, batch) VALUES (?, ?, ?, ?, ?, ?)", [college_id, prn, email, password, branch, batch]);
+			logger.info("student added", email);
+		}
+
+		return res.send({ student });
 	} catch (error) {
 		logger.error(error);
 		res.status(500).json(new Response(500, "Internal server error", error.message));

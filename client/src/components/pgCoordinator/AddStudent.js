@@ -33,18 +33,16 @@ const AddStudent = () => {
 					className='nav nav-tabs static'
 					style={{
 						display: "flex",
-						justifyContent: "center",
+						// justifyContent: "center",
 						marginBottom: "10px",
+						width: "100vw",
 					}}
 				>
 					<div className='nav-item '>
 						<div
 							className={`nav-link ${tab === 0 ? "active" : ""}`}
 							style={{
-								width: "90%",
 								height: "fit-content",
-								padding: "20px",
-								fontFamily: "Roboto, sans-serif",
 								textAlign: "center",
 								fontSize: "15px",
 								fontWeight: "550",
@@ -62,10 +60,7 @@ const AddStudent = () => {
 						<div
 							className={`nav-link ${tab === 1 ? "active" : ""}`}
 							style={{
-								width: "90%",
 								height: "fit-content",
-								padding: "20px",
-								fontFamily: "Roboto, sans-serif",
 								textAlign: "center",
 								fontSize: "15px",
 								fontWeight: "550",
@@ -83,7 +78,6 @@ const AddStudent = () => {
 				<div className='container mt-3' style={{ height: "90%", overflowX: "scroll" }}>
 					{tab === 0 ? <AddStdManually /> : <AddStdFile />}
 				</div>
-				
 			</div>
 		</>
 	);

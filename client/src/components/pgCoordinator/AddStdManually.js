@@ -3,7 +3,7 @@ import Table from "../Table";
 import CoordinatorContext from "../../Context/Coordinator/CoordinatorContext";
 
 const AddStdManually = () => {
-	const { addStudent } = useContext(CoordinatorContext)
+	const { addStudent } = useContext(CoordinatorContext);
 	const dropdowns = [0, 1];
 	const branch = ["a", "b", "c", "d"]; // fetch all branchs set by pg coordinator
 	const batch = ["2023-24", "2024-25"]; // fetch all branchs set by pg coordinator
@@ -11,8 +11,8 @@ const AddStdManually = () => {
 	const header = ["#", "PRN", "Email Address", "Branch", "Batch"];
 	const handleSave = () => {
 		// console.log(tempStudent);
-		addStudent(tempStudent)
-	}
+		addStudent(tempStudent);
+	};
 	const handleAddStudent = (e) => {
 		e.preventDefault();
 		let prn = document.getElementById("prn");
@@ -20,15 +20,7 @@ const AddStdManually = () => {
 		let AddStudentBranch = document.getElementById("AddStudentBranch");
 		let AddStudentBatch = document.getElementById("AddStudentBatch");
 		// let i = 1;
-		setTempStudent((prevTempStudent) => [
-			...prevTempStudent,
-			[
-				prn.value,
-				studentemail.value,
-				AddStudentBranch.value,
-				AddStudentBatch.value,
-			],
-		]);
+		setTempStudent((prevTempStudent) => [...prevTempStudent, [prn.value, studentemail.value, AddStudentBranch.value, AddStudentBatch.value]]);
 
 		// console.log(tempStudent);
 	};
@@ -46,42 +38,20 @@ const AddStdManually = () => {
 			<div>
 				<form className='' onSubmit={handleAddStudent} method='post'>
 					<div className='mb-3 d-flex'>
-						<label
-							htmlFor='prn'
-							className='form-label me-2'
-							style={inputstyle}
-						>
+						<label htmlFor='prn' className='form-label me-2' style={inputstyle}>
 							Student PRN
 						</label>
-						<input
-							id='prn'
-							className='form-control'
-							required
-							name='prn'
-						/>
+						<input id='prn' className='form-control' required name='prn' />
 					</div>
-					<div className='mb-3 d-flex'>
-						<label
-							htmlFor='studentemail'
-							className='form-label me-2'
-							style={inputstyle}
-						>
+					<div className='mb-3 d-flex '>
+						<label htmlFor='studentemail' className='form-label me-2' style={inputstyle}>
 							Student Email:
 						</label>
-						<input
-							id='studentemail'
-							type='email'
-							className='form-control'
-							name='password'
-						/>
+						<input id='studentemail' type='email' className='form-control' name='password' />
 					</div>
 
 					<div className='mb-3 d-flex'>
-						<label
-							htmlFor={`AddStudentBranch`}
-							className='form-label me-2'
-							style={inputstyle}
-						>
+						<label htmlFor={`AddStudentBranch`} className='form-label me-2' style={inputstyle}>
 							Student Branch:
 						</label>
 						<select className='form-select' id={`AddStudentBranch`}>
@@ -91,11 +61,7 @@ const AddStdManually = () => {
 						</select>
 					</div>
 					<div className='mb-3 d-flex'>
-						<label
-							htmlFor={`AddStudentBatch`}
-							className='form-label me-2'
-							style={inputstyle}
-						>
+						<label htmlFor={`AddStudentBatch`} className='form-label me-2' style={inputstyle}>
 							Student Batch:
 						</label>
 						<select className='form-select' id={`AddStudentBatch`}>
@@ -122,9 +88,7 @@ const AddStdManually = () => {
 								color: "#fff",
 								fontSize: "24px",
 								fontWeight: "600",
-								boxShadow:
-									"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
-								fontFamily: "Roboto, sans-serif",
+								boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
 								marginBottom: "20px",
 							}}
 						/>
@@ -156,9 +120,6 @@ const AddStdManually = () => {
 					Send Credentials and Save
 				</div>
 			</div>
-
-
-
 		</div>
 	);
 };
