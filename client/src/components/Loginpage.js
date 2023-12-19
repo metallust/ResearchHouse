@@ -1,10 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import CoordinatorContext from "../Context/Coordinator/CoordinatorContext";
+import { useContext } from "react";
 
 const LoginPage = () => {
-	const handleSubmit = (event) => {
+	const { login: PGlogin } = useContext(CoordinatorContext);
+	const navigate = useNavigate();
+
+	const handleSubmit = async (event) => {
 		event.preventDefault();
 		// Add logic for form submission here
+		const email = document.querySelector("#email").value;
+		const password = document.querySelector("#password").value;
+		// const role = document.querySelector("#type").value;
+		const token = await PGlogin(email, password);
+		if (token.statusCode !== 200) {
+			alert("Invalid Credentials");
+			return;
+		}
+		localStorage.setItem("token", [token.data.token, token.data.type]);
+		navigate("/pg");
 	};
 
 	return (
@@ -24,16 +39,12 @@ const LoginPage = () => {
 							<form
 								className='form-horizontal'
 								role='form'
-								method='POST'
-								action=''
 								id='thisform'
-								onSubmit={handleSubmit}
 								style={{
 									border: "none",
 									padding: "20px",
 									borderRadius: "5px",
-									boxShadow:
-										"0px 4px 4px rgba(0, 0, 0, 0.25)",
+									boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 									background: "#E1F8FF",
 									fontFamily: "Roboto, sans-serif",
 									textAlign: "center",
@@ -67,15 +78,13 @@ const LoginPage = () => {
 										type='text'
 										id='email'
 										name='email'
-										
 										className='form-control-login input_box'
 										style={{
 											width: "80%",
 											height: "40%",
 											padding: "10px",
 											borderRadius: "10px",
-											boxShadow:
-												"0px 4px 4px rgba(0, 0, 0, 0.25)",
+											boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 											border: "none",
 											color: "#004257",
 											fontSize: "16px",
@@ -97,8 +106,7 @@ const LoginPage = () => {
 											height: "40%",
 											padding: "10px",
 											borderRadius: "10px",
-											boxShadow:
-												"0px 4px 4px rgba(0, 0, 0, 0.25)",
+											boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 											border: "none",
 											color: "#004257",
 											fontSize: "16px",
@@ -128,6 +136,7 @@ const LoginPage = () => {
 										id='edit-submit'
 										name='op'
 										value='Submit'
+										onClick={handleSubmit}
 										className='form-control-login btn btn-success btn-lg'
 										style={{
 											width: "176px",
@@ -139,8 +148,7 @@ const LoginPage = () => {
 											color: "#fff",
 											fontSize: "24px",
 											fontWeight: "600",
-											boxShadow:
-												"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+											boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
 											fontFamily: "Roboto, sans-serif",
 											marginBottom: "20px",
 										}}
@@ -158,8 +166,6 @@ const LoginPage = () => {
 										Don't Have an Account?{" "}
 										<Link
 											to='/signup'
-											data-toggle='modal'
-											data-target='#Registeration_type_modal'
 											style={{
 												textDecoration: "none",
 												color: "#004257",

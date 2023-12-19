@@ -46,7 +46,7 @@ CREATE TABLE guide (
     phone VARCHAR(50),
     email VARCHAR(50),
     password VARCHAR(50),
-    domain VARCHAR(50),
+    domain VARCHAR(255),
     experience INT,
     profile_pic VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
