@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Table from "../Table";
+import CoordinatorContext from "../../Context/Coordinator/CoordinatorContext";
 
 const AddStdManually = () => {
+	const {addStudent} = useContext(CoordinatorContext)
 	const dropdowns = [0, 1];
 	const branch = ["a", "b", "c", "d"]; // fetch all branchs set by pg coordinator
 	const batch = ["2023-24", "2024-25"]; // fetch all branchs set by pg coordinator
 	var [tempStudent, setTempStudent] = useState([]);
 	const header = ["#", "PRN", "Email Address", "Branch", "Batch"];
-
+	const handleSave = ()=>{
+		console.log(tempStudent);
+		addStudent(tempStudent)
+	}
 	const handleAddStudent = (e) => {
 		e.preventDefault();
 		let prn = document.getElementById("prn");
@@ -24,7 +29,7 @@ const AddStdManually = () => {
 				AddStudentBatch.value,
 			],
 		]);
-		
+
 		// console.log(tempStudent);
 	};
 	const inputstyle = {
@@ -37,6 +42,7 @@ const AddStdManually = () => {
 	};
 
 	return (
+	<div>
 		<div>
 			<form className='' onSubmit={handleAddStudent} method='post'>
 				<div className='mb-3 d-flex'>
@@ -127,6 +133,32 @@ const AddStdManually = () => {
 			<div className='my-4'>
 				<Table header={header} body={tempStudent} />
 			</div>
+			</div>
+			<div
+					className='container d-flex justify-content-center '
+					style={{
+						marginBottom: "20px",
+					}}
+				>
+					<div
+						className='btn'
+						style={{
+							fontFamily: "Roboto, sans-serif",
+							textAlign: "center",
+							fontSize: "15px",
+							fontWeight: "550",
+							backgroundColor: "#004257",
+							color: "#FFF",
+							width: "fit-content",
+						}}
+						onClick={handleSave}
+					>
+						Send Credentials and Save
+					</div>
+				</div>
+		
+		
+
 		</div>
 	);
 };

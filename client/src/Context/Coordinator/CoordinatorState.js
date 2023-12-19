@@ -31,8 +31,25 @@ const CoordinatorState = (props) => {
         const json = await response.json()
     };
 
+    const addStudent = async (students) => {
+        // console.log(students);
+        const response = await fetch(
+            `${host}/api/coordinator/auth/addstudents`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({students})
+
+            }
+        );
+        const json = await response.json();
+        console.log(json)
+    };
+
     return (
-        <CoordinatorContext.Provider value={{ createUser, login }}>
+        <CoordinatorContext.Provider value={{ createUser, login, addStudent }}>
             {props.children}
         </CoordinatorContext.Provider>
     );

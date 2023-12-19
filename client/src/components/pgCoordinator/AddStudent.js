@@ -5,9 +5,7 @@ import AddStdFile from "./AddStdFile";
 
 const AddStudent = () => {
 	const [tab, setTab] = useState(0);
-	const handleSave = () => {
-		
-	};
+
 	return (
 		<>
 			<div
@@ -85,28 +83,7 @@ const AddStudent = () => {
 				<div className='container mt-3' style={{ height: "90%", overflowX: "scroll" }}>
 					{tab === 0 ? <AddStdManually /> : <AddStdFile />}
 				</div>
-				<div
-					className='container d-flex justify-content-center '
-					style={{
-						marginBottom: "20px",
-					}}
-				>
-					<div
-						className='btn'
-						style={{
-							fontFamily: "Roboto, sans-serif",
-							textAlign: "center",
-							fontSize: "15px",
-							fontWeight: "550",
-							backgroundColor: "#004257",
-							color: "#FFF",
-							width: "fit-content",
-						}}
-						onClick={handleSave}
-					>
-						Send Credentials and Save
-					</div>
-				</div>
+				
 			</div>
 		</>
 	);

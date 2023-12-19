@@ -30,11 +30,14 @@ CREATE TABLE coordinator (
 CREATE TABLE student (
     student_id VARCHAR(50) PRIMARY KEY,
     college_id VARCHAR(50) REFERENCES college(college_id),
+    branch varchar(50),
+    batch varchar(20),
     name VARCHAR(50),
     phone VARCHAR(50),
     email VARCHAR(50),
     password VARCHAR(50),
     profile_pic VARCHAR(50),
+    guide_id varchar(50) references guide(guide_id),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
