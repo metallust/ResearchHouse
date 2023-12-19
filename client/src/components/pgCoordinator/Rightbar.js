@@ -27,7 +27,13 @@ function Rightbar() {
 				}}
 			>
 				<button style={buttonstyle}>
-					<svg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'>
+					<svg
+						width='30'
+						height='30'
+						viewBox='0 0 30 30'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'
+					>
 						<path
 							fill-rule='evenodd'
 							clip-rule='evenodd'
@@ -37,7 +43,13 @@ function Rightbar() {
 					</svg>
 				</button>
 				<button style={buttonstyle}>
-					<svg width='30' height='34' viewBox='0 0 30 34' fill='none' xmlns='http://www.w3.org/2000/svg'>
+					<svg
+						width='30'
+						height='34'
+						viewBox='0 0 30 34'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'
+					>
 						<path
 							d='M29.1783 24.0583C27.8953 22.6797 25.4947 20.6059 25.4947 13.8125C25.4947 8.65273 21.8769 4.52227 16.9987 3.50891V2.125C16.9987 0.951602 16.0478 0 14.875 0C13.7023 0 12.7514 0.951602 12.7514 2.125V3.50891C7.87317 4.52227 4.25536 8.65273 4.25536 13.8125C4.25536 20.6059 1.85477 22.6797 0.571804 24.0583C0.173366 24.4866 -0.0032744 24.9986 4.59125e-05 25.5C0.0073506 26.5891 0.861999 27.625 2.13169 27.625H27.6184C28.8881 27.625 29.7434 26.5891 29.75 25.5C29.7534 24.9986 29.5767 24.486 29.1783 24.0583ZM4.48446 24.4375C5.8936 22.5801 7.43423 19.5015 7.44153 13.851C7.44153 13.8377 7.43755 13.8258 7.43755 13.8125C7.43755 9.70461 10.7672 6.375 14.875 6.375C18.9829 6.375 22.3125 9.70461 22.3125 13.8125C22.3125 13.8258 22.3086 13.8377 22.3086 13.851C22.3159 19.5022 23.8565 22.5808 25.2656 24.4375H4.48446ZM14.875 34C17.2205 34 19.1231 32.0975 19.1231 29.75H10.627C10.627 32.0975 12.5296 34 14.875 34Z'
 							fill='#004257'
@@ -45,7 +57,13 @@ function Rightbar() {
 					</svg>
 				</button>
 				<button style={buttonstyle}>
-					<svg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'>
+					<svg
+						width='30'
+						height='30'
+						viewBox='0 0 30 30'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'
+					>
 						<path
 							fill-rule='evenodd'
 							clip-rule='evenodd'
@@ -73,7 +91,14 @@ function Rightbar() {
 					justifyContent: "space-between",
 					margin: "10px 10px 10px 10px",
 				}}
-			></div>
+			>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 		</div>
 	);
 }

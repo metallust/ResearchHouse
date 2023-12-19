@@ -46,7 +46,7 @@ const AddStdManually = () => {
 						className='form-label me-2'
 						style={inputstyle}
 					>
-						PRN Number
+						Student PRN
 					</label>
 					<input
 						id='prn'
@@ -61,7 +61,7 @@ const AddStdManually = () => {
 						className='form-label me-2'
 						style={inputstyle}
 					>
-						Email:
+						Student Email:
 					</label>
 					<input
 						id='studentemail'
@@ -77,7 +77,7 @@ const AddStdManually = () => {
 						className='form-label me-2'
 						style={inputstyle}
 					>
-						Branch:
+						Student Branch:
 					</label>
 					<select className='form-select' id={`AddStudentBranch`}>
 						{branch.map((opt) => {
@@ -91,7 +91,7 @@ const AddStdManually = () => {
 						className='form-label me-2'
 						style={inputstyle}
 					>
-						Batch:
+						Student Batch:
 					</label>
 					<select className='form-select' id={`AddStudentBatch`}>
 						{batch.map((opt) => {

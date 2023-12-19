@@ -3,7 +3,7 @@ import { useState } from "react";
 import AddStdManually from "./AddStdManually";
 import AddStdFile from "./AddStdFile";
 
-const AddStudent = () => {
+const AddGuides = () => {
 	const [tab, setTab] = useState(0);
 	const handleSave = () => {};
 	return (
@@ -113,4 +113,4 @@ const AddStudent = () => {
 	);
 };
 
-export default AddStudent;
+export default AddGuides;
