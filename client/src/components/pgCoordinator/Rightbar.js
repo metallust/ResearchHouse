@@ -93,7 +93,7 @@ function Rightbar() {
 					margin: "10px 10px 10px 10px",
 				}}
 			>
-				<div className='btn'>
+				<div className='btn btn-transparent '>
 					<svg
 						width='27'
 						height='26'
