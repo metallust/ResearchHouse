@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { Pie } from "./Pie";
-import Pacman from './Pacman';
+import Pacman from "./Pacman";
 // import { Doughnut } from "react-chartjs-2";
 
 const GuideAnalytics = () => {
 	const [tab, setTab] = useState(0);
-	const handleSave = () => { };
+	const handleSave = () => {};
 
 	const containerstyle = {
 		backgroundColor: "#E1F8FF",
@@ -41,7 +41,8 @@ const GuideAnalytics = () => {
 					flexDirection: "column",
 					alignItems: "center",
 				}}
-			><div>
+			>
+				<div>
 					<div
 						style={{
 							fontSize: "22px",

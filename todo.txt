@@ -1,0 +1,14 @@
+Guide Student Mapping UI
+
+Dashboard : PG, Guide, Committie
+
+ML Model: Student Check Similar Topic
+          Guide Summarize and Check For Diffrences with previous
+
+Plagiarism
+
+Mailing ther Credentials
+
+Video Conferences
+
+
