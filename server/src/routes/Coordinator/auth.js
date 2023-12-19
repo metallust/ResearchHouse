@@ -3,6 +3,7 @@ import express from "express";
 import logger from "../../utils/logger.js";
 import Response from "../../utils/response.js";
 import pool from "../../config/mysql.config.js";
+import sendMail from "../../SendMail/index.js";
 
 const router = express.Router();
 // define the router after api/coordinator/auth/
@@ -56,6 +57,8 @@ router.post("/addstudent", async (req, res) => {
 			logger.info(college_id);
 			await pool.query("INSERT INTO student (college_id, student_id, email, password, branch, batch) VALUES (?, ?, ?, ?, ?, ?)", [college_id, prn, email, password, branch, batch]);
 			logger.info("student added", email);
+			// sendMail(email, password)
+
 		}
 
 		return res.send({ student });

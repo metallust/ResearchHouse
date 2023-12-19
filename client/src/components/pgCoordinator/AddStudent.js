@@ -35,7 +35,7 @@ const AddStudent = () => {
 						display: "flex",
 						// justifyContent: "center",
 						marginBottom: "10px",
-						width: "100vw",
+						// width: "100vw",
 					}}
 				>
 					<div className='nav-item '>
