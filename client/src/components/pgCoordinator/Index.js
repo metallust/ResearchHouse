@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import "./style.css";
 import PgCoordinatorSidebar from "./PgCoordinatorSidebar";
 import Rightbar from "./Rightbar";
 import AddStudent from "./AddStudent";
-import { Outlet } from "react-router";
+import { Outlet, useNavigate } from "react-router";
 import AddGuides from "./AddGuides";
 import AddCom from "./AddCom";
 
 function Index(props) {
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (!localStorage.getItem("token")) {
+			navigate("/login");
+		}
+	}, []);
+
 	const sidebar = {
 		display: "block",
 		/* background: rgba(0, 0, 0, 0.2), */
