@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import Buttonbox from "./Buttonbox";
 
 const PgCoordinatorSidebar = () => {
-	const branch = "Computer Science";
-	const batch = "2022-2023";
-	const schedule = "Presentation";
-	const scheduledate = "05/12/2012";
-
 	const card = {
 		height: "150px",
 		width: "100%",
@@ -29,10 +23,22 @@ const PgCoordinatorSidebar = () => {
 		width: "100%",
 		padding: "15px",
 	};
+
 	const body = {
 		height: "100%",
 		overflowY: "scroll",
 		paddingY: "15px",
+	};
+
+	const [activeDepartment, setActiveDepartment] = useState(null);
+	const [activeBatch, setActiveBatch] = useState(null);
+
+	const handleDepartmentClick = (index) => {
+		setActiveDepartment(index);
+	};
+
+	const handleBatchClick = (index) => {
+		setActiveBatch(index);
 	};
 
 	const departments = [
@@ -45,17 +51,6 @@ const PgCoordinatorSidebar = () => {
 	];
 
 	const batches = ["2022-23", "2021-22"];
-
-	const [activeDepartment, setActiveDepartment] = useState(null);
-	const [activeBatch, setActiveBatch] = useState(null);
-
-	const handleDepartmentClick = (index) => {
-		setActiveDepartment(index);
-	};
-
-	const handleBatchClick = (index) => {
-		setActiveBatch(index);
-	};
 
 	return (
 		<div className='container d-flex flex-column align-items-center'>
@@ -77,31 +72,41 @@ const PgCoordinatorSidebar = () => {
 				className='d-flex flex-column justify-content-center'
 				style={card}
 			>
-				<h6 className='text-center fw-bold'>
-					{branch}
+				<div className='text-center fw-bold'>
+					Computer Science
 					<div></div>
-					{batch}
+					2022-2023
 					<div></div>
-				</h6>
+				</div>
 				<p className='fw-semibold'>
-					Upcoming: {schedule} ({scheduledate})
+					Upcoming: Presentation (05/12/2012)
 				</p>
 			</div>
 
 			<div style={card}>
-				<div style={title}>Departments </div>
+				<div style={title}>Departments</div>
 				<div style={{ height: "40px" }}></div>
 				<div style={body}>
 					<ul className='list-group px-2'>
-						{departments.map((e) => {
+						{departments.map((dept, index) => {
 							return (
 								<div
-									key={e}
-									className='d-flex justify-content-between
-									my-1 p-2 rounded'
+									key={dept}
+									className='d-flex justify-content-between my-1 p-2 rounded'
+									style={{
+										backgroundColor:
+											activeDepartment === index
+												? "#004257"
+												: "",
+										color:
+											activeDepartment === index
+												? "white"
+												: "",
+									}}
+									onClick={() => handleDepartmentClick(index)}
 									type='button'
 								>
-									{e}
+									{dept}
 								</div>
 							);
 						})}
@@ -114,15 +119,25 @@ const PgCoordinatorSidebar = () => {
 				<div style={{ height: "40px" }}></div>
 				<div style={body}>
 					<ul className='list-group px-2'>
-						{batches.map((e) => {
+						{batches.map((batch, index) => {
 							return (
 								<div
-									key={e}
-									className='d-flex justify-content-between
-									my-1 p-2 rounded'
+									key={batch}
+									className='d-flex justify-content-between my-1 p-2 rounded'
+									style={{
+										backgroundColor:
+											activeBatch === index
+												? "#004257"
+												: "",
+										color:
+											activeBatch === index
+												? "white"
+												: "",
+									}}
+									onClick={() => handleBatchClick(index)}
 									type='button'
 								>
-									{e}
+									{batch}
 								</div>
 							);
 						})}
