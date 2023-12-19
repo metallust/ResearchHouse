@@ -18,6 +18,7 @@ import PgCoordinatorDashboard from "./components/pgCoordinator/Index";
 
 import Editor from "./components/TimelineEditor/Index";
 import GuideDashboard from "./components/guide/GuideDashboard";
+import StudentSetup from "./components/student/StudentSetup";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -36,6 +37,7 @@ function App() {
 				<Route path='/Home' element={<Dashboard />} />
 				<Route path='/test' element={<Main />} />
 				<Route path='/test2' element={<Flow />} />
+				<Route path='/studentsetup' element={<StudentSetup />} />
 
 				<Route
 					path='/editor'
