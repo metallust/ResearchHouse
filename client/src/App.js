@@ -84,7 +84,7 @@ function App() {
 						element={<Colors />}
 					/>
 				</Route>
-				{/* <Route
+				<Route
 					exact
 					path='/guidedashboard'
 					element={<GuideDashboard />}
@@ -94,7 +94,7 @@ function App() {
 						path='/guidedashboard/myprogress'
 						element={<Colors />}
 					/>
-				</Route> */}
+				</Route>
 				<Route exact path='/pg' element={<PgCoordinatorDashboard />}>
 					{/* <Route
 						exact

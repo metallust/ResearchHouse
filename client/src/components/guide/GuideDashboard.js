@@ -1,11 +1,13 @@
 import React from "react";
 // import "./style.css";
-import PgCoordinatorSidebar from "./PgCoordinatorSidebar";
-import Rightbar from "./Rightbar";
-import AddStudent from "./AddStudent";
+// import PgCoordinatorSidebar from "./PgCoordinatorSidebar";
+// import Rightbar from "./Rightbar";
+// import AddStudent from "./AddStudent";
+
 import { Outlet } from "react-router";
 import GuideSidebar from "./GuideSidebar";
 import AddGuides from "./AddGuides";
+import GuideRightbar from "./GuideRightbar";
 
 function GuideDashboard(props) {
 	const sidebar = {
@@ -48,7 +50,7 @@ function GuideDashboard(props) {
 				<Outlet />
 			</div>
 			<div style={rightbar}>
-				<Rightbar />
+				<GuideRightbar />
 			</div>
 		</div>
 	);

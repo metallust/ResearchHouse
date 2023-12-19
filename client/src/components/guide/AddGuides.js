@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import AddStdManually from "./AddStdManually";
-import AddStdFile from "./AddStdFile";
+// import AddStdManually from "./AddStdManually";
+// import AddStdFile from "./AddStdFile";
+import AddGuidesManually from "./AddGuideManually";
+import AddGuideFile from "./AddGuideFile";
 
 const AddGuides = () => {
 	const [tab, setTab] = useState(0);
@@ -84,7 +86,7 @@ const AddGuides = () => {
 					className='container mt-3'
 					style={{ height: "90%", overflowX: "scroll" }}
 				>
-					{tab === 0 ? <AddStdManually /> : <AddStdFile />}
+					{tab === 0 ? <AddGuidesManually /> : <AddGuideFile />}
 				</div>
 				<div
 					className='container d-flex justify-content-center '
