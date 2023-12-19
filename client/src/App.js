@@ -18,6 +18,9 @@ import PgCoordinatorDashboard from "./components/pgCoordinator/Index";
 
 import Editor from "./components/TimelineEditor/Index";
 
+import Textfield from "./videoCall/Init";
+import Room from "./videoCall/Room";
+
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
 	console.log(theme);
@@ -67,8 +70,8 @@ function App() {
 
 				{/* Route required from video call */}
 
-				{/* <Route exact path='/videocall' element={<Textfield />} />
-				<Route exact path='/videocall/:roomid' element={<Room />} /> */}
+				<Route exact path='/videocall' element={<Textfield />} />
+				<Route exact path='/room/:roomid' element={<Room />} />
 			</Routes>
 		</BrowserRouter>
 	);

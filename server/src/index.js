@@ -10,33 +10,37 @@ import admin from "./routes/Admin/Index.js";
 const io = new Server({ cors: true });
 const app = express();
 const port = 5000;
-const emailToSocketMapping = new Map();
-const socketToEmailMapping = new Map();
 
-// socket connection
+const emailToSocketIdMap = new Map();
+const socketidToEmailMap = new Map();
+
 io.on("connection", (socket) => {
-	logger.info("New Connection ...");
-	socket.on("join-room", (data) => {
-		const { roomId, emailId } = data;
-		logger.info(`User ${emailId} Joined ${roomId}`);
-		emailToSocketMapping.set(emailId, socket.id);
-		socketToEmailMapping.set(socket.id, emailId);
-		socket.join(roomId);
-		socket.emit("joined-room", { roomId });
-		socket.broadcast.to(roomId).emit("user-joined", { emailId, socketId: socket.id });
+	logger.info(`Socket Connected`, socket.id);
+	socket.on("room:join", (data) => {
+		const { email, room } = data;
+		emailToSocketIdMap.set(email, socket.id);
+		socketidToEmailMap.set(socket.id, email);
+		io.to(room).emit("user:joined", { email, id: socket.id });
+		socket.join(room);
+		io.to(socket.id).emit("room:join", data);
 	});
 
-	socket.on("call-user", ({ to, emailId, offer }) => {
-		logger.info(`Call to ${emailId} `);
-		const from = socketToEmailMapping.get(socket.id);
-		socket.to(to).emit("incomming-call", { from, offer });
+	socket.on("user:call", ({ to, offer }) => {
+		io.to(to).emit("incomming:call", { from: socket.id, offer });
 	});
 
-	socket.on("answer-call", (data) => {
-		const { emailId, answer } = data;
-		const socketId = emailToSocketMapping.get(emailId);
-		logger.info(`Answering ${emailId}`);
-		io.to(socketId).emit("call-accepted", { answer });
+	socket.on("call:accepted", ({ to, ans }) => {
+		io.to(to).emit("call:accepted", { from: socket.id, ans });
+	});
+
+	socket.on("peer:nego:needed", ({ to, offer }) => {
+		logger.info("peer:nego:needed", offer);
+		io.to(to).emit("peer:nego:needed", { from: socket.id, offer });
+	});
+
+	socket.on("peer:nego:done", ({ to, ans }) => {
+		logger.info("peer:nego:done", ans);
+		io.to(to).emit("peer:nego:final", { from: socket.id, ans });
 	});
 });
 
