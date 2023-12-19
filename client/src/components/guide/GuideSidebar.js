@@ -78,7 +78,7 @@ const GuideSidebar = () => {
 					2022-2023
 					<div></div>
 				</div>
-				<p className='fw-semibold'>
+				<p className='text-center fw-semibold'>
 					Upcoming: Presentation (05/12/2012)
 				</p>
 			</div>

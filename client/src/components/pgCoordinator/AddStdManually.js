@@ -5,7 +5,7 @@ import CoordinatorContext from "../../Context/Coordinator/CoordinatorContext";
 const AddStdManually = () => {
 	const { addStudent } = useContext(CoordinatorContext);
 	const dropdowns = [0, 1];
-	const branch = ["a", "b", "c", "d"]; // fetch all branchs set by pg coordinator
+	const branch = ["Computer Science", "Information Technology", "Mechanical Engg", "Civil Engineering", "Artificial Intelligence", "Data Science",]; // fetch all branchs set by pg coordinator
 	const batch = ["2023-24", "2024-25"]; // fetch all branchs set by pg coordinator
 	var [tempStudent, setTempStudent] = useState([]);
 	const header = ["#", "PRN", "Email Address", "Branch", "Batch"];

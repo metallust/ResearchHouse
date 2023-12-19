@@ -39,6 +39,23 @@ function GuideDashboard(props) {
 		overflow: "hidden",
 		overflowY: "scroll",
 	};
+	const btnstyle = {
+		width: "fit-content",
+		height: "40px",
+		padding: "10px",
+		backgroundColor: "#004257",
+		borderRadius: "10px",
+		border: "none",
+		color: "#fff",
+		fontSize: "16px",
+		fontWeight: "400",
+		boxShadow:
+			"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+		fontFamily: "Roboto, sans-serif",
+		marginBottom: "20px",
+		marginRight: "10px",
+	};
+
 	return (
 		<div style={main}>
 			<div style={sidebar}>
@@ -52,6 +69,14 @@ function GuideDashboard(props) {
 				<Outlet />
 			</div> */}
 			<div style={content}>
+				<div
+					className='d-flex justify-content-between'
+					style={{
+						marginTop: "10px",
+					}}
+				>
+					<p>Computer Science 2023-24</p>
+				</div>
 				<Timeline
 					n={5}
 					complete={3}
@@ -78,6 +103,7 @@ function GuideDashboard(props) {
 						},
 					]}
 				/>
+				
 				<GuideAnalytics />
 				<Outlet />
 			</div>
