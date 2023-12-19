@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
 	const handleSubmit = (event) => {
@@ -66,7 +67,7 @@ const LoginPage = () => {
 										type='text'
 										id='email'
 										name='email'
-										value=''
+										
 										className='form-control-login input_box'
 										style={{
 											width: "80%",
@@ -155,8 +156,8 @@ const LoginPage = () => {
 										}}
 									>
 										Don't Have an Account?{" "}
-										<a
-											href='javascript:void(0)'
+										<Link
+											to='/signup'
 											data-toggle='modal'
 											data-target='#Registeration_type_modal'
 											style={{
@@ -166,7 +167,7 @@ const LoginPage = () => {
 											}}
 										>
 											Register
-										</a>
+										</Link>
 									</span>
 								</div>
 							</form>
