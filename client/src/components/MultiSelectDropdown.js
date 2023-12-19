@@ -2,30 +2,31 @@ import React, { useState } from "react";
 
 function MultiSelectDropdown() {
 	const [selectedSubjects, setSelectedSubjects] = useState([]);
-	const subjects = [
+	const [subjects, setSubjects] = useState([
 		{ value: "science", label: "Science" },
 		{ value: "maths", label: "Maths" },
 		{ value: "history", label: "History" },
-		// Add more subjects as needed
-	];
+	]);
 
 	const addSubject = (e) => {
 		const selectedValue = e.target.value;
 		const selectedText = e.target.options[e.target.selectedIndex].text;
 
+		// update subjects dropdown
+		const temp = subjects.filter((subject) => subject.value !== selectedValue);
+		console.log(temp);
+		setSubjects(temp);
+
 		if (selectedValue !== "") {
-			setSelectedSubjects([
-				...selectedSubjects,
-				{ value: selectedValue, label: selectedText },
-			]);
+			setSelectedSubjects([...selectedSubjects, { value: selectedValue, label: selectedText }]);
 		}
 	};
 
 	const removeSubject = (subjectToRemove) => {
-		const updatedSubjects = selectedSubjects.filter(
-			(subject) => subject.value !== subjectToRemove.value
-		);
+		const updatedSubjects = selectedSubjects.filter((subject) => subject.value !== subjectToRemove.value);
 		setSelectedSubjects(updatedSubjects);
+
+		setSubjects([...subjects, { value: subjectToRemove.value, label: subjectToRemove.label }]);
 	};
 
 	return (
@@ -66,8 +67,7 @@ function MultiSelectDropdown() {
 							color: "#fff",
 							fontSize: "12px",
 							fontWeight: "200",
-							boxShadow:
-								"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+							boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
 							fontFamily: "Roboto, sans-serif",
 							marginBottom: "20px",
 						}}

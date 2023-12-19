@@ -52,8 +52,7 @@ const GuideSetup = () => {
 									border: "none",
 									padding: "20px",
 									borderRadius: "5px",
-									boxShadow:
-										"0px 4px 4px rgba(0, 0, 0, 0.25)",
+									boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 									background: "#E1F8FF",
 									fontFamily: "Roboto, sans-serif",
 									textAlign: "center",
@@ -77,15 +76,13 @@ const GuideSetup = () => {
 										type='text'
 										id='studentname'
 										name='studentname'
-										value=''
 										className='form-control-login input_box'
 										style={{
 											width: "80%",
 											height: "40%",
 											padding: "10px",
 											borderRadius: "10px",
-											boxShadow:
-												"0px 4px 4px rgba(0, 0, 0, 0.25)",
+											boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 											border: "none",
 											color: "#004257",
 											fontSize: "16px",
@@ -107,8 +104,7 @@ const GuideSetup = () => {
 											height: "40%",
 											padding: "10px",
 											borderRadius: "10px",
-											boxShadow:
-												"0px 4px 4px rgba(0, 0, 0, 0.25)",
+											boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 											border: "none",
 											color: "#004257",
 											fontSize: "16px",
@@ -130,9 +126,7 @@ const GuideSetup = () => {
 										fontFamily: "Roboto, sans-serif",
 									}}
 								>
-									<div className='mr-2'>
-										Upload Profile Pic
-									</div>
+									<div className='mr-2'>Upload Profile Pic</div>
 								</div>
 
 								<div className='d-flex justify-content-center'>
@@ -165,8 +159,7 @@ const GuideSetup = () => {
 											color: "#fff",
 											fontSize: "24px",
 											fontWeight: "600",
-											boxShadow:
-												"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+											boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
 											fontFamily: "Roboto, sans-serif",
 											marginBottom: "20px",
 										}}
