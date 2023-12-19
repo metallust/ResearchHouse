@@ -67,13 +67,12 @@ const AddStdFile = () => {
 							zIndex: "1",
 						}}
 					>
-						Add File (PNG, PDF, JPEG)
+						Add File
 					</span>
 					<input
 						type='file'
 						id='consentLetter'
 						name='consentLetter'
-						accept='.png, .pdf, .jpeg'
 						className='form-control'
 						style={{
 							...inputStyle, // Apply inputStyle here
@@ -82,6 +81,7 @@ const AddStdFile = () => {
 							position: "relative", // Ensure positioning works as expected
 							overflow: "hidden", // Hide overflow
 						}}
+						onChange={handleFileSelect}
 					/>
 				</div>
 			</div>
@@ -101,10 +101,7 @@ const AddStdFile = () => {
 					File Content
 					<Table
 						header={headers}
-						body={Object.values(fileContent).slice(
-							0,
-							Object.values(fileContent).length
-						)}
+						body={Object.values(fileContent).slice(1,fileContent.length)}
 					/>
 				</div>
 			)}

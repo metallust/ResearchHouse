@@ -6,11 +6,12 @@ import reportWebVitals from "./reportWebVitals";
 import ThemeState from "./Context/ThemeState";
 import GuideAllotmentState from "./Context/GuideAllotmentState";
 import SocketState from "./Context/Socket/SocketState";
+import CoordinatorState from "./Context/Coordinator/CoordinatorState";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
-		
+		<CoordinatorState>
 			<GuideAllotmentState>
 				<ThemeState>
 					<SocketState>
@@ -18,7 +19,7 @@ root.render(
 					</SocketState>
 				</ThemeState>
 			</GuideAllotmentState>
-
+		</CoordinatorState>
 	</React.StrictMode>
 );
 

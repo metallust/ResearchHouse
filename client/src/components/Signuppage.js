@@ -2,21 +2,21 @@ import React, { useContext } from "react";
 import CoordinatorContext from "../Context/Coordinator/CoordinatorContext";
 
 const SignupPage = () => {
-	const context = useContext(CoordinatorContext)
+	const { createUser } = useContext(CoordinatorContext);
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		const aishe = document.getElementById('aisheCode');
-		const collegeName = document.getElementById('collegeName');
-		const state = document.getElementById('state');
-		const district = document.getElementById('district');
-		const city = document.getElementById('city');
-		const fullName = document.getElementById('fullName');
-		const email = document.getElementById('email');
-		const phone = document.getElementById('phone');
-		const password = document.getElementById('password');
-		const confirmPassword = document.getElementById('confirmPassword');
-		const consentLetter = document.getElementById('consentLetter');
-		context.createUser([aishe, collegeName, state, district, city, fullName, email, phone, password, confirmPassword, consentLetter])
+		const aishe = document.getElementById('aisheCode').value;
+		const collegeName = document.getElementById('collegeName').value;
+		const state = document.getElementById('state').value;
+		const district = document.getElementById('district').value;
+		const city = document.getElementById('city').value;
+		const fullName = document.getElementById('fullName').value;
+		const email = document.getElementById('email').value;
+		const phone = document.getElementById('phone').value;
+		const password = document.getElementById('password').value;
+		const confirmPassword = document.getElementById('confirmPassword').value;
+		const consentLetter = document.getElementById('consentLetter').value;
+		createUser({ aishe, collegeName, state, district, city, fullName, email, phone, password, confirmPassword, consentLetter })
 	};
 
 	const inputStyle = {
