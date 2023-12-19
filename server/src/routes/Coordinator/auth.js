@@ -14,7 +14,6 @@ router.get("/", async (req, res) => {
 
 // Router 1: this is for creating the new coordinator
 router.post("/createuser", async (req, res) => {
-	req.body.students
 	// creating a hash of the password using bcryptjs
 	// const paswordhash = req.body.password;
 
@@ -46,30 +45,12 @@ router.post("/createuser", async (req, res) => {
 });
 
 
-router.post("/addstudents", async (req, res) => {
-	// creating a hash of the password using bcryptjs
-	// const paswordhash = req.body.password;
-
+router.post("/addstudent", async (req, res) => {
+	const { student } = req.body;
 	try {
-		// checking if the student is already created
-		// req.body.forEach(element => {
-		// console.log(element[0]);
-		// let user = pool.query("SELECT * FROM student WHERE college_id = ?", [element]);
-		// logger.info(user);
+	
 
-		// 	if (user[0].length) return res.status(400).json(new Response(400, "User already exists", user[0].length));
-		// });
-		console.log(req.body.students);
-
-		// adding the info to the database
-		// TODO: ADD query to add the user to the database username email, hashpassword
-		// console.log(req.body);
-		// const {} = req.body
-		// await pool.query("INSERT INTO college (aishe_code, college_name, college_city, college_district, college_state, college_uni, profile_pic, iic_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [aishe, collegeName, city, district, state, "SOLAPUR", null, 1212]);
-		// await pool.query("INSERT INTO coordinator ( college_id, email, phone, profile_pic) VALUES (?, ?, ?, ?)", [aishe, email, phone, null]);
-
-		// res.status(200).json(new Response(200, "coordinator created", { authtoken }));
-		// logger.info("coordinator created");
+		return res.send({ student })
 	} catch (error) {
 		logger.error(error);
 		res.status(500).json(new Response(500, "Internal server error", error.message));
