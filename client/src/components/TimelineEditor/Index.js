@@ -29,7 +29,7 @@ function Index() {
 	}
 
 	const linestyle = {
-		backgroundColor: "orange",
+		backgroundColor: "#e1f8ff",
 		// padding: "0px 20px",
 		height: "5px",
 		position: "flex",

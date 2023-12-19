@@ -20,11 +20,12 @@ import Editor from "./components/TimelineEditor/Index";
 import GuideDashboard from "./components/guide/GuideDashboard";
 import StudentSetup from "./components/student/StudentSetup";
 
+import Textfield from "./videoCall/Init";
+import Room from "./videoCall/Room";
+
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
 	console.log(theme);
-
-	const modalref = useRef(null);
 
 	return (
 		<BrowserRouter>
@@ -39,23 +40,7 @@ function App() {
 				<Route path='/test2' element={<Flow />} />
 				<Route path='/studentsetup' element={<StudentSetup />} />
 
-				<Route
-					path='/editor'
-					element={
-						<>
-							<button
-								type='button'
-								className='btn btn-primary'
-								onClick={() => {
-									modalref.current.click();
-								}}
-							>
-								Open Timeline Editor
-							</button>
-							<Editor reference={modalref} />
-						</>
-					}
-				/>
+				<Route path='/editor' element={<Editor />} />
 				<Route
 					path='/todo'
 					element={
@@ -107,8 +92,8 @@ function App() {
 
 				{/* Route required from video call */}
 
-				{/* <Route exact path='/videocall' element={<Textfield />} />
-				<Route exact path='/videocall/:roomid' element={<Room />} /> */}
+				<Route exact path='/videocall' element={<Textfield />} />
+				<Route exact path='/room/:roomid' element={<Room />} />
 			</Routes>
 		</BrowserRouter>
 	);

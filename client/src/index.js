@@ -5,8 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ThemeState from "./Context/ThemeState";
 import GuideAllotmentState from "./Context/GuideAllotmentState";
-import SocketState from "./Context/Socket/SocketState";
-import PeerState from "./Context/Socket/PeerState";
+import SocketState from "./Context/socket/SocketState";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,9 +13,7 @@ root.render(
 		<GuideAllotmentState>
 			<ThemeState>
 				<SocketState>
-					<PeerState>
-						<App />
-					</PeerState>
+					<App />
 				</SocketState>
 			</ThemeState>
 		</GuideAllotmentState>
