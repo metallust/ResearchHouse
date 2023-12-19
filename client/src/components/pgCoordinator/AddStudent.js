@@ -5,7 +5,9 @@ import AddStdFile from "./AddStdFile";
 
 const AddStudent = () => {
 	const [tab, setTab] = useState(0);
-	const handleSave = () => {};
+	const handleSave = () => {
+		
+	};
 	return (
 		<>
 			<div
@@ -37,7 +39,7 @@ const AddStudent = () => {
 						marginBottom: "10px",
 					}}
 				>
-					<div className='nav-item'>
+					<div className='nav-item '>
 						<div
 							className={`nav-link ${tab === 0 ? "active" : ""}`}
 							style={{
@@ -55,7 +57,7 @@ const AddStudent = () => {
 								setTab(0);
 							}}
 						>
-							Add Manually
+							Manually
 						</div>
 					</div>
 					<div className='nav-item'>
@@ -76,7 +78,7 @@ const AddStudent = () => {
 								setTab(1);
 							}}
 						>
-							Add Using XL File
+							Upload
 						</div>
 					</div>
 				</div>

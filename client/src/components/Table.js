@@ -37,7 +37,7 @@ const Table = (props) => {
 				<tbody>
 					{body.map((apmt, id) => {
 						let rowcolor = apmt[0];
-						apmt = apmt.slice(1);
+						// apmt = apmt.slice(1);
 						return (
 							<tr >
 								<th

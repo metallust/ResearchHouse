@@ -14,18 +14,17 @@ const AddStdManually = () => {
 		let studentemail = document.getElementById("studentemail");
 		let AddStudentBranch = document.getElementById("AddStudentBranch");
 		let AddStudentBatch = document.getElementById("AddStudentBatch");
-		let i = 1;
+		// let i = 1;
 		setTempStudent((prevTempStudent) => [
 			...prevTempStudent,
 			[
-				i++,
 				prn.value,
 				studentemail.value,
 				AddStudentBranch.value,
 				AddStudentBatch.value,
 			],
 		]);
-
+		
 		// console.log(tempStudent);
 	};
 	const inputstyle = {
