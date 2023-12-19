@@ -1,10 +1,31 @@
 import React from "react";
+import MultiSelectDropdown from "../MultiSelectDropdown";
 
 const GuideSetup = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		// Add logic for form submission here
 	};
+
+	function addSubject() {
+		var selectBox = document.getElementById("subjectDropdown");
+		var selectedOptions = selectBox.selectedOptions;
+
+		var ul = document.getElementById("selectedSubjects");
+
+		for (var i = 0; i < selectedOptions.length; i++) {
+			var selectedValue = selectedOptions[i].value;
+			var selectedText = selectedOptions[i].text;
+
+			if (selectedValue !== "") {
+				var li = document.createElement("li");
+				li.appendChild(document.createTextNode(selectedText));
+				li.setAttribute("value", selectedValue);
+
+				ul.appendChild(li);
+			}
+		}
+	}
 
 	return (
 		<section
@@ -97,6 +118,9 @@ const GuideSetup = () => {
 										}}
 									/>
 								</div>
+								<MultiSelectDropdown />
+
+								<ul id='selectedSubjects'></ul>
 								<div
 									className='d-flex justify-content-center mb-2'
 									style={{
