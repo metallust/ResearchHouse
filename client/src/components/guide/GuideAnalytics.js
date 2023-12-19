@@ -1,16 +1,17 @@
 import React from "react";
 import { useState } from "react";
+import { Pie } from "./Pie";
 
 // import { Doughnut } from "react-chartjs-2";
 
 const GuideAnalytics = () => {
 	const [tab, setTab] = useState(0);
-	const handleSave = () => {};
+	const handleSave = () => { };
 
 	const containerstyle = {
 		backgroundColor: "#E1F8FF",
 		width: "90%",
-		height: "fit-content",
+		// height: "fit-content",
 		marginRight: "20px",
 		marginBottom: "20px",
 		borderRadius: "10px",
@@ -40,7 +41,7 @@ const GuideAnalytics = () => {
 					flexDirection: "column",
 					alignItems: "center",
 				}}
-			>
+			><div>
 				<div
 					style={{
 						fontSize: "22px",
@@ -53,10 +54,10 @@ const GuideAnalytics = () => {
 				>
 					At a Glance
 				</div>
-				<div className='d-flex'>
+				<div className='d-flex' style={{height:"27vh"}}>
 					<div className='container py-2' style={containerstyle}>
 						<div style={cardheadername}>
-							<p>Students allocated :</p>
+							<p>Students/Guide Ratio :</p>
 						</div>
 						<div className='d-flex'>
 							<div
@@ -89,7 +90,7 @@ const GuideAnalytics = () => {
 							<div> 7 Students per Guide</div>
 						</div>
 					</div>
-					<div className='container py-2' style={containerstyle}>
+					<div className='container py-2 ' style={containerstyle}>
 						<div style={cardheadername}>
 							<p>Submissions in Deadline : Average </p>
 						</div>
@@ -104,6 +105,10 @@ const GuideAnalytics = () => {
 						</div>
 
 						<div>Maximum : 7 Students per Guide</div>
+					</div>
+					</div>
+					<div style={{maxHeight:"160px"}}>
+						<Pie/>
 					</div>
 				</div>
 			</div>
