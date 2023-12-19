@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuideRightbar() {
+function CommitteeRightbar() {
 	const buttonstyle = {
 		background: "none",
 		border: "none",
@@ -161,4 +161,4 @@ function GuideRightbar() {
 	);
 }
 
-export default GuideRightbar;
+export default CommitteeRightbar;
