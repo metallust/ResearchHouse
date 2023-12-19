@@ -47,7 +47,7 @@ function App() {
 				<Route path='/studentsetup' element={<StudentSetup />} />
 				<Route path='/guidesetup' element={<GuideSetup />} />
 				<Route path='/committeesetup' element={<CommitteeSetup />} />
-				<Route path='/idemodal' element={<IdeaModal />} />
+				<Route path='/ideamodal' element={<IdeaModal />} />
 
 				<Route path='/editor' element={<Editor />} />
 				<Route
