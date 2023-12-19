@@ -3,16 +3,17 @@ import CoordinatorContext from "./CoordinatorContext";
 const CoordinatorState = (props) => {
 
     const host = "http://localhost:5000"
-    const createUser = async (arr) => {
+    const createUser = async (details) => {
+        console.log(details)
         const response = await fetch(
-            `${host}/api/coordinator/createuser`,
+            `${host}/api/coordinator/auth/createuser`,
             {
-                method: "GET",
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "auth-token":
-                        localStorage.getItem('token'),
-                }
+                },
+                body: JSON.stringify(details)
+
             }
         );
         const json = await response.json()
@@ -24,8 +25,6 @@ const CoordinatorState = (props) => {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "auth-token":
-                        localStorage.getItem('token'),
                 }
             }
         );

@@ -18,7 +18,7 @@ CREATE TABLE college (
 
 -- Create PG coordinator table
 CREATE TABLE coordinator (
-    coordinator_id VARCHAR(50) PRIMARY KEY,
+    coordinator_id int PRIMARY KEY AUTO_INCREMENT,
     college_id VARCHAR(50) REFERENCES college(college_id),
     email VARCHAR(50),
     phone VARCHAR(50),
