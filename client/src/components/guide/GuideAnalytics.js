@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Pie } from "./Pie";
-
+import Pacman from './Pacman';
 // import { Doughnut } from "react-chartjs-2";
 
 const GuideAnalytics = () => {
@@ -42,73 +42,74 @@ const GuideAnalytics = () => {
 					alignItems: "center",
 				}}
 			><div>
-				<div
-					style={{
-						fontSize: "22px",
-						fontWeight: "700",
-						color: "#004257",
-						fontFamily: "Roboto, sans-serif",
-						marginBottom: "5px",
-						marginTop: "20px",
-					}}
-				>
-					At a Glance
-				</div>
-				<div className='d-flex' style={{height:"27vh"}}>
-					<div className='container py-2' style={containerstyle}>
-						<div style={cardheadername}>
-							<p>Students/Guide Ratio :</p>
-						</div>
-						<div className='d-flex'>
-							<div
-								style={{
-									fontSize: "64px",
-								}}
-							>
-								6
+					<div
+						style={{
+							fontSize: "22px",
+							fontWeight: "700",
+							color: "#004257",
+							fontFamily: "Roboto, sans-serif",
+							marginBottom: "5px",
+							marginTop: "20px",
+						}}
+					>
+						At a Glance
+					</div>
+					<div className='d-flex' style={{ height: "27vh" }}>
+						<div className='container py-2' style={containerstyle}>
+							<div style={cardheadername}>
+								<p>Students/Guide Ratio :</p>
+							</div>
+							<div className='d-flex'>
+								<div
+									style={{
+										fontSize: "64px",
+									}}
+								>
+									6
+								</div>
+								<div
+									style={{
+										fontSize: "10px",
+										marginLeft: "60px",
+										marginTop: "30px",
+									}}
+								>
+									<div>1 Less than Maximum</div>
+
+									<div> (Per Academic Year)</div>
+								</div>
 							</div>
 							<div
 								style={{
 									fontSize: "10px",
-									marginLeft: "60px",
-									marginTop: "30px",
+									display: "flex",
+									justifyContent: "between",
 								}}
 							>
-								<div>1 Less than Maximum</div>
-
-								<div> (Per Academic Year)</div>
+								<div>Recommended Maximum:</div>
+								<div> 7 Students per Guide</div>
 							</div>
 						</div>
-						<div
-							style={{
-								fontSize: "10px",
-								display: "flex",
-								justifyContent: "between",
-							}}
-						>
-							<div>Recommended Maximum:</div>
-							<div> 7 Students per Guide</div>
+						<div className='container py-2 ' style={containerstyle}>
+							<div style={cardheadername}>
+								<p>Submissions in Deadline : Average </p>
+								<Pacman />
+							</div>
 						</div>
-					</div>
-					<div className='container py-2 ' style={containerstyle}>
-						<div style={cardheadername}>
-							<p>Submissions in Deadline : Average </p>
-						</div>
-					</div>
-					<div className='container py-2' style={containerstyle}>
-						<div style={cardheadername}>
-							<p>Chosen Domains</p>
-						</div>
-						<div className='d-flex'>
-							<div>6 </div>
-							<div>1 Less than Maximum Recommended</div>
-						</div>
+						<div className='container py-2' style={containerstyle}>
+							<div style={cardheadername}>
+								<p>Chosen Domains</p>
+							</div>
+							<div className='d-flex'>
+								<div>6 </div>
+								<div>1 Less than Maximum Recommended</div>
+							</div>
 
-						<div>Maximum : 7 Students per Guide</div>
+							<div>Maximum : 7 Students per Guide</div>
+						</div>
 					</div>
-					</div>
-					<div style={{maxHeight:"160px"}}>
-						<Pie/>
+					<div style={{ maxHeight: "160px" }}>
+						<Pie />
 					</div>
 				</div>
 			</div>
