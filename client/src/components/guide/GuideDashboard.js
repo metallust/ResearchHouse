@@ -6,7 +6,7 @@ import React from "react";
 
 import { Outlet } from "react-router";
 import GuideSidebar from "./GuideSidebar";
-import AddGuides from "./AddGuides";
+import AddGuides from "../pgCoordinator/AddGuides";
 import GuideRightbar from "./GuideRightbar";
 
 function GuideDashboard(props) {
@@ -45,10 +45,10 @@ function GuideDashboard(props) {
 					<Outlet />
 				</div>
 			</div>
-			<div style={content}>
+			{/* <div style={content}>
 				<AddGuides />
 				<Outlet />
-			</div>
+			</div> */}
 			<div style={rightbar}>
 				<GuideRightbar />
 			</div>

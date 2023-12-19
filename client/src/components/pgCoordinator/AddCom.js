@@ -4,8 +4,9 @@ import { useState } from "react";
 // import AddStdFile from "./AddStdFile";
 import AddGuidesManually from "./AddGuideManually";
 import AddGuideFile from "./AddGuideFile";
+import AddComManually from "./AddComManually";
 
-const AddGuides = () => {
+const AddCom = () => {
 	const [tab, setTab] = useState(0);
 	const handleSave = () => {};
 	return (
@@ -29,7 +30,7 @@ const AddGuides = () => {
 						marginTop: "20px",
 					}}
 				>
-					Add New Student/s
+					Add New Committee Members/s
 				</div>
 				<div
 					className='nav nav-tabs static'
@@ -86,7 +87,7 @@ const AddGuides = () => {
 					className='container mt-3'
 					style={{ height: "90%", overflowX: "scroll" }}
 				>
-					{tab === 0 ? <AddGuidesManually /> : <AddGuideFile />}
+					{tab === 0 ? <AddComManually /> : <AddGuideFile />}
 				</div>
 				<div
 					className='container d-flex justify-content-center '
@@ -115,4 +116,4 @@ const AddGuides = () => {
 	);
 };
 
-export default AddGuides;
+export default AddCom;
