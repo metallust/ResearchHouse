@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Index.css";
 import StudentTodo from "./StudentTodo";
+import Announcements from "./Announcements";
 import Timeline from "./Timeline";
 import File from "./File";
 import Conversation from "./Conversation/Index";
+import Rightbar from "./Rightbar";
 
 function Files() {
 	return (
@@ -22,7 +24,9 @@ function Index(props) {
 	return (
 		<div className='main'>
 			<div className='sidebar'>
-				<div className='h2 my-3 py-4 fw-bold d-flex justify-content-center position'>ResearchHouse</div>
+				<div className='h2 my-3 py-4 fw-bold d-flex justify-content-center position' style={{ color: "#004256" }}>
+					ResearchHouse
+				</div>
 				<div
 					className='d-flex flex-column justify-content-center'
 					style={{
@@ -31,15 +35,13 @@ function Index(props) {
 						margin: "10px 10px 10px 10px",
 						borderRadius: "6px",
 						boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
-						border: "1px solid #004256",
 					}}
 				>
 					<h6 className='text-center fw-bold'>Implement</h6>
 					<p className='fw-semibold'>Deadline : 17 Dec 2023 (7 days left)</p>
 				</div>
 				<StudentTodo />
-				<StudentTodo />
-				<StudentTodo />
+				<Announcements />
 			</div>
 			<div className='content'>
 				<Timeline
@@ -72,7 +74,7 @@ function Index(props) {
 				<div className='px-4'>
 					<div className='flex-grow-1 d-flex justify-content-between'>
 						<h3 className='fw-bold'>Submission : </h3>
-						<button type='button' class='btn btn-primary'>
+						<button type='button' class='btn btn-primary' style={{ background: "#004256" }}>
 							+ New Submission
 						</button>
 					</div>
@@ -108,11 +110,7 @@ function Index(props) {
 				</div>
 			</div>
 			<div className='rightbar'>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
+				<Rightbar />
 			</div>
 		</div>
 	);

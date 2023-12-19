@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 
 // import { Doughnut } from "react-chartjs-2";
-import SemicircularPieChart from "../SemicircularPieChart";
 
 const GuideAnalytics = () => {
 	const [tab, setTab] = useState(0);
@@ -93,9 +92,6 @@ const GuideAnalytics = () => {
 					<div className='container py-2' style={containerstyle}>
 						<div style={cardheadername}>
 							<p>Submissions in Deadline : Average </p>
-						</div>
-						<div>
-							<SemicircularPieChart />
 						</div>
 					</div>
 					<div className='container py-2' style={containerstyle}>

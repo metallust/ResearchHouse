@@ -25,6 +25,7 @@ import Room from "./videoCall/Room";
 import GuideSetup from "./components/guide/GuideSetup";
 import CommitteeSetup from "./components/committee/CommitteeSetup";
 import CommitteeDashboard from "./components/committee/CommitteeDashboard";
+import Card1 from "./components/powerbi/Card1";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -41,6 +42,7 @@ function App() {
 				<Route path='/Home' element={<Dashboard />} />
 				<Route path='/test' element={<Main />} />
 				<Route path='/test2' element={<Flow />} />
+				<Route path='/card' element={<Card1 />} />
 				<Route path='/studentsetup' element={<StudentSetup />} />
 				<Route path='/guidesetup' element={<GuideSetup />} />
 				<Route path='/committeesetup' element={<CommitteeSetup />} />
@@ -65,33 +67,13 @@ function App() {
 					}
 				/>
 				<Route path='/color' element={<Colors />} />
-				<Route
-					exact
-					path='/studentdashboard'
-					element={<StudentDashboard />}
-				>
-					<Route
-						exact
-						path='/studentdashboard/myprogress'
-						element={<Colors />}
-					/>
+				<Route exact path='/studentdashboard' element={<StudentDashboard />}>
+					<Route exact path='/studentdashboard/myprogress' element={<Colors />} />
 				</Route>
-				<Route
-					exact
-					path='/guidedashboard'
-					element={<GuideDashboard />}
-				>
-					<Route
-						exact
-						path='/guidedashboard/myprogress'
-						element={<Colors />}
-					/>
+				<Route exact path='/guidedashboard' element={<GuideDashboard />}>
+					<Route exact path='/guidedashboard/myprogress' element={<Colors />} />
 				</Route>
-				<Route
-					exact
-					path='/committeedashboard'
-					element={<CommitteeDashboard />}
-				></Route>
+				<Route exact path='/committeedashboard' element={<CommitteeDashboard />}></Route>
 				<Route exact path='/pg' element={<PgCoordinatorDashboard />}>
 					{/* <Route
 						exact
@@ -104,6 +86,8 @@ function App() {
 
 				<Route exact path='/videocall' element={<Textfield />} />
 				<Route exact path='/room/:roomid' element={<Room />} />
+
+				<Route exact path='/pg/dashboard' element={<Room />} />
 			</Routes>
 		</BrowserRouter>
 	);
