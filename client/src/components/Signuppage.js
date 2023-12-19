@@ -3,7 +3,17 @@ import React from "react";
 const SignupPage = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		// Add logic for form submission here
+		const aishe = document.getElementById('aisheCode');
+		const collegeName = document.getElementById('collegeName');
+		const state = document.getElementById('state');
+		const district = document.getElementById('district');
+		const city = document.getElementById('city');
+		const fullName = document.getElementById('fullName');
+		const email = document.getElementById('email');
+		const phone = document.getElementById('phone');
+		const password = document.getElementById('password');
+		const confirmPassword = document.getElementById('confirmPassword');
+		const consentLetter = document.getElementById('consentLetter');
 	};
 
 	const inputStyle = {
