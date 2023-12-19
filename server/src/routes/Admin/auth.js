@@ -1,103 +1,83 @@
 import express from "express";
-import { body, validationResult } from "express-validator";
-import bcryptjs from "bcryptjs";
-import jwt from "jsonwebtoken";
 
-import fetchuser from "../../middleware/fetchuser.js";
 import logger from "../../utils/logger.js";
 import Response from "../../utils/response.js";
 import pool from "../../config/mysql.config.js";
 
-const JWT_SECREAT = "bittersweetjoy";
 const router = express.Router();
 // define the router after api/admin/auth/
 
 // test
-router.get("/", (req, res) => {
-	res.status(200).json(new Response(200, "Dont worry mate you are good enough 🗿", null));
+router.get("/", async (req, res) => {
+	const result = await pool.query("SELECT * FROM coordinator");
+	res.status(200).json(new Response(200, "Dont worry mate you are good enough 🗿", result));
 });
 
 // Router 1: this is for creating the new admin
-router.post(
-	"/createuser",
+router.post("/createuser", async (req, res) => {
+	// returning invalid info if any
+	const errors = validationResult(req);
+	if (!errors.isEmpty()) return res.status(400).json(new Response(400, "Invalid inputs", errors.array()));
 
-	// express validator check if the info in the request is valid
-	[body("name", "Name can't be less that 3 character").isLength({ min: 3 }), body("email", "Give a valid Email ..").isEmail(), body("password", "Password should be greater than 5 characters").isLength({ min: 5 })],
+	// creating a hash of the password using bcryptjs
+	const salt = await bcryptjs.genSalt(10);
+	const paswordhash = await bcryptjs.hash(req.body.password, salt);
 
-	async (req, res) => {
-		// returning invalid info if any
-		const errors = validationResult(req);
-		if (!errors.isEmpty()) return res.status(400).json(new Response(400, "Invalid inputs", errors.array()));
+	try {
+		// checking if the email is already registered
+		let user = await pool.query("SELECT * FROM coordinator WHERE email = ?", [req.body.email]);
+		if (user) return res.status(400).json(new Response(400, "User already exists", null));
 
-		// creating a hash of the password using bcryptjs
-		const salt = await bcryptjs.genSalt(10);
-		const paswordhash = await bcryptjs.hash(req.body.password, salt);
-
-		try {
-			// checking if the email is already registered
-			// TODO: ADD query to check if the user is already registered
-			let user = pool.query("SELECT * FROM users WHERE email = ?", [req.body.email]);
-
-			if (user) return res.status(400).json(new Response(400, "User already exists", null));
-
-			// adding the info to the database
-			// TODO: ADD query to add the user to the database username email, hashpassword
-
-			// creating a authtoken using jsonwebtoken
-			data = {
-				user: req.body.email,
-				type: "admin",
-			};
-			const authtoken = jwt.sign(data, JWT_SECREAT);
-			res.status(200).json(new Response(200, "Admin created", { authtoken }));
-			logger.info("Admin created");
-		} catch (error) {
-			logger.error(error);
-			res.status(500).json(new Response(500, "Internal server error", error.message));
-		}
+		// adding the info to the database
+		// TODO: ADD query to add the user to the database username email, hashpassword
+		await pool.query("INSERT INTO co (username, email, password) VALUES (?, ?, ?)", [req.body.name, req.body.email, paswordhash]);
+		// creating a authtoken using jsonwebtoken
+		data = {
+			user: req.body.email,
+			type: "admin",
+		};
+		const authtoken = jwt.sign(data, JWT_SECREAT);
+		res.status(200).json(new Response(200, "Admin created", { authtoken }));
+		logger.info("Admin created");
+	} catch (error) {
+		logger.error(error);
+		res.status(500).json(new Response(500, "Internal server error", error.message));
 	}
-);
+});
 
 //Router 2: to login the user
-router.post(
-	"/login",
+router.post("/login", async (req, res) => {
+	// returning invalid info if any
+	const errors = validationResult(req);
+	if (!errors.isEmpty()) return res.status(400).json(new Response(400, "Invalid inputs", errors.array()));
 
-	// express validator check if the info in the request is valid
-	[body("email", "not a valid email").isEmail(), body("password", "password can't be blank").exists()],
+	try {
+		// fetching the user
+		// TODO: ADD query to fetch the user
+		let user = [];
+		if (!user) return res.status(400).json(new Response(400, "Please try login with correct credentials", null));
 
-	async (req, res) => {
-		// returning invalid info if any
-		const errors = validationResult(req);
-		if (!errors.isEmpty()) return res.status(400).json(new Response(400, "Invalid inputs", errors.array()));
+		// checking if the password is correct
+		const bcryptjscompare = await bcryptjs.compare(req.body.password, user.password);
+		if (!bcryptjscompare) return res.status(400).json(new Response(400, "Please try login with correct credentials", null));
 
-		try {
-			// fetching the user
-			// TODO: ADD query to fetch the user
-			let user = [];
-			if (!user) return res.status(400).json(new Response(400, "Please try login with correct credentials", null));
+		// creating a authtoken using jsonwebtoken
+		const data = {
+			user: user.id,
+			type: "admin",
+		};
+		const authtoken = jwt.sign(data, JWT_SECREAT);
+		res.status(200).json(new Response(200, "Admin logged in", { authtoken }));
 
-			// checking if the password is correct
-			const bcryptjscompare = await bcryptjs.compare(req.body.password, user.password);
-			if (!bcryptjscompare) return res.status(400).json(new Response(400, "Please try login with correct credentials", null));
-
-			// creating a authtoken using jsonwebtoken
-			const data = {
-				user: user.id,
-				type: "admin",
-			};
-			const authtoken = jwt.sign(data, JWT_SECREAT);
-			res.status(200).json(new Response(200, "Admin logged in", { authtoken }));
-
-			logger.info("Admin logged in");
-		} catch (error) {
-			logger.error(error);
-			res.status(500).json(new Response(500, "Internal server error", error.message));
-		}
+		logger.info("Admin logged in");
+	} catch (error) {
+		logger.error(error);
+		res.status(500).json(new Response(500, "Internal server error", error.message));
 	}
-);
+});
 
 // Route 3: give user data to authenicated users
-router.post("/getuser", fetchuser, async (req, res) => {
+router.post("/getuser", async (req, res) => {
 	try {
 		const userid = req.userid;
 		let user = []; //TODO: ADD query to fetch the user

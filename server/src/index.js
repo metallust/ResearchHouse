@@ -5,6 +5,7 @@ import Response from "./utils/response.js";
 import { Server } from "socket.io";
 
 import admin from "./routes/Admin/Index.js";
+import coordinator from "./routes/Coordinator/Index.js";
 // import auth from "./routes/Admin/auth.js";
 
 const io = new Server({ cors: true });
@@ -49,6 +50,7 @@ app.use(express.json());
 
 // Routes admin
 app.use("/api/admin", admin);
+app.use("/api/coordinator", coordinator);
 
 // Check
 app.get("/", (req, res) => {
