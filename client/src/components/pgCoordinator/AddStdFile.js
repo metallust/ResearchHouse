@@ -5,9 +5,7 @@ import Table from "../Table";
 const AddStdFile = () => {
 	const [fileContent, setFileContent] = useState([]);
 	const headers = ["#", "PRN", "Email", "Branch", "Batch"];
-	const handleSave = ()=>{
-		
-	}
+	const handleSave = () => {};
 	const handleFileSelect = (event) => {
 		const file = event.target.files[0];
 
@@ -42,17 +40,11 @@ const AddStdFile = () => {
 	// };
 
 	const inputStyle = {
-		//width: "80%",
-		height: "40px",
-		padding: "10px",
-		borderRadius: "10px",
 		boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 		border: "none",
 		color: "#004257",
 		fontSize: "16px",
 		fontWeight: "600",
-		fontFamily: "Roboto, sans-serif",
-		marginBottom: "20px",
 	};
 
 	return (
@@ -70,7 +62,9 @@ const AddStdFile = () => {
 							zIndex: "1",
 						}}
 					>
-						Add File
+						<svg width='16' height='20' viewBox='0 0 16 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+							<path d='M10 0H2C0.9 0 0.0100002 0.9 0.0100002 2L0 18C0 19.1 0.89 20 1.99 20H14C15.1 20 16 19.1 16 18V6L10 0ZM14 18H2V2H9V7H14V18ZM4 13.01L5.41 14.42L7 12.84V17H9V12.84L10.59 14.43L12 13.01L8.01 9L4 13.01Z' fill='#004257' />
+						</svg>
 					</span>
 					<input
 						type='file'
@@ -88,48 +82,28 @@ const AddStdFile = () => {
 					/>
 				</div>
 			</div>
-			{/* <button onClick={handleShowContent}>Show Content</button> */}
-
-			{/* Display the content of the file */}
 			{fileContent && (
 				<div
 					style={{
 						color: "#004257",
-						fontSize: "20px",
 						fontWeight: "600",
-						fontFamily: "Roboto, sans-serif",
 						marginBottom: "20px",
 					}}
 				>
 					File Content
-					<Table
-						header={headers}
-						body={Object.values(fileContent).slice(1,fileContent.length)}
-					/>
+					<Table header={headers} body={Object.values(fileContent).slice(1, fileContent.length)} />
 				</div>
 			)}
 			<div
-					className='container d-flex justify-content-center '
-					style={{
-						marginBottom: "20px",
-					}}
-				>
-					<div
-						className='btn'
-						style={{
-							fontFamily: "Roboto, sans-serif",
-							textAlign: "center",
-							fontSize: "15px",
-							fontWeight: "550",
-							backgroundColor: "#004257",
-							color: "#FFF",
-							width: "fit-content",
-						}}
-						onClick={handleSave}
-					>
-						Send Credentials and Save
-					</div>
-				</div>
+				className='container d-flex justify-content-center '
+				style={{
+					marginBottom: "20px",
+				}}
+			>
+				<button type='button' class='btn btn-primary' onClick={handleSave} style={{ background: "#004256" }}>
+					Confirm
+				</button>
+			</div>
 		</div>
 	);
 };

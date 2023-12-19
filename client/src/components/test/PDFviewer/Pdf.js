@@ -9,7 +9,7 @@ function Pdf() {
 	};
 	return (
 		<div>
-			<Document file='../sample.pdf' onLoadSuccess={onDocumentLoadSuccess}>
+			<Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
 				<Page pageNumber={page} height={600} />
 			</Document>
 		</div>

@@ -39,6 +39,19 @@ const CoordinatorState = (props) => {
 		const json = await response.json();
 		console.log(json);
 	};
+	const addGuide = async (guide) => {
+		// console.log(students);
+		if (localStorage.getItem("token") === null) return { status: 400, message: "Please login first" };
+		const response = await fetch(`${host}/api/coordinator/auth/addstudent`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ guide, token: localStorage.getItem("token").split(",")[0] }),
+		});
+		const json = await response.json();
+		console.log(json);
+	};
 
 	return <CoordinatorContext.Provider value={{ createUser, login, addStudent }}>{props.children}</CoordinatorContext.Provider>;
 };

@@ -6,8 +6,8 @@ const PgCoordinatorSidebar = () => {
 		width: "100%",
 		maxWidth: "300px",
 		backgroundColor: "#E1F8FF",
-		borderRadius: "6px",
-		padding: "0 10px ",
+		borderRadius: "10px",
+		padding: "0px 10px ",
 		margin: "10px 10px 10px 10px",
 		boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
 		position: "relative",
@@ -21,7 +21,8 @@ const PgCoordinatorSidebar = () => {
 		left: "0",
 		position: "absolute",
 		width: "100%",
-		padding: "15px",
+		padding: "5px 20px",
+		backgroundColor: "#e1f8ff",
 	};
 
 	const body = {
@@ -41,27 +42,18 @@ const PgCoordinatorSidebar = () => {
 		setActiveBatch(index);
 	};
 
-	const departments = [
-		"Computer Science",
-		"Information Technology",
-		"Mechanical Engg",
-		"Civil Engineering",
-		"Artificial Intelligence",
-		"Data Science",
-	];
+	const departments = ["Computer Science", "IT", "Mechanical Engg", "Civil Engineering", "Artificial Intelligence", "Data Science"];
 
 	const batches = ["2022-23", "2021-22"];
 
 	return (
 		<div className='container d-flex flex-column align-items-center'>
 			<div
-				className='logo'
+				className='logo h3'
 				style={{
-					fontSize: "28px",
 					fontWeight: "700",
 					color: "#004257",
-					fontFamily: "Roboto, sans-serif",
-					marginBottom: "5px",
+					marginBottom: "20px",
 					marginTop: "20px",
 				}}
 			>
@@ -70,7 +62,18 @@ const PgCoordinatorSidebar = () => {
 
 			<div
 				className='d-flex flex-column justify-content-center'
-				style={card}
+				style={{
+					height: "120px",
+					width: "100%",
+					maxWidth: "300px",
+					backgroundColor: "#E1F8FF",
+					borderRadius: "10px",
+					padding: "0px 10px ",
+					margin: "10px 10px 10px 10px",
+					boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
+					position: "relative",
+					overflow: "hidden",
+				}}
 			>
 				<div className='text-center fw-bold'>
 					Computer Science
@@ -78,30 +81,24 @@ const PgCoordinatorSidebar = () => {
 					2022-2023
 					<div></div>
 				</div>
-				<p className='fw-semibold'>
-					Upcoming: Presentation (05/12/2012)
-				</p>
+				<p className='fw-semibold'>Upcoming: Presentation (05/12/2012)</p>
 			</div>
 
 			<div style={card}>
 				<div style={title}>Departments</div>
-				<div style={{ height: "40px" }}></div>
 				<div style={body}>
-					<ul className='list-group px-2'>
+					<div style={{ height: "30px" }}></div>
+
+					<ul className='list-group'>
 						{departments.map((dept, index) => {
 							return (
 								<div
 									key={dept}
-									className='d-flex justify-content-between my-1 p-2 rounded'
+									className='d-flex justify-content-between mb-1 px-1 rounded'
 									style={{
-										backgroundColor:
-											activeDepartment === index
-												? "#004257"
-												: "",
-										color:
-											activeDepartment === index
-												? "white"
-												: "",
+										backgroundColor: activeDepartment === index ? "#004257" : "",
+										color: activeDepartment === index ? "white" : "",
+										wordWrap: "nowrap",
 									}}
 									onClick={() => handleDepartmentClick(index)}
 									type='button'
@@ -114,25 +111,32 @@ const PgCoordinatorSidebar = () => {
 				</div>
 			</div>
 
-			<div style={card}>
+			<div
+				style={{
+					height: "110px",
+					width: "100%",
+					maxWidth: "300px",
+					backgroundColor: "#E1F8FF",
+					borderRadius: "10px",
+					padding: "0px 10px ",
+					margin: "10px 10px 10px 10px",
+					boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
+					position: "relative",
+					overflow: "hidden",
+				}}
+			>
 				<div style={title}>Batches</div>
-				<div style={{ height: "40px" }}></div>
-				<div style={body}>
-					<ul className='list-group px-2'>
+				<div style={{ body }}>
+					<div style={{ height: "30px" }}></div>
+					<ul className='list-group'>
 						{batches.map((batch, index) => {
 							return (
 								<div
 									key={batch}
-									className='d-flex justify-content-between my-1 p-2 rounded'
+									className='d-flex justify-content-between mb-1 p-1 rounded'
 									style={{
-										backgroundColor:
-											activeBatch === index
-												? "#004257"
-												: "",
-										color:
-											activeBatch === index
-												? "white"
-												: "",
+										backgroundColor: activeBatch === index ? "#004257" : "",
+										color: activeBatch === index ? "white" : "",
 									}}
 									onClick={() => handleBatchClick(index)}
 									type='button'

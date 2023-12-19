@@ -8,76 +8,39 @@ const AddStudent = () => {
 
 	return (
 		<>
-			<div
-				id='AddStudentModal'
-				style={{
-					textAlign: "center",
-					display: "flex",
-					flexDirection: "column",
-					alignItems: "center",
-				}}
-			>
-				<div
-					style={{
-						fontSize: "28px",
-						fontWeight: "700",
-						color: "#004257",
-						fontFamily: "Roboto, sans-serif",
-						marginBottom: "5px",
-						marginTop: "20px",
-					}}
-				>
-					Add New Student/s
+			<div className='px-4'>
+				<div className='flex-grow-1 d-flex justify-content-between'>
+					<h3 className='fw-bold'>Add Students: </h3>
 				</div>
-				<div
-					className='nav nav-tabs static'
-					style={{
-						display: "flex",
-						// justifyContent: "center",
-						marginBottom: "10px",
-						width: "100vw",
-					}}
-				>
-					<div className='nav-item '>
-						<div
+
+				<ul className='nav nav-tabs'>
+					<li className='nav-item'>
+						<a
 							className={`nav-link ${tab === 0 ? "active" : ""}`}
-							style={{
-								height: "fit-content",
-								textAlign: "center",
-								fontSize: "15px",
-								fontWeight: "550",
-								color: "#004257",
-							}}
 							aria-current='page'
 							onClick={() => {
 								setTab(0);
 							}}
+							href='#'
 						>
 							Manually
-						</div>
-					</div>
-					<div className='nav-item'>
-						<div
+						</a>
+					</li>
+					<li className='nav-item'>
+						<a
 							className={`nav-link ${tab === 1 ? "active" : ""}`}
-							style={{
-								height: "fit-content",
-								textAlign: "center",
-								fontSize: "15px",
-								fontWeight: "550",
-								color: "#004257",
-							}}
 							aria-current='page'
 							onClick={() => {
 								setTab(1);
 							}}
+							href='#'
 						>
 							Upload
-						</div>
-					</div>
-				</div>
-				<div className='container mt-3' style={{ height: "90%", overflowX: "scroll" }}>
-					{tab === 0 ? <AddStdManually /> : <AddStdFile />}
-				</div>
+						</a>
+					</li>
+				</ul>
+
+				<div className='pt-4'>{tab === 0 ? <AddStdManually /> : <AddStdFile />}</div>
 			</div>
 		</>
 	);

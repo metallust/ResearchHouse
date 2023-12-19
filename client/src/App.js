@@ -28,6 +28,8 @@ import CommitteeDashboard from "./components/committee/CommitteeDashboard";
 import Card1 from "./components/powerbi/Card1";
 import IdeaModal from "./components/test/IdeaModal";
 
+import Viewer from "./components/test/PDFviewer/Index";
+
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
 	console.log(theme);
@@ -85,11 +87,12 @@ function App() {
 				</Route>
 
 				{/* Route required from video call */}
-
 				<Route exact path='/videocall' element={<Textfield />} />
 				<Route exact path='/room/:roomid' element={<Room />} />
+				<Route exact path='/test3' element={<Viewer />} />
 
-				<Route exact path='/pg/dashboard' element={<Room />} />
+				{/* not found */}
+				<Route path='*' element={<h1>404 Not Found</h1>} />
 			</Routes>
 		</BrowserRouter>
 	);

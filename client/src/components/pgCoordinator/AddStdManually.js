@@ -25,7 +25,6 @@ const AddStdManually = () => {
 		// console.log(tempStudent);
 	};
 	const inputstyle = {
-		fontFamily: "Roboto, sans-serif",
 		textAlign: "center",
 		fontSize: "15px",
 		fontWeight: "550",
@@ -39,20 +38,20 @@ const AddStdManually = () => {
 				<form className='' onSubmit={handleAddStudent} method='post'>
 					<div className='mb-3 d-flex'>
 						<label htmlFor='prn' className='form-label me-2' style={inputstyle}>
-							Student PRN
+							PRN
 						</label>
 						<input id='prn' className='form-control' required name='prn' />
 					</div>
 					<div className='mb-3 d-flex '>
 						<label htmlFor='studentemail' className='form-label me-2' style={inputstyle}>
-							Student Email:
+							Email:
 						</label>
 						<input id='studentemail' type='email' className='form-control' name='password' />
 					</div>
 
 					<div className='mb-3 d-flex'>
 						<label htmlFor={`AddStudentBranch`} className='form-label me-2' style={inputstyle}>
-							Student Branch:
+							Branch:
 						</label>
 						<select className='form-select' id={`AddStudentBranch`}>
 							{branch.map((opt) => {
@@ -62,7 +61,7 @@ const AddStdManually = () => {
 					</div>
 					<div className='mb-3 d-flex'>
 						<label htmlFor={`AddStudentBatch`} className='form-label me-2' style={inputstyle}>
-							Student Batch:
+							Batch:
 						</label>
 						<select className='form-select' id={`AddStudentBatch`}>
 							{batch.map((opt) => {
@@ -72,26 +71,9 @@ const AddStdManually = () => {
 					</div>
 
 					<div className='d-flex justify-content-center col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing '>
-						<input
-							type='submit'
-							id='edit-submit'
-							name='op'
-							value='Submit'
-							className='form-control-login btn btn-success btn-lg'
-							style={{
-								width: "176px",
-								height: "50px",
-								padding: "10px",
-								backgroundColor: "#004257",
-								borderRadius: "10px",
-								border: "none",
-								color: "#fff",
-								fontSize: "24px",
-								fontWeight: "600",
-								boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
-								marginBottom: "20px",
-							}}
-						/>
+						<button type='button' class='btn btn-primary' style={{ background: "#004256" }}>
+							Preview
+						</button>
 					</div>
 				</form>
 				<div className='my-4'>
@@ -104,21 +86,9 @@ const AddStdManually = () => {
 					marginBottom: "20px",
 				}}
 			>
-				<div
-					className='btn'
-					style={{
-						fontFamily: "Roboto, sans-serif",
-						textAlign: "center",
-						fontSize: "15px",
-						fontWeight: "550",
-						backgroundColor: "#004257",
-						color: "#FFF",
-						width: "fit-content",
-					}}
-					onClick={handleSave}
-				>
-					Send Credentials and Save
-				</div>
+				<button type='button' class='btn btn-primary' style={{ background: "#004256" }}>
+					Confirm
+				</button>
 			</div>
 		</div>
 	);

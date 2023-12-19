@@ -19,6 +19,7 @@ body {
 
 .content {
 	/* background: rgba(0, 0, 0, 0.4); */
+	display: block;
 	flex-grow: 3;
 	overflow: hidden;
 	overflow-y: scroll;

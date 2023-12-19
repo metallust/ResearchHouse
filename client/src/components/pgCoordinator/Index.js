@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 // import "./style.css";
-import PgCoordinatorSidebar from "./PgCoordinatorSidebar";
+import Sidebar from "./Sidebar";
 import Rightbar from "./Rightbar";
 import AddStudent from "./AddStudent";
 import { Outlet, useNavigate } from "react-router";
 import AddGuides from "./AddGuides";
 import AddCom from "./AddCom";
+
+import Timeline from "../test/Timeline";
 
 function Index(props) {
 	const navigate = useNavigate();
@@ -37,8 +39,7 @@ function Index(props) {
 	};
 	const rightbar = {
 		background: "rgba(255, 255, 255, 0.2)",
-		minWidth: "140px",
-		maxWidth: "200px",
+		maxWidth: "160px",
 		flexGrow: "1",
 		overflow: "hidden",
 		overflowY: "scroll",
@@ -47,12 +48,40 @@ function Index(props) {
 		<div style={main}>
 			<div style={sidebar}>
 				<div className='d-flex'>
-					<PgCoordinatorSidebar />
+					<Sidebar />
 					<Outlet />
 				</div>
 			</div>
 			<div style={content}>
-				<AddStudent />
+				<Timeline
+					n={5}
+					complete={3}
+					descriptions={[
+						{
+							title: "Synopsis",
+							position: 1,
+						},
+						{
+							title: "Research",
+							position: 1,
+						},
+						{
+							title: "Implementation",
+							position: 1,
+						},
+						{
+							title: "Reports",
+							position: 1,
+						},
+						{
+							title: "Publication",
+							position: 1,
+						},
+					]}
+				/>
+				<div style={{}}>
+					<AddStudent />
+				</div>
 				<Outlet />
 			</div>
 			<div style={rightbar}>
