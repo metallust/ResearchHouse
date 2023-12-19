@@ -5,6 +5,9 @@ import Table from "../Table";
 const AddStdFile = () => {
 	const [fileContent, setFileContent] = useState([]);
 	const headers = ["#", "PRN", "Email", "Branch", "Batch"];
+	const handleSave = ()=>{
+		
+	}
 	const handleFileSelect = (event) => {
 		const file = event.target.files[0];
 
@@ -105,6 +108,28 @@ const AddStdFile = () => {
 					/>
 				</div>
 			)}
+			<div
+					className='container d-flex justify-content-center '
+					style={{
+						marginBottom: "20px",
+					}}
+				>
+					<div
+						className='btn'
+						style={{
+							fontFamily: "Roboto, sans-serif",
+							textAlign: "center",
+							fontSize: "15px",
+							fontWeight: "550",
+							backgroundColor: "#004257",
+							color: "#FFF",
+							width: "fit-content",
+						}}
+						onClick={handleSave}
+					>
+						Send Credentials and Save
+					</div>
+				</div>
 		</div>
 	);
 };

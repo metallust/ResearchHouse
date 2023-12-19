@@ -44,6 +44,19 @@ router.post("/createuser", async (req, res) => {
 	}
 });
 
+
+router.post("/addstudent", async (req, res) => {
+	const { student } = req.body;
+	try {
+	
+
+		return res.send({ student })
+	} catch (error) {
+		logger.error(error);
+		res.status(500).json(new Response(500, "Internal server error", error.message));
+	}
+});
+
 //Router 2: to login the user
 router.post("/login", async (req, res) => {
 	// returning invalid info if any
