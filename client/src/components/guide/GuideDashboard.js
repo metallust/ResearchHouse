@@ -1,13 +1,15 @@
 import React from "react";
 // import "./style.css";
-import PgCoordinatorSidebar from "./PgCoordinatorSidebar";
-import Rightbar from "./Rightbar";
-import AddStudent from "./AddStudent";
-import { Outlet } from "react-router";
-import AddGuides from "./AddGuides";
-import AddCom from "./AddCom";
+// import PgCoordinatorSidebar from "./PgCoordinatorSidebar";
+// import Rightbar from "./Rightbar";
+// import AddStudent from "./AddStudent";
 
-function Index(props) {
+import { Outlet } from "react-router";
+import GuideSidebar from "./GuideSidebar";
+import AddGuides from "../pgCoordinator/AddGuides";
+import GuideRightbar from "./GuideRightbar";
+
+function GuideDashboard(props) {
 	const sidebar = {
 		display: "block",
 		/* background: rgba(0, 0, 0, 0.2), */
@@ -39,19 +41,19 @@ function Index(props) {
 		<div style={main}>
 			<div style={sidebar}>
 				<div className='d-flex'>
-					<PgCoordinatorSidebar />
+					<GuideSidebar />
 					<Outlet />
 				</div>
 			</div>
-			<div style={content}>
-				<AddCom />
+			{/* <div style={content}>
+				<AddGuides />
 				<Outlet />
-			</div>
+			</div> */}
 			<div style={rightbar}>
-				<Rightbar />
+				<GuideRightbar />
 			</div>
 		</div>
 	);
 }
 
-export default Index;
+export default GuideDashboard;

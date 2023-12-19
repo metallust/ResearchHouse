@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Table from "../Table";
 
-const AddStdManually = () => {
+const AddGuidesManually = () => {
 	const dropdowns = [0, 1];
 	const branch = ["a", "b", "c", "d"]; // fetch all branchs set by pg coordinator
 	const batch = ["2023-24", "2024-25"]; // fetch all branchs set by pg coordinator
@@ -46,7 +46,7 @@ const AddStdManually = () => {
 						className='form-label me-2'
 						style={inputstyle}
 					>
-						Student PRN
+						Guide Name
 					</label>
 					<input
 						id='prn'
@@ -61,7 +61,7 @@ const AddStdManually = () => {
 						className='form-label me-2'
 						style={inputstyle}
 					>
-						Student Email:
+						Guide ID
 					</label>
 					<input
 						id='studentemail'
@@ -77,7 +77,7 @@ const AddStdManually = () => {
 						className='form-label me-2'
 						style={inputstyle}
 					>
-						Student Branch:
+						Guide Email:
 					</label>
 					<select className='form-select' id={`AddStudentBranch`}>
 						{branch.map((opt) => {
@@ -85,21 +85,6 @@ const AddStdManually = () => {
 						})}
 					</select>
 				</div>
-				<div className='mb-3 d-flex'>
-					<label
-						htmlFor={`AddStudentBatch`}
-						className='form-label me-2'
-						style={inputstyle}
-					>
-						Student Batch:
-					</label>
-					<select className='form-select' id={`AddStudentBatch`}>
-						{batch.map((opt) => {
-							return <option value={opt}>{opt}</option>;
-						})}
-					</select>
-				</div>
-
 				<div className='d-flex justify-content-center col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing '>
 					<input
 						type='submit'
@@ -132,4 +117,4 @@ const AddStdManually = () => {
 	);
 };
 
-export default AddStdManually;
+export default AddGuidesManually;

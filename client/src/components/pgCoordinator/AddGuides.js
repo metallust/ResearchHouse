@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import AddStdManually from "./AddStdManually";
-import AddStdFile from "./AddStdFile";
+// import AddStdManually from "./AddStdManually";
+// import AddStdFile from "./AddStdFile";
+import AddGuidesManually from "./AddGuideManually";
+import AddGuideFile from "./AddGuideFile";
 
-const AddStudent = () => {
+const AddGuides = () => {
 	const [tab, setTab] = useState(0);
 	const handleSave = () => {};
 	return (
@@ -27,7 +29,7 @@ const AddStudent = () => {
 						marginTop: "20px",
 					}}
 				>
-					Add New Student/s
+					Add New Guides/s
 				</div>
 				<div
 					className='nav nav-tabs static'
@@ -84,7 +86,7 @@ const AddStudent = () => {
 					className='container mt-3'
 					style={{ height: "90%", overflowX: "scroll" }}
 				>
-					{tab === 0 ? <AddStdManually /> : <AddStdFile />}
+					{tab === 0 ? <AddGuidesManually /> : <AddGuideFile />}
 				</div>
 				<div
 					className='container d-flex justify-content-center '
@@ -113,4 +115,4 @@ const AddStudent = () => {
 	);
 };
 
-export default AddStudent;
+export default AddGuides;

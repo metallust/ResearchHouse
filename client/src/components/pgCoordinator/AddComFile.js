@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import XLSX from "xlsx";
 import Table from "../Table";
 
-const AddStdFile = () => {
+const AddComFile = () => {
 	const [fileContent, setFileContent] = useState([]);
 	const headers = ["#", "PRN", "Email", "Branch", "Batch"];
 	const handleFileSelect = (event) => {
@@ -112,4 +112,4 @@ const AddStdFile = () => {
 	);
 };
 
-export default AddStdFile;
+export default AddComFile;

@@ -17,6 +17,8 @@ import AddStudent from "./components/pgCoordinator/AddStudent";
 import PgCoordinatorDashboard from "./components/pgCoordinator/Index";
 
 import Editor from "./components/TimelineEditor/Index";
+import GuideDashboard from "./components/guide/GuideDashboard";
+import StudentSetup from "./components/student/StudentSetup";
 
 import Textfield from "./videoCall/Init";
 import Room from "./videoCall/Room";
@@ -36,6 +38,7 @@ function App() {
 				<Route path='/Home' element={<Dashboard />} />
 				<Route path='/test' element={<Main />} />
 				<Route path='/test2' element={<Flow />} />
+				<Route path='/studentsetup' element={<StudentSetup />} />
 
 				<Route path='/editor' element={<Editor />} />
 				<Route
@@ -57,8 +60,27 @@ function App() {
 					}
 				/>
 				<Route path='/color' element={<Colors />} />
-				<Route exact path='/studentdashboard' element={<StudentDashboard />}>
-					<Route exact path='/studentdashboard/myprogress' element={<Colors />} />
+				<Route
+					exact
+					path='/studentdashboard'
+					element={<StudentDashboard />}
+				>
+					<Route
+						exact
+						path='/studentdashboard/myprogress'
+						element={<Colors />}
+					/>
+				</Route>
+				<Route
+					exact
+					path='/guidedashboard'
+					element={<GuideDashboard />}
+				>
+					<Route
+						exact
+						path='/guidedashboard/myprogress'
+						element={<Colors />}
+					/>
 				</Route>
 				<Route exact path='/pg' element={<PgCoordinatorDashboard />}>
 					{/* <Route

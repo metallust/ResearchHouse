@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Buttonbox from "./Buttonbox";
+// import Buttonbox from "./Buttonbox";
 
-const PgCoordinatorSidebar = () => {
+const GuideSidebar = () => {
 	const branch = "Computer Science";
 	const batch = "2022-2023";
 	const schedule = "Presentation";
@@ -178,4 +178,4 @@ const PgCoordinatorSidebar = () => {
 	);
 };
 
-export default PgCoordinatorSidebar;
+export default GuideSidebar;
