@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import SocketContext from "../Context/socket/SocketContext";
+import SocketContext from "../Context/Socket/SocketContext";
 
 const LobbyScreen = () => {
 	const [email, setEmail] = useState("");

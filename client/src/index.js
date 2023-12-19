@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ThemeState from "./Context/ThemeState";
 import GuideAllotmentState from "./Context/GuideAllotmentState";
-import SocketState from "./Context/socket/SocketState";
+import SocketState from "./Context/Socket/SocketState";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
