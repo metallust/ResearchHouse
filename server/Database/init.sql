@@ -1,6 +1,8 @@
+CREATE DATABASE researchhouse;
+Use researchhouse;
+
 -- Create Collage
 CREATE TABLE college (
-    college_id VARCHAR(50) PRIMARY KEY,
     aishe_code VARCHAR(50) PRIMARY KEY,
     -- college_name VARCHAR(50) REFERENCES your_college_name_table(college_name),
     college_name VARCHAR(50),
@@ -12,8 +14,6 @@ CREATE TABLE college (
     iic_code VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-
 
 
 -- Create PG coordinator table
