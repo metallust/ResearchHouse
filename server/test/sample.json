@@ -1,0 +1,308 @@
+{
+	"sources": [
+		{
+			"url": "https://en.wikipedia.org/wiki/Franz_Kafka",
+			"scholarResult": false,
+			"title": "Franz Kafka",
+			"matches": [
+				{
+					"inputStart": 0,
+					"inputEnd": 193,
+					"matchText": "Kafka was born into a middle-class German-speaking Czech Jewish family in Prague, the capital of the Kingdom of Bohemia , then part of the Austro-Hungarian Empire (today the capital of the Czech",
+					"context": {
+						"before": "cted in his writing. [6] ",
+						"after": " Republic). [7] He trained"
+					},
+					"score": 22.05
+				},
+				{
+					"inputStart": 211,
+					"inputEnd": 656,
+					"matchText": "trained as a lawyer, and after completing his legal education was employed full-time by an insurance company, forcing him to relegate writing to his spare time. Over the course of his life, Kafka wrote hundreds of letters to family and close friends, including his father, with whom he had a strained and formal relationship. He became engaged to several women but never married. He died in obscurity in 1924 at the age of 40 from tuberculosis",
+					"context": {
+						"before": "he Czech Republic). [7] He ",
+						"after": ". Kafka was a prolific writ"
+					},
+					"score": 64.01612903225806
+				},
+				{
+					"inputStart": 425,
+					"inputEnd": 442,
+					"matchText": "Letter to His Father Letters to Felice Letters to Ottla Letters to Milena Letters to Family,",
+					"context": {
+						"before": "Letters and essays ",
+						"after": " Friends, and Editors Th"
+					},
+					"score": 0
+				}
+			]
+		},
+		{
+			"url": "https://geniuses.club/genius/franz-kafka",
+			"scholarResult": false,
+			"title": "Franz Kafka - Geniuses",
+			"matches": [
+				{
+					"inputStart": 211,
+					"inputEnd": 355,
+					"matchText": "trained as a lawyer and after completing his legal education was employed full-time by an insurance company, forcing him to relegate writing to",
+					"context": {},
+					"score": 20
+				}
+			]
+		},
+		{
+			"url": "https://catalog.washoecountylibrary.us/Author/Home/?author=%22Kafka%2C+Franz%22",
+			"scholarResult": false,
+			"title": "Franz Kafka",
+			"matches": [
+				{
+					"inputStart": 211,
+					"inputEnd": 355,
+					"matchText": "trained as a lawyer, and after completing his legal education was employed full-time by an insurance company, forcing him to relegate writing to",
+					"context": {},
+					"score": 20
+				}
+			]
+		},
+		{
+			"url": "https://quizlet.com/in/612811000/franz-kafka-flash-cards/",
+			"scholarResult": false,
+			"title": "Franz Kafka Flashcards",
+			"matches": [
+				{
+					"inputStart": 211,
+					"inputEnd": 355,
+					"matchText": "trained as a lawyer and after completing his legal education was employed full-time by an insurance company, forcing him to relegate writing to",
+					"context": {},
+					"score": 20
+				}
+			]
+		},
+		{
+			"url": "https://biblio.unq.edu.ar/Author/Home?author=Kafka%2C+Franz.",
+			"scholarResult": false,
+			"title": "Franz Kafka",
+			"matches": [
+				{
+					"inputStart": 211,
+					"inputEnd": 355,
+					"matchText": "trained as a lawyer, and after completing his legal education was employed full-time by an insurance company, forcing him to relegate writing to",
+					"context": {},
+					"score": 20
+				}
+			]
+		},
+		{
+			"url": "https://kids.kiddle.co/Franz_Kafka",
+			"scholarResult": false,
+			"title": "Franz Kafka Facts for Kids",
+			"matches": [
+				{
+					"inputStart": 211,
+					"inputEnd": 352,
+					"matchText": "trained as a lawyer and after completing his legal education was employed full-time by an insurance company, forcing him to relegate writing...",
+					"context": {},
+					"score": 19
+				}
+			]
+		},
+		{
+			"url": "https://www.waymarking.com/waymarks/WM1645Z_Statue_of_Franz_Kafka_Prague_Czech_Republic",
+			"scholarResult": false,
+			"title": "Statue of Franz Kafka - Prague, Czech Republic",
+			"matches": [
+				{
+					"inputStart": 0,
+					"inputEnd": 73,
+					"matchText": "Kafka was born into a middle-class German-speaking Czech Jewish family in",
+					"context": {
+						"after": "... [7] He trained as a lawye"
+					},
+					"score": 11.11111111111111
+				},
+				{
+					"inputStart": 211,
+					"inputEnd": 276,
+					"matchText": "trained as a lawyer and after completing his legal education was...",
+					"context": {
+						"before": "h Jewish family in... [7] He "
+					},
+					"score": 8
+				}
+			]
+		},
+		{
+			"url": "https://catalog.oslri.net/Author/Home?author=%22Kafka%2C+Franz%22&basicSearchType=Author&filter[]=authorStr%3A%22Kuper%2C+Peter%22&sort=callnumber_sort&view=list",
+			"scholarResult": false,
+			"title": "Franz Kafka - Ocean State Libraries Catalog",
+			"matches": [
+				{
+					"inputStart": 286,
+					"inputEnd": 376,
+					"matchText": "full-time by an insurance company, forcing him to relegate writing to his spare time. Over",
+					"context": {
+						"after": " the course of his life, Kafka"
+					},
+					"score": 12
+				},
+				{
+					"inputStart": 395,
+					"inputEnd": 442,
+					"matchText": "life, Kafka wrote hundreds of letters to family...",
+					"context": {
+						"before": "time. Over the course of his "
+					},
+					"score": 5
+				}
+			]
+		},
+		{
+			"url": "https://www.wattpad.com/1209923442-weekly-classics-discussions-franz-kafka",
+			"scholarResult": false,
+			"title": "Weekly Classics Discussions - Franz Kafka",
+			"matches": [
+				{
+					"inputStart": 286,
+					"inputEnd": 376,
+					"matchText": "full-time by an insurance company, forcing him to relegate writing to his spare time. Over",
+					"context": {
+						"after": " the course of his life, Kafka"
+					},
+					"score": 12
+				},
+				{
+					"inputStart": 395,
+					"inputEnd": 442,
+					"matchText": "life, Kafka wrote hundreds of letters to family...",
+					"context": {
+						"before": "time. Over the course of his "
+					},
+					"score": 5
+				}
+			]
+		},
+		{
+			"url": "https://www.bookbeat.com/it/libro/the-metamorphosis-292830",
+			"scholarResult": false,
+			"title": "The Metamorphosis - Franz Kafka - E-book - BookBeat",
+			"matches": [
+				{
+					"inputStart": 286,
+					"inputEnd": 376,
+					"matchText": "full-time by an insurance company, forcing him to relegate writing to his spare time. Over",
+					"context": {
+						"after": " the course of his life, Kafka"
+					},
+					"score": 12
+				},
+				{
+					"inputStart": 395,
+					"inputEnd": 442,
+					"matchText": "life, Kafka wrote hundreds of letters to family...",
+					"context": {
+						"before": "time. Over the course of his "
+					},
+					"score": 5
+				}
+			]
+		},
+		{
+			"url": "https://libcat.simmons.edu/Author/Home?author=Kafka%2C+Franz%2C+1883-1924%2C",
+			"scholarResult": false,
+			"title": "Author Search Results - Library Catalog - Simmons University",
+			"matches": [
+				{
+					"inputStart": 503,
+					"inputEnd": 622,
+					"matchText": "strained and formal relationship. He became engaged to several women but never married. He died in obscurity in 1924 at",
+					"context": {
+						"after": " the age of 40 from tuberculos"
+					},
+					"score": 14.0625
+				}
+			]
+		},
+		{
+			"url": "https://search.library.wisc.edu/catalog/9912432261202121",
+			"scholarResult": false,
+			"title": "Franz Kafka in context - Catalog - UW-Madison Libraries",
+			"matches": [
+				{
+					"inputStart": 540,
+					"inputEnd": 622,
+					"matchText": "became engaged to several women but never married. He died in obscurity in 1924 at",
+					"context": {
+						"after": " the age of 40 from tuberculos"
+					},
+					"score": 12
+				}
+			]
+		},
+		{
+			"url": "https://catalog.sbplibrary.org/Author/Home?author=%22Kafka%2C+Franz%22&basicSearchType=Author&filter[]=local_time_since_added_santabarbara%3A%222+Months%22&sort=title&view=list",
+			"scholarResult": false,
+			"title": "Franz Kafka",
+			"matches": [
+				{
+					"inputStart": 540,
+					"inputEnd": 622,
+					"matchText": "became engaged to several women but never married. He died in obscurity in 1924 at",
+					"context": {
+						"after": " the age of 40 from tuberculos"
+					},
+					"score": 12
+				}
+			]
+		},
+		{
+			"url": "https://pantheon.world/profile/occupation/writer/country/austria",
+			"scholarResult": false,
+			"title": "Greatest Austrian Writers | Famous Writers from Austria",
+			"matches": [
+				{
+					"inputStart": 540,
+					"inputEnd": 622,
+					"matchText": "became engaged to several women but never married. He died in obscurity in 1924 at",
+					"context": {
+						"after": " the age of 40 from tuberculos"
+					},
+					"score": 12
+				}
+			]
+		},
+		{
+			"url": "http://www.kafka.org/index.php?biography",
+			"scholarResult": false,
+			"title": "Biography | Kafka's Life (1883-1924)",
+			"matches": [
+				{
+					"inputStart": 0,
+					"inputEnd": 81,
+					"matchText": "Kafka was born into a middle-class, German-speaking Jewish family in Prague,",
+					"context": {
+						"after": " the capital of Bohemia, a kin"
+					},
+					"score": 8.1
+				}
+			]
+		},
+		{
+			"url": "https://znhsh.casagrandefontao.com/us10/kafka+doll+story",
+			"scholarResult": false,
+			"title": "kafka doll story | Kafka and the Doll",
+			"matches": [
+				{
+					"inputStart": 0,
+					"inputEnd": 81,
+					"matchText": "Kafka was born into a middle-class German-speaking Czech Jewish family in Prague,",
+					"context": {
+						"after": " the capital of the Kingdom of"
+					},
+					"score": 12.1
+				}
+			]
+		}
+	],
+	"percentPlagiarism": 97
+}

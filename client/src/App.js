@@ -22,8 +22,6 @@ function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
 	console.log(theme);
 
-	const modalref = useRef(null);
-
 	return (
 		<BrowserRouter>
 			<Routes>
@@ -36,23 +34,7 @@ function App() {
 				<Route path='/test' element={<Main />} />
 				<Route path='/test2' element={<Flow />} />
 
-				<Route
-					path='/editor'
-					element={
-						<>
-							<button
-								type='button'
-								className='btn btn-primary'
-								onClick={() => {
-									modalref.current.click();
-								}}
-							>
-								Open Timeline Editor
-							</button>
-							<Editor reference={modalref} />
-						</>
-					}
-				/>
+				<Route path='/editor' element={<Editor />} />
 				<Route
 					path='/todo'
 					element={

@@ -8,7 +8,9 @@ function Node({ position, name, due, removenode }) {
 
 	return (
 		<div style={{ position: "relative" }}>
-			<div className='node' onClick={handleClick}></div>
+			<div className='node' onClick={handleClick}>
+				<p>-</p>
+			</div>
 			<div style={{ position: "absolute" }}>
 				<div className='node-title'>{name}</div>
 				<div className='node-subtitle'>{due}</div>

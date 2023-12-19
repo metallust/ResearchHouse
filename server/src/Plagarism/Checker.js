@@ -27,4 +27,4 @@ const plagiarismCheck = (text) => {
 	}
 };
 
-module.exports = plagiarismCheck;
+export default plagiarismCheck;
