@@ -80,10 +80,7 @@ const AddStudent = () => {
 						</div>
 					</div>
 				</div>
-				<div
-					className='container mt-3'
-					style={{ height: "90%", overflowX: "scroll" }}
-				>
+				<div className='container mt-3' style={{ height: "90%", overflowX: "scroll" }}>
 					{tab === 0 ? <AddStdManually /> : <AddStdFile />}
 				</div>
 				<div
@@ -93,7 +90,7 @@ const AddStudent = () => {
 					}}
 				>
 					<div
-						className='btn btn'
+						className='btn'
 						style={{
 							fontFamily: "Roboto, sans-serif",
 							textAlign: "center",

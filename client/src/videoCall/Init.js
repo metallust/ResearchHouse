@@ -1,10 +1,12 @@
 import React, { useState, useCallback, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import SocketContext from "../Context/Socket/SocketContext";
+import ReactPlayer from "react-player";
 
 const LobbyScreen = () => {
 	const [email, setEmail] = useState("");
 	const [room, setRoom] = useState("");
+	const [stream, setStream] = useState();
 	const socket = useContext(SocketContext);
 
 	const navigate = useNavigate();
@@ -25,8 +27,18 @@ const LobbyScreen = () => {
 		[navigate]
 	);
 
+	const getstream = useCallback(async () => {
+		const stream = await navigator.mediaDevices.getUserMedia({
+			audio: true,
+			video: true,
+		});
+		setStream(stream);
+	}, []);
+
 	useEffect(() => {
 		socket.on("room:join", handleJoinRoom);
+		getstream();
+
 		return () => {
 			socket.off("room:join", handleJoinRoom);
 		};
@@ -46,30 +58,28 @@ const LobbyScreen = () => {
 			>
 				Ready To Connect
 			</p>
+			<div
+				style={{
+					width: "70%",
+					maxWidth: "500px",
+					height: "350px",
+					backgroundColor: " black",
+					borderRadius: "10px",
+					boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+					overflow: "hidden",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+				}}
+			>
+				<ReactPlayer playing={false} muted url={stream} />
+			</div>
 			<form onSubmit={handleSubmitForm}>
-				<div
-					style={{
-						width: "500px",
-						height: "350px",
-						backgroundColor: " black",
-						borderRadius: "10px",
-					}}
-				></div>
 				<label htmlFor='email'>Email ID</label>
-				<input
-					type='email'
-					id='email'
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-				/>
+				<input type='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
 				<br />
 				<label htmlFor='room'>Room Number</label>
-				<input
-					type='text'
-					id='room'
-					value={room}
-					onChange={(e) => setRoom(e.target.value)}
-				/>
+				<input type='text' id='room' value={room} onChange={(e) => setRoom(e.target.value)} />
 				<br />
 				<div className='d-flex justify-content-center'>
 					<input
@@ -89,8 +99,7 @@ const LobbyScreen = () => {
 							color: "#fff",
 							fontSize: "24px",
 							fontWeight: "600",
-							boxShadow:
-								"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+							boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
 							fontFamily: "Roboto, sans-serif",
 							marginBottom: "20px",
 						}}
