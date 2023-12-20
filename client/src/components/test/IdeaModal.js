@@ -44,9 +44,9 @@ const IdeaModal = () => {
 			setResultText("Please enter a question.");
 		}
 
-		var summaries = await fetch("http://localhost:5000/fetchsummaries")
-
-		var similar = [];
+		let summaries = await fetch("http://localhost:5000/fetchsummaries")
+		console.log(summaries.data);
+		let similar = [];
 		for (let i = 0; i < summaries.length; i++) {
 			let a = await fetch("http://localhost:5003/similarity", {
 				method: "post",
