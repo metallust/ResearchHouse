@@ -2,9 +2,9 @@ import React from "react";
 import { Chart } from "react-google-charts";
 
 export const data = [
-	["Language", "Speakers (in millions)"],
-	["Assamese", 13],
-	["Bengali", 83],
+	["Following Deadlines", "Students (in count)"],
+	["Trailing", 13],
+	["Within Timeline", 83],
 ];
 
 export const options = {
