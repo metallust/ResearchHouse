@@ -50,7 +50,7 @@ function Index(props) {
 			<div style={sidebar}>
 				<div className='d-flex'>
 					<Sidebar />
-					<Outlet />
+					{/* <Outlet /> */}
 				</div>
 			</div>
 			<div style={content}>
