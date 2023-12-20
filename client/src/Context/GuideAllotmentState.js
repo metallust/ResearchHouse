@@ -6,7 +6,24 @@ const GuideAllotmentState = (props) => {
     const selection = ["selection", 0];
     const domainConfirm = ["confirm", 1];
     const allotment = ["allotment", 2];
-    const [domain, setDomain] = useState(["Select Domain", "a", "b", "c", "d", "e", "f", "g"]);
+    const [domain, setDomain] = useState(["Select Domain",
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Data Science",
+        "Cybersecurity",
+        "Cloud Computing",
+        "Natural Language Processing",
+        "Computer Vision",
+        "Internet of Things (IoT)",
+        "Big Data",
+        "Blockchain Technology",
+        "Human-Computer Interaction",
+        "Software Engineering",
+        "Mobile Application Development",
+        "Game Development",
+        "Computer Graphics",
+        "Bioinformatics",
+      ]);
     const [progress, setProgress] = useState(selection);
     var [selectedDomain, setSelectedDomain] = useState([])
 

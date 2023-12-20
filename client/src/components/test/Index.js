@@ -8,6 +8,7 @@ import Conversation from "./Conversation/Index";
 import Rightbar from "./Rightbar";
 
 function Files() {
+
 	return (
 		<div className='my-4'>
 			<File />
@@ -18,6 +19,12 @@ function Files() {
 }
 
 function Index(props) {
+	const handleUpload = () => {
+		const file = document.getElementById('report').value
+		console.log(file);
+		
+		document.getElementById('fileModal').close();
+	};
 	const name = "Basit";
 	const section = "section";
 	const [tab, setTab] = useState(0);
@@ -74,7 +81,7 @@ function Index(props) {
 				<div className='px-4'>
 					<div className='flex-grow-1 d-flex justify-content-between'>
 						<h3 className='fw-bold'>Submission : </h3>
-						<button type='button' class='btn btn-primary' style={{ background: "#004256" }}>
+						<button type='button' onClick={() => document.getElementById('fileModal').showModal()} class='btn btn-primary' style={{ background: "#004256" }}>
 							+ New Submission
 						</button>
 					</div>
@@ -112,6 +119,11 @@ function Index(props) {
 			<div className='rightbar'>
 				<Rightbar />
 			</div>
+			<dialog id="fileModal">
+				<input type="file" accept=".pdf" name="report" id="report" />
+				<div className="btn" onClick={handleUpload}>Upload</div>
+				<div className="btn" onClick={() => document.getElementById('fileModal').close()}>Close</div>
+			</dialog>
 		</div>
 	);
 }

@@ -3,17 +3,23 @@ import Timeline from "../Timeline/Index";
 import Selection from "./Selection";
 import DomainConfirm from "./DomainConfirm";
 import GuideAllotmentContext from "../../Context/GuideAllotmentContext";
-
+import { useState } from "react";
+import { useNavigate } from "react-router";
 const DomainSelection = () => {
+	const [final, setFinal] = useState("Waiting for pg coordinator to allocate a guide")
 	const context = useContext(GuideAllotmentContext)
 	let progressContent;
+	const navigate = useNavigate();
+	const handleProceed = ()=>{
+		navigate("/studentdashboard")
+	};
 
 	if (context.progress[0] === "selection") {
 		progressContent = <Selection />;
 	} else if (context.progress[0] === "confirm") {
 		progressContent = <DomainConfirm />;
 	} else {
-		progressContent = <b style={{ fontSize: "25px" }}>Waiting for pg coordinator to allocate a guide</b>;
+		progressContent = <b style={{ fontSize: "25px" }}>{final}</b>;
 	}
 
 	// const dropdown = {
@@ -57,9 +63,13 @@ const DomainSelection = () => {
 				<div className="container" style={{ padding: "0 17%", marginTop: "10%" }}>
 					{progressContent}
 				</div>
+				{
+					(final !== "Waiting for pg coordinator to allocate a guide") ? <div className="btn btn-dark" onClick={()=>{navigate("/test")}}>Proceed</div> : ""
+				}
 
 
 			</div>
+			<div className="btn" style={{ color: "lightgrey" }} onClick={() => setFinal("You have been assigned to Mr. A. R. Chinchawade Sir")}>H</div>
 
 
 

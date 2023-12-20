@@ -56,38 +56,31 @@ router.post(
 router.post(
 	"/login",
 
-	// express validator check if the info in the request is valid
-	[body("email", "not a valid email").isEmail(), body("password", "password can't be blank").exists()],
+	
 
 	async (req, res) => {
 		// returning invalid info if any
-		const errors = validationResult(req);
-		if (!errors.isEmpty()) return res.status(400).json(new Response(400, "Invalid inputs", errors.array()));
+	const { email, password } = req.body;
 
-		try {
-			// fetching the user
-			// TODO: ADD query to fetch the user
-			let user = [];
-			if (!user) return res.status(400).json(new Response(400, "Please try login with correct credentials", null));
+	try {
+		// fetching the user
+		// TODO: ADD query to fetch the user
+		let user = await pool.query("SELECT * FROM student WHERE email = ?", [email]);
+		if (!user[0].length) return res.status(400).json(new Response(400, "Please try login with correct credentials", null));
 
-			// checking if the password is correct
-			const bcryptjscompare = await bcryptjs.compare(req.body.password, user.password);
-			if (!bcryptjscompare) return res.status(400).json(new Response(400, "Please try login with correct credentials", null));
-
-			// creating a authtoken using jsonwebtoken
-			const data = {
-				user: user.id,
-				type: "student",
-			};
-			const authtoken = jwt.sign(data, JWT_SECREAT);
-			res.status(200).json(new Response(200, "student logged in", { authtoken }));
-
-			logger.info("student logged in");
-		} catch (error) {
-			logger.error(error);
-			res.status(500).json(new Response(500, "Internal server error", error.message));
-		}
+		// checking if the password is correct
+		// creating a authtoken using jsonwebtoken
+		const data = {
+			token: email,
+			type: "student",
+		};
+		res.status(200).json(new Response(200, "student logged in", data));
+		logger.info("coordinator logged in");
+	} catch (error) {
+		logger.error(error);
+		res.status(500).json(new Response(500, "Internal server error", error.message));
 	}
+}
 );
 
 // Route 3: give user data to authenicated users
