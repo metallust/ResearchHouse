@@ -20,11 +20,13 @@ function Files() {
 
 function Index(props) {
 	const handleUpload = () => {
-		const file = document.getElementById('report').value
-		console.log(file);
-		
+		// const file = document.getElementById('report').value
+		// console.log(file);
+
 		document.getElementById('fileModal').close();
 	};
+
+
 	const name = "Basit";
 	const section = "section";
 	const [tab, setTab] = useState(0);
@@ -120,8 +122,10 @@ function Index(props) {
 				<Rightbar />
 			</div>
 			<dialog id="fileModal">
-				<input type="file" accept=".pdf" name="report" id="report" />
-				<div className="btn" onClick={handleUpload}>Upload</div>
+				<form action="http://localhost:5000/upload" method="post" enctype="multipart/form-data">
+					<input type="file" name="file" /><input type="submit" value="Upload" />
+				</form>
+
 				<div className="btn" onClick={() => document.getElementById('fileModal').close()}>Close</div>
 			</dialog>
 		</div>

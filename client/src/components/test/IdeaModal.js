@@ -37,12 +37,28 @@ const IdeaModal = () => {
 		setInputText(e.target.value);
 	};
 
-	const handleSubmit = () => {
+	const handleSubmit = async () => {
 		if (inputText.trim() !== "") {
 			setResultText(`Question :"${inputText}". answer : ...`);
 		} else {
 			setResultText("Please enter a question.");
 		}
+
+		var summaries = await fetch("http://localhost:5000/fetchsummaries")
+
+		var similar = [];
+		for (let i = 0; i < summaries.length; i++) {
+			let a = await fetch("http://localhost:5003/similarity", {
+				method: "post",
+				header: { "Content-Type": "application/json" },
+				body: {
+					message: `${document.getElementById('idea').value}`,
+					summary: `${summaries[i]}`
+				}
+			})
+			similar.push(a);
+		}
+		console.log(similar)
 	};
 
 	const openModal = () => {
