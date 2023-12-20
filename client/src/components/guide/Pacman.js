@@ -2,37 +2,31 @@ import React from "react";
 import { Chart } from "react-google-charts";
 
 export const data = [
-	[
-		"Done Within Deadline",
-		"Not Done Within Deadline",
-		{ role: "style" },
-		{
-			sourceColumn: 0,
-			role: "annotation",
-			type: "string",
-			calc: "stringify",
-		},
-	],
-	["Done Within", 6, "#b87333", null],
-	["Not Done Within Deadline", 4, "silver", null],
+	["Following Deadlines", "Students (in count)"],
+	["Trailing", 13],
+	["Within Timeline", 83],
 ];
 
 export const options = {
-	// title: "Density of Precious Metals, in g/cm^3",
-	width: 120,
-	height: 130,
-	bar: { groupWidth: "95%" },
-	legend: { position: "none" },
+	title: "Domains Choosen By Student",
+	legend: "none",
+	pieSliceText: "label",
+	slices: {
+		4: { offset: 0.2 },
+		12: { offset: 0.3 },
+		14: { offset: 0.4 },
+		15: { offset: 0.5 },
+	},
 };
 
 function Pacman() {
 	return (
 		<Chart
-			chartType='BarChart'
-			width='40px'
-			height='40px'
+			chartType='PieChart'
 			data={data}
 			options={options}
+			width={"100%"}
+			height={"100px"}
 		/>
 	);
 }
