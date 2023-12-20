@@ -8,6 +8,7 @@ import AddGuides from "./AddGuides";
 import AddCom from "./AddCom";
 
 import Timeline from "../test/Timeline";
+import PgAnalytics from "./PgAnalytics";
 
 function Index(props) {
 	const navigate = useNavigate();
@@ -49,7 +50,7 @@ function Index(props) {
 			<div style={sidebar}>
 				<div className='d-flex'>
 					<Sidebar />
-					<Outlet />
+					{/* <Outlet /> */}
 				</div>
 			</div>
 			<div style={content}>
@@ -80,7 +81,7 @@ function Index(props) {
 					]}
 				/>
 				<div style={{}}>
-					<AddStudent />
+					<PgAnalytics />
 				</div>
 				<Outlet />
 			</div>

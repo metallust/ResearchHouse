@@ -71,7 +71,7 @@ function Rightbar() {
 				style={{
 					backgroundColor: "#E1F8FF",
 					maxWidth: "130px",
-					height: "80vh",
+					height: "85vh",
 					borderRadius: "10px",
 					border: "none",
 					padding: "10px",

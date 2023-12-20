@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
-const GuideSidebar = () => {
+const PgCoordinatorSidebar = () => {
 	const card = {
 		height: "150px",
 		width: "100%",
 		maxWidth: "300px",
 		backgroundColor: "#E1F8FF",
-		borderRadius: "10px",
-		padding: "0px 10px ",
+		borderRadius: "6px",
+		padding: "0 10px ",
 		margin: "10px 10px 10px 10px",
 		boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
 		position: "relative",
@@ -22,8 +21,7 @@ const GuideSidebar = () => {
 		left: "0",
 		position: "absolute",
 		width: "100%",
-		padding: "5px 20px",
-		backgroundColor: "#e1f8ff",
+		padding: "15px",
 	};
 
 	const body = {
@@ -45,7 +43,7 @@ const GuideSidebar = () => {
 
 	const departments = [
 		"Computer Science",
-		"IT",
+		"Information Technology",
 		"Mechanical Engg",
 		"Civil Engineering",
 		"Artificial Intelligence",
@@ -57,11 +55,13 @@ const GuideSidebar = () => {
 	return (
 		<div className='container d-flex flex-column align-items-center'>
 			<div
-				className='logo h3'
+				className='logo'
 				style={{
+					fontSize: "28px",
 					fontWeight: "700",
 					color: "#004257",
-					marginBottom: "20px",
+					fontFamily: "Roboto, sans-serif",
+					marginBottom: "5px",
 					marginTop: "20px",
 				}}
 			>
@@ -70,18 +70,7 @@ const GuideSidebar = () => {
 
 			<div
 				className='d-flex flex-column justify-content-center'
-				style={{
-					height: "120px",
-					width: "100%",
-					maxWidth: "300px",
-					backgroundColor: "#E1F8FF",
-					borderRadius: "10px",
-					padding: "0px 10px ",
-					margin: "10px 10px 10px 10px",
-					boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
-					position: "relative",
-					overflow: "hidden",
-				}}
+				style={card}
 			>
 				<div className='text-center fw-bold'>
 					Computer Science
@@ -96,15 +85,14 @@ const GuideSidebar = () => {
 
 			<div style={card}>
 				<div style={title}>Departments</div>
+				<div style={{ height: "40px" }}></div>
 				<div style={body}>
-					<div style={{ height: "30px" }}></div>
-
-					<ul className='list-group'>
+					<ul className='list-group px-2'>
 						{departments.map((dept, index) => {
 							return (
 								<div
 									key={dept}
-									className='d-flex justify-content-between mb-1 px-1 rounded'
+									className='d-flex justify-content-between my-1 p-2 rounded'
 									style={{
 										backgroundColor:
 											activeDepartment === index
@@ -114,7 +102,6 @@ const GuideSidebar = () => {
 											activeDepartment === index
 												? "white"
 												: "",
-										wordWrap: "nowrap",
 									}}
 									onClick={() => handleDepartmentClick(index)}
 									type='button'
@@ -127,29 +114,16 @@ const GuideSidebar = () => {
 				</div>
 			</div>
 
-			<div
-				style={{
-					height: "110px",
-					width: "100%",
-					maxWidth: "300px",
-					backgroundColor: "#E1F8FF",
-					borderRadius: "10px",
-					padding: "0px 10px ",
-					margin: "10px 10px 10px 10px",
-					boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
-					position: "relative",
-					overflow: "hidden",
-				}}
-			>
+			<div style={card}>
 				<div style={title}>Batches</div>
-				<div style={{ body }}>
-					<div style={{ height: "30px" }}></div>
-					<ul className='list-group'>
+				<div style={{ height: "40px" }}></div>
+				<div style={body}>
+					<ul className='list-group px-2'>
 						{batches.map((batch, index) => {
 							return (
 								<div
 									key={batch}
-									className='d-flex justify-content-between mb-1 p-1 rounded'
+									className='d-flex justify-content-between my-1 p-2 rounded'
 									style={{
 										backgroundColor:
 											activeBatch === index
@@ -174,4 +148,4 @@ const GuideSidebar = () => {
 	);
 };
 
-export default GuideSidebar;
+export default PgCoordinatorSidebar;

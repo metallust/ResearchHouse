@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Pie } from "./Pie";
 import Pacman from "./Pacman";
 
-const GuideAnalytics = () => {
+const PgAnalytics = () => {
 	const [tab, setTab] = useState(0);
 	const handleSave = () => {};
 
@@ -72,4 +72,4 @@ const GuideAnalytics = () => {
 	);
 };
 
-export default GuideAnalytics;
+export default PgAnalytics;

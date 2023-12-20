@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const PgCoordinatorSidebar = () => {
 	const card = {
@@ -147,6 +148,12 @@ const PgCoordinatorSidebar = () => {
 						})}
 					</ul>
 				</div>
+			</div>
+			<div className="d-flex flex-column" >
+				<Link style={{backgroundColor:"#004257",color:"white"}} className="btn mb-2" to={"/addstudent"}>Add Student</Link>
+				<Link style={{backgroundColor:"#004257",color:"white"}} className="btn mb-2" to={"/addguide"}>Add Guide</Link>
+				<Link style={{backgroundColor:"#004257",color:"white"}} className="btn mb-2" to={"/addcommittee"}>Add Committee</Link>
+				<Link style={{backgroundColor:"#004257",color:"white"}} className="btn mb-2" to={"/add timeline"}>Add Timeline</Link>
 			</div>
 		</div>
 	);
