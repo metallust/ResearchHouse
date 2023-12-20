@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const PgCoordinatorSidebar = () => {
+	const navigate = useNavigate();
+	const handleEditor = () => {
+		navigate("/editor");
+	};
 	const card = {
 		height: "150px",
 		width: "100%",
@@ -43,7 +47,14 @@ const PgCoordinatorSidebar = () => {
 		setActiveBatch(index);
 	};
 
-	const departments = ["Computer Science", "IT", "Mechanical Engg", "Civil Engineering", "Artificial Intelligence", "Data Science"];
+	const departments = [
+		"Computer Science",
+		"IT",
+		"Mechanical Engg",
+		"Civil Engineering",
+		"Artificial Intelligence",
+		"Data Science",
+	];
 
 	const batches = ["2022-23", "2021-22"];
 
@@ -57,7 +68,12 @@ const PgCoordinatorSidebar = () => {
 					marginTop: "20px",
 				}}
 			>
-				<Link to={"/pg"} style={{ color: "#004257", textDecoration: "none" }}>ResearchHouse</Link>
+				<Link
+					to={"/pg"}
+					style={{ color: "#004257", textDecoration: "none" }}
+				>
+					ResearchHouse
+				</Link>
 			</div>
 
 			<div
@@ -81,7 +97,9 @@ const PgCoordinatorSidebar = () => {
 					2022-2023
 					<div></div>
 				</div>
-				<p className='fw-semibold'>Upcoming: Presentation (05/12/2012)</p>
+				<p className='fw-semibold'>
+					Upcoming: Presentation (05/12/2012)
+				</p>
 			</div>
 
 			<div style={card}>
@@ -96,8 +114,14 @@ const PgCoordinatorSidebar = () => {
 									key={dept}
 									className='d-flex justify-content-between mb-1 px-1 rounded'
 									style={{
-										backgroundColor: activeDepartment === index ? "#004257" : "",
-										color: activeDepartment === index ? "white" : "",
+										backgroundColor:
+											activeDepartment === index
+												? "#004257"
+												: "",
+										color:
+											activeDepartment === index
+												? "white"
+												: "",
 										wordWrap: "nowrap",
 									}}
 									onClick={() => handleDepartmentClick(index)}
@@ -135,8 +159,14 @@ const PgCoordinatorSidebar = () => {
 									key={batch}
 									className='d-flex justify-content-between mb-1 p-1 rounded'
 									style={{
-										backgroundColor: activeBatch === index ? "#004257" : "",
-										color: activeBatch === index ? "white" : "",
+										backgroundColor:
+											activeBatch === index
+												? "#004257"
+												: "",
+										color:
+											activeBatch === index
+												? "white"
+												: "",
 									}}
 									onClick={() => handleBatchClick(index)}
 									type='button'
@@ -148,11 +178,35 @@ const PgCoordinatorSidebar = () => {
 					</ul>
 				</div>
 			</div>
-			<div className="d-flex flex-column" >
-				<Link style={{ backgroundColor: "#004257", color: "white" }} className="btn mb-2" to={"/pg/addstudent"}>Add Student</Link>
-				<Link style={{ backgroundColor: "#004257", color: "white" }} className="btn mb-2" to={"/pg/addguide"}>Add Guide</Link>
-				<Link style={{ backgroundColor: "#004257", color: "white" }} className="btn mb-2" to={"/pg/addcommittee"}>Add Committee</Link>
-				<Link style={{ backgroundColor: "#004257", color: "white" }} className="btn mb-2" to={"/pg/add timeline"}>Add Timeline</Link>
+			<div className='d-flex flex-column'>
+				<Link
+					style={{ backgroundColor: "#004257", color: "white" }}
+					className='btn mb-2'
+					to={"/pg/addstudent"}
+				>
+					Add Student
+				</Link>
+				<Link
+					style={{ backgroundColor: "#004257", color: "white" }}
+					className='btn mb-2'
+					to={"/pg/addguide"}
+				>
+					Add Guide
+				</Link>
+				<Link
+					style={{ backgroundColor: "#004257", color: "white" }}
+					className='btn mb-2'
+					to={"/pg/addcommittee"}
+				>
+					Add Committee
+				</Link>
+				<div
+					style={{ backgroundColor: "#004257", color: "white" }}
+					className='btn mb-2'
+					onClick={handleEditor}
+				>
+					Add Timeline
+				</div>
 			</div>
 		</div>
 	);

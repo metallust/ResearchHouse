@@ -31,7 +31,8 @@ import IdeaModal from "./components/test/IdeaModal";
 import Viewer from "./components/test/PDFviewer/Index";
 import PgAnalytics from "./components/pgCoordinator/PgAnalytics";
 import AddGuides from "./components/pgCoordinator/AddGuides";
-import Timeline from './components/test/Timeline'
+import Timeline from "./components/test/Timeline";
+import Index from "./components/TimelineEditor/Index";
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -53,6 +54,7 @@ function App() {
 				<Route path='/guidesetup' element={<GuideSetup />} />
 				<Route path='/committeesetup' element={<CommitteeSetup />} />
 				<Route path='/ideamodal' element={<IdeaModal />} />
+				<Route path='/pg' element={<PgCoordinatorDashboard />} />
 
 				<Route path='/editor' element={<Editor />} />
 				<Route
@@ -74,20 +76,43 @@ function App() {
 					}
 				/>
 				<Route path='/color' element={<Colors />} />
-				<Route exact path='/studentdashboard' element={<StudentDashboard />}>
-					<Route exact path='/studentdashboard/myprogress' element={<Colors />} />
+				<Route
+					exact
+					path='/studentdashboard'
+					element={<StudentDashboard />}
+				>
+					<Route
+						exact
+						path='/studentdashboard/myprogress'
+						element={<Colors />}
+					/>
 				</Route>
-				<Route exact path='/guidedashboard' element={<GuideDashboard />}>
-					<Route exact path='/guidedashboard/myprogress' element={<Colors />} />
+				<Route
+					exact
+					path='/guidedashboard'
+					element={<GuideDashboard />}
+				>
+					<Route
+						exact
+						path='/guidedashboard/myprogress'
+						element={<Colors />}
+					/>
 				</Route>
-				<Route exact path='/committeedashboard' element={<CommitteeDashboard />}></Route>
+				<Route
+					exact
+					path='/committeedashboard'
+					element={<CommitteeDashboard />}
+				></Route>
 				<Route exact path='/pg' element={<PgCoordinatorDashboard />}>
-					<Route exact path='/pg/addstudent' element={<AddStudent />} />
+					<Route
+						exact
+						path='/pg/addstudent'
+						element={<AddStudent />}
+					/>
 					<Route exact path='/pg' element={<PgAnalytics />} />
 					<Route exact path='/pg/addguide' element={<AddGuides />} />
-					<Route exact path='/pg/timeline' element={<Timeline />} />
-
 				</Route>
+				<Route exact path='/pg/editor' element={<Index />} />
 
 				{/* Route required from video call */}
 				<Route exact path='/videocall' element={<Textfield />} />

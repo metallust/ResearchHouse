@@ -103,8 +103,8 @@ function GuideDashboard(props) {
 						},
 					]}
 				/>
-				
-				<GuideAnalytics />
+
+				{/* <GuideSubmissionView /> */}
 				<Outlet />
 			</div>
 			<div style={rightbar}>
