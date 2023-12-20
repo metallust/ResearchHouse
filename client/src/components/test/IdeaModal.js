@@ -44,19 +44,24 @@ const IdeaModal = () => {
 			setResultText("Please enter a question.");
 		}
 
-		let summaries = await fetch("http://localhost:5000/fetchsummaries")
-		console.log(summaries.data);
+		let response = await fetch("http://localhost:5000/fetchsummaries")
+		let summaries = await response.json()
+		summaries = summaries.data
 		let similar = [];
 		for (let i = 0; i < summaries.length; i++) {
-			let a = await fetch("http://localhost:5003/similarity", {
-				method: "post",
-				header: { "Content-Type": "application/json" },
-				body: {
-					message: `${document.getElementById('idea').value}`,
-					summary: `${summaries[i]}`
-				}
+			let response = await fetch("http://localhost:5003/similarity", {
+				method: 'POST',
+				header: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					message: document.getElementById('idea').value,
+					summary: summaries[i],
+				})
 			})
-			similar.push(a);
+			const json = await response.json();
+			console.log(json);
+			similar.push(json);
 		}
 		console.log(similar)
 	};
