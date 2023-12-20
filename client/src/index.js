@@ -7,6 +7,7 @@ import ThemeState from "./Context/ThemeState";
 import GuideAllotmentState from "./Context/GuideAllotmentState";
 import SocketState from "./Context/Socket/SocketState";
 import CoordinatorState from "./Context/Coordinator/CoordinatorState";
+import StudentState from "./Context/Student/StudentState";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +16,9 @@ root.render(
 			<GuideAllotmentState>
 				<ThemeState>
 					<SocketState>
-						<App />
+						<StudentState>
+							<App />
+						</StudentState>
 					</SocketState>
 				</ThemeState>
 			</GuideAllotmentState>

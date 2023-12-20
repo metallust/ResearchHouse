@@ -1,9 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 const StudentSetup = () => {
+	const navigate = useNavigate();
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		navigate("/domain")
 		// Add logic for form submission here
+
 	};
 	const inputStyle = {
 		// width: "80%",
@@ -69,7 +73,6 @@ const StudentSetup = () => {
 										type='text'
 										id='studentname'
 										name='studentname'
-										value=''
 										className='form-control-login input_box'
 										style={{
 											width: "80%",
@@ -91,7 +94,7 @@ const StudentSetup = () => {
 									<input
 										placeholder='Mobile'
 										id='studentmobile'
-										type='password'
+										type='number'
 										name='studentmobile'
 										className='form-control-login input_box'
 										style={{
@@ -107,33 +110,6 @@ const StudentSetup = () => {
 											fontWeight: "600",
 											fontFamily: "Roboto, sans-serif",
 											marginBottom: "20px",
-										}}
-									/>
-								</div>
-								<div
-									className='d-flex justify-content-center mb-2'
-									style={{
-										color: "#004257",
-										fontSize: "16px",
-										fontWeight: "600",
-										fontFamily: "Roboto, sans-serif",
-									}}
-								>
-									<div className='mr-2'>
-										Upload Profile Pic
-									</div>
-								</div>
-
-								<div className='d-flex justify-content-center'>
-									<input
-										className='d-flex justify-content-center'
-										type='file'
-										id='profilepic'
-										name='profilepic'
-										accept='.png, .jpeg'
-										style={{
-											marginBottom: "20px",
-											marginLeft: "10%",
 										}}
 									/>
 								</div>
