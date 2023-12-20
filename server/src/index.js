@@ -129,5 +129,13 @@ app.post("/chat", async (req, res) => {
 	}
 });
 
+app.get("/fetchsummaries", async (req, res) => {
+	// fetch all summaries from database
+	const result = await pool.query("SELECT summary FROM summary");
+	const summaries = result[0];
+	const temp = summaries.map((summary) => summary.summary);
+	res.status(200).send(new Response(200, "Summaries fetched successfully", temp));
+});
+
 app.listen(port, () => logger.info(`Server running on port http://localhost:${port}`));
 io.listen(5001);
