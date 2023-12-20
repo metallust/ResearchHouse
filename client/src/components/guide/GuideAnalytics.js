@@ -21,7 +21,7 @@ const GuideAnalytics = () => {
 		maxWidth: "300px",
 		backgroundColor: "#E1F8FF",
 		borderRadius: "6px",
-		padding: "0 10px ",
+		padding: "5px 5px 5px 5px",
 		margin: "10px 10px 10px 10px",
 		boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
 		position: "relative",
@@ -30,10 +30,17 @@ const GuideAnalytics = () => {
 
 	const cardheadername = {
 		fontSize: "13px",
+		fontWeight: "500",
 		display: "flex",
-		justifyContent: "start",
+		justifyContent: "between",
 	};
 
+	const bodyname = {
+		fontSize: "13px",
+		fontWeight: "500",
+		display: "flex",
+		justifyContent: "between",
+	};
 	const card = {
 		height: "190px",
 		width: "100%",
@@ -85,43 +92,40 @@ const GuideAnalytics = () => {
 					At a Glance
 				</div>
 				<div className='d-flex' style={{ height: "36vh" }}>
-					<div className='container py-2' style={containerstyle}>
+					<div className='container' style={containerstyle}>
 						<div style={cardheadername}>
-							<p>Students/Guide Ratio :</p>
+							<p>Allocated Students : </p>
 						</div>
-						<div className='d-flex'>
-							<div style={{ fontSize: "64px" }}>6</div>
-							<div
-								style={{
-									fontSize: "10px",
-									marginLeft: "60px",
-									marginTop: "30px",
-								}}
-							>
-								<div>1 Less than Maximum</div>
-								<div>(Per Academic Year)</div>
-							</div>
-						</div>
+
 						<div
 							style={{
-								fontSize: "10px",
-								display: "flex",
-								justifyContent: "between",
+								fontSize: "80px",
+								marginLeft: "10px",
+								marginTop: "0px",
 							}}
 						>
+							6
+						</div>
+
+						<div style={bodyname}>
 							<div>Recommended Maximum:</div>
 							<div>7 Students per Guide</div>
 						</div>
 					</div>
-					<div className='container py-2 ' style={containerstyle}>
+					<div
+						className='container d-flex felx-column py-2 '
+						style={containerstyle}
+					>
 						<div style={cardheadername}>
-							<p>Submissions in Deadline : Average</p>
-							<Pacman />
+							<div>Submissions in Deadline : Average</div>
+							<div>
+								<Pacman />
+							</div>
 						</div>
 					</div>
 
-					<div style={card}>
-						<div style={title}>Chosen Domains</div>
+					<div className='container py-2 ' style={containerstyle}>
+						<div style={cardheadername}>Chosen Domains</div>
 						<div style={{ height: "40px" }}></div>
 						<div style={body}>
 							<ul className='list-group px-2'>
