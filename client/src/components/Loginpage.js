@@ -2,9 +2,12 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CoordinatorContext from "../Context/Coordinator/CoordinatorContext";
 import { useContext } from "react";
+import StudentContext from '../Context/Student/StudentContext'
 
 const LoginPage = () => {
+	const role = ["coordinator", "student", "guide", "committee"]
 	const { login: PGlogin } = useContext(CoordinatorContext);
+	const { studentLogin } = useContext(StudentContext);
 	const navigate = useNavigate();
 
 	const handleSubmit = async (event) => {
@@ -12,14 +15,27 @@ const LoginPage = () => {
 		// Add logic for form submission here
 		const email = document.querySelector("#email").value;
 		const password = document.querySelector("#password").value;
-		// const role = document.querySelector("#type").value;
-		const token = await PGlogin(email, password);
-		if (token.statusCode !== 200) {
-			alert("Invalid Credentials");
-			return;
+		const role = document.getElementById('loginRole').value;
+		console.log(role);
+		if (role === "coordinator") {
+			const token = await PGlogin(email, password);
+			if (token.statusCode !== 200) {
+				alert("Invalid Credentials");
+				return;
+			}
+			localStorage.setItem("token", [token.data.token, token.data.type]);
+			navigate("/pg");
 		}
-		localStorage.setItem("token", [token.data.token, token.data.type]);
-		navigate("/pg");
+		else if (role === "student") {
+			const token = await studentLogin(email, password);
+			if (token.statusCode !== 200) {
+				alert("Invalid Credentials");
+				return;
+			}
+			localStorage.setItem("token", [token.data.token, token.data.type]);
+			console.log(localStorage.getItem("token"))
+			navigate("/studentsetup");
+		}
 	};
 
 	return (
@@ -115,6 +131,20 @@ const LoginPage = () => {
 											marginBottom: "20px",
 										}}
 									/>
+								</div>
+								<div className='mb-3 d-flex'>
+									<label htmlFor={`loginRole`} className='form-label me-2' >
+										Role:
+									</label>
+									<select className='form-select' id={`loginRole`}>
+										{role.map((opt) => {
+											return (
+												<option key={opt} value={opt}>
+													{opt}
+												</option>
+											);
+										})}
+									</select>
 								</div>
 								<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
 									<span

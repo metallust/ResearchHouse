@@ -70,3 +70,14 @@ CREATE TABLE committee (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
  
+ --Create dssertation
+CREATE TABLE dissertation (
+    student_id VARCHAR(50) REFERENCES student(student_id),
+    file_name TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    filedata LONGBLOB
+);
+
+CREATE TABLE dissertation_summary (
+    student_id VARCHAR(50) REFERENCES student(student_id),
+    filedata LONGTEXT
+);
