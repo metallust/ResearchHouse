@@ -53,12 +53,11 @@ const PgCoordinatorSidebar = () => {
 				className='logo h3'
 				style={{
 					fontWeight: "700",
-					color: "#004257",
 					marginBottom: "20px",
 					marginTop: "20px",
 				}}
 			>
-				ResearchHouse
+				<Link to={"/pg"} style={{ color: "#004257", textDecoration: "none" }}>ResearchHouse</Link>
 			</div>
 
 			<div
@@ -150,10 +149,10 @@ const PgCoordinatorSidebar = () => {
 				</div>
 			</div>
 			<div className="d-flex flex-column" >
-				<Link style={{backgroundColor:"#004257",color:"white"}} className="btn mb-2" to={"/addstudent"}>Add Student</Link>
-				<Link style={{backgroundColor:"#004257",color:"white"}} className="btn mb-2" to={"/addguide"}>Add Guide</Link>
-				<Link style={{backgroundColor:"#004257",color:"white"}} className="btn mb-2" to={"/addcommittee"}>Add Committee</Link>
-				<Link style={{backgroundColor:"#004257",color:"white"}} className="btn mb-2" to={"/add timeline"}>Add Timeline</Link>
+				<Link style={{ backgroundColor: "#004257", color: "white" }} className="btn mb-2" to={"/pg/addstudent"}>Add Student</Link>
+				<Link style={{ backgroundColor: "#004257", color: "white" }} className="btn mb-2" to={"/pg/addguide"}>Add Guide</Link>
+				<Link style={{ backgroundColor: "#004257", color: "white" }} className="btn mb-2" to={"/pg/addcommittee"}>Add Committee</Link>
+				<Link style={{ backgroundColor: "#004257", color: "white" }} className="btn mb-2" to={"/pg/add timeline"}>Add Timeline</Link>
 			</div>
 		</div>
 	);

@@ -80,9 +80,9 @@ function Index(props) {
 						},
 					]}
 				/>
-				<div style={{}}>
+				{/* <div style={{}}>
 					<PgAnalytics />
-				</div>
+				</div> */}
 				<Outlet />
 			</div>
 			<div style={rightbar}>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Rightbar() {
 	const buttonstyle = {
@@ -85,7 +86,7 @@ function Rightbar() {
 					</svg>
 					Virtual Meet
 				</div>
-				<div className='btn btn-transparent d-flex flex-column align-items-center fs-7'>
+				<Link to={"/pg/timeline"} className='btn btn-transparent d-flex flex-column align-items-center fs-7'>
 					<svg width='24' height='28' viewBox='0 0 24 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
 						<path
 							d='M9.36935 23.4505C9.36935 24.1484 9.6466 24.8177 10.1401 25.3113C10.6336 25.8048 11.303 26.082 12.0009 26.082C12.6989 26.082 13.3682 25.8048 13.8617 25.3113C14.3552 24.8177 14.6325 24.1484 14.6325 23.4505M9.36935 23.4505C9.36935 22.7525 9.6466 22.0832 10.1401 21.5896C10.6336 21.0961 11.303 20.8189 12.0009 20.8189C12.6989 20.8189 13.3682 21.0961 13.8617 21.5896C14.3552 22.0832 14.6325 22.7525 14.6325 23.4505M9.36935 23.4505H1.47461M14.6325 23.4505H22.5272M8.05356 5.0294H15.9483M8.05356 8.97677H12.0009M12.0009 16.8715L9.36935 14.2399H5.42198C5.07301 14.2399 4.73833 14.1013 4.49157 13.8545C4.24482 13.6078 4.10619 13.2731 4.10619 12.9241V2.39782C4.10619 2.04885 4.24482 1.71418 4.49157 1.46742C4.73833 1.22066 5.07301 1.08203 5.42198 1.08203H18.5799C18.9288 1.08203 19.2635 1.22066 19.5103 1.46742C19.757 1.71418 19.8957 2.04885 19.8957 2.39782V12.9241C19.8957 13.2731 19.757 13.6078 19.5103 13.8545C19.2635 14.1013 18.9288 14.2399 18.5799 14.2399H14.6325L12.0009 16.8715Z'
@@ -96,7 +97,7 @@ function Rightbar() {
 						/>
 					</svg>
 					Timeline
-				</div>
+				</Link>
 				<div className='btn btn-transparent d-flex flex-column align-items-center fs-7'>
 					<svg width='26' height='19' viewBox='0 0 26 19' fill='none' xmlns='http://www.w3.org/2000/svg'>
 						<path

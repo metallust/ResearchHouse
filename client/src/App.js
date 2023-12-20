@@ -29,6 +29,9 @@ import Card1 from "./components/powerbi/Card1";
 import IdeaModal from "./components/test/IdeaModal";
 
 import Viewer from "./components/test/PDFviewer/Index";
+import PgAnalytics from "./components/pgCoordinator/PgAnalytics";
+import AddGuides from "./components/pgCoordinator/AddGuides";
+import Timeline from './components/test/Timeline'
 
 function App() {
 	const { theme, changeTheme } = useContext(ThemeContext);
@@ -79,11 +82,11 @@ function App() {
 				</Route>
 				<Route exact path='/committeedashboard' element={<CommitteeDashboard />}></Route>
 				<Route exact path='/pg' element={<PgCoordinatorDashboard />}>
-					{/* <Route
-						exact
-						path='/pgcoordinatordashboard/myprogress'
-						element={<Colors />}
-					/> */}
+					<Route exact path='/pg/addstudent' element={<AddStudent />} />
+					<Route exact path='/pg' element={<PgAnalytics />} />
+					<Route exact path='/pg/addguide' element={<AddGuides />} />
+					<Route exact path='/pg/timeline' element={<Timeline />} />
+
 				</Route>
 
 				{/* Route required from video call */}
