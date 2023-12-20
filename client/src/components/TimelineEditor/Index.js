@@ -2,12 +2,17 @@ import React, { useEffect, useRef, useState } from "react";
 import AddNode from "./AddNode";
 import Node from "./Node";
 import "./Index.css";
+import { useNavigate } from "react-router";
 
 function Index() {
 	const [timeline, setTimeline] = useState([]);
 	const [name, setName] = useState("");
 	const [dueDate, setDueDate] = useState("");
 	const [position, setPosition] = useState(0);
+	const navigate = useNavigate();
+	const handleProceed = () => {
+		navigate("/pg");
+	};
 
 	const ref = useRef(null);
 	function addNode(position) {
@@ -153,10 +158,18 @@ function Index() {
 					</div>
 				</div>
 				<div className='position-absolute bottom-0 end-0 m-3'>
-					<button type='button' className='btn btn-primary me-2'>
+					<button
+						type='button'
+						onClick={handleProceed}
+						className='btn btn-primary me-2'
+					>
 						Proceed
 					</button>
-					<button type='button' className='btn btn-secondary'>
+					<button
+						type='button'
+						onClick={handleProceed}
+						className='btn btn-secondary'
+					>
 						Cancel
 					</button>
 				</div>

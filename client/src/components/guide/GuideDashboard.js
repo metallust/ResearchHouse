@@ -10,6 +10,7 @@ import GuideSidebar from "./GuideSidebar";
 // import AddGuides from "../pgCoordinator/AddGuides";
 import GuideRightbar from "./GuideRightbar";
 import GuideAnalytics from "./GuideAnalytics";
+import GuideApproval from "./GuideApproval";
 
 function GuideDashboard(props) {
 	const sidebar = {
@@ -105,6 +106,7 @@ function GuideDashboard(props) {
 				/>
 
 				{/* <GuideSubmissionView /> */}
+				<GuideApproval />
 				<Outlet />
 			</div>
 			<div style={rightbar}>

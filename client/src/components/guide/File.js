@@ -13,11 +13,6 @@ function Status() {
 		alignItems: "center",
 		justifyContent: "center",
 	};
-	return (
-		<div style={style} className='fw-bold'>
-			Approved
-		</div>
-	);
 }
 function FileIcon() {
 	const style = {
@@ -76,7 +71,25 @@ function Review() {
 		</div>
 	);
 }
-
+function Approve() {
+	const style = {
+		backgroundColor: "#e1f8ff",
+		borderRadius: "5px",
+		padding: "5px 10px 5px 10px",
+		fontSize: "12px",
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		width: "80px",
+		boxShadow: "0px 3px 4px 0px rgba(0,0,0,0.4)",
+		fontWeight: 600,
+	};
+	return (
+		<div style={style} className='fw-semibold'>
+			Approve
+		</div>
+	);
+}
 function File({ approved = true }) {
 	return (
 		<div className='container'>
@@ -112,6 +125,7 @@ function File({ approved = true }) {
 					</div>
 				</div>
 				<Review />
+				<Approve />
 			</div>
 		</div>
 	);

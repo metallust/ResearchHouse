@@ -2,10 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CoordinatorContext from "../Context/Coordinator/CoordinatorContext";
 import { useContext } from "react";
-import StudentContext from '../Context/Student/StudentContext'
+import StudentContext from "../Context/Student/StudentContext";
 
 const LoginPage = () => {
-	const role = ["coordinator", "student", "guide", "committee"]
+	const role = ["coordinator", "student", "guide", "committee"];
 	const { login: PGlogin } = useContext(CoordinatorContext);
 	const { studentLogin } = useContext(StudentContext);
 	const navigate = useNavigate();
@@ -15,7 +15,7 @@ const LoginPage = () => {
 		// Add logic for form submission here
 		const email = document.querySelector("#email").value;
 		const password = document.querySelector("#password").value;
-		const role = document.getElementById('loginRole').value;
+		const role = document.getElementById("loginRole").value;
 		console.log(role);
 		if (role === "coordinator") {
 			const token = await PGlogin(email, password);
@@ -25,16 +25,24 @@ const LoginPage = () => {
 			}
 			localStorage.setItem("token", [token.data.token, token.data.type]);
 			navigate("/pg");
-		}
-		else if (role === "student") {
+		} else if (role === "student") {
 			const token = await studentLogin(email, password);
 			if (token.statusCode !== 200) {
 				alert("Invalid Credentials");
 				return;
 			}
 			localStorage.setItem("token", [token.data.token, token.data.type]);
-			console.log(localStorage.getItem("token"))
+			console.log(localStorage.getItem("token"));
 			navigate("/studentsetup");
+		} else if (role === "guide") {
+			// const token = await studentLogin(email, password);
+			// if (token.statusCode !== 200) {
+			// 	alert("Invalid Credentials");
+			// 	return;
+			// }
+			// localStorage.setItem("token", [token.data.token, token.data.type]);
+			console.log(localStorage.getItem("token"));
+			navigate("/guidesetup");
 		}
 	};
 
@@ -60,7 +68,8 @@ const LoginPage = () => {
 									border: "none",
 									padding: "20px",
 									borderRadius: "5px",
-									boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+									boxShadow:
+										"0px 4px 4px rgba(0, 0, 0, 0.25)",
 									background: "#E1F8FF",
 									fontFamily: "Roboto, sans-serif",
 									textAlign: "center",
@@ -100,7 +109,8 @@ const LoginPage = () => {
 											height: "40%",
 											padding: "10px",
 											borderRadius: "10px",
-											boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+											boxShadow:
+												"0px 4px 4px rgba(0, 0, 0, 0.25)",
 											border: "none",
 											color: "#004257",
 											fontSize: "16px",
@@ -122,7 +132,8 @@ const LoginPage = () => {
 											height: "40%",
 											padding: "10px",
 											borderRadius: "10px",
-											boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+											boxShadow:
+												"0px 4px 4px rgba(0, 0, 0, 0.25)",
 											border: "none",
 											color: "#004257",
 											fontSize: "16px",
@@ -133,10 +144,16 @@ const LoginPage = () => {
 									/>
 								</div>
 								<div className='mb-3 d-flex'>
-									<label htmlFor={`loginRole`} className='form-label me-2' >
+									<label
+										htmlFor={`loginRole`}
+										className='form-label me-2'
+									>
 										Role:
 									</label>
-									<select className='form-select' id={`loginRole`}>
+									<select
+										className='form-select'
+										id={`loginRole`}
+									>
 										{role.map((opt) => {
 											return (
 												<option key={opt} value={opt}>
@@ -178,7 +195,8 @@ const LoginPage = () => {
 											color: "#fff",
 											fontSize: "24px",
 											fontWeight: "600",
-											boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+											boxShadow:
+												"0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
 											fontFamily: "Roboto, sans-serif",
 											marginBottom: "20px",
 										}}

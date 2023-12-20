@@ -1,7 +1,10 @@
 import React from "react";
 import MultiSelectDropdown from "../MultiSelectDropdown";
+import { useNavigate } from "react-router";
 
 const GuideSetup = () => {
+	const navigate = useNavigate();
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		// Add logic for form submission here
@@ -121,21 +124,11 @@ const GuideSetup = () => {
 
 								<ul id='selectedSubjects'></ul>
 
-								<div className='d-flex justify-content-center'>
-									<input
-										className='d-flex justify-content-center'
-										type='file'
-										id='profilepic'
-										name='profilepic'
-										accept='.png, .jpeg'
-										style={{
-											marginBottom: "20px",
-											marginLeft: "10%",
-										}}
-									/>
-								</div>
 								<div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing'>
 									<input
+										onClick={() => {
+											navigate("/guidedashboard");
+										}}
 										type='submit'
 										id='edit-submit'
 										name='op'

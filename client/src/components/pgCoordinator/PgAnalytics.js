@@ -5,6 +5,10 @@ import Pacman from "./Pacman";
 const PgAnalytics = () => {
 	const [tab, setTab] = useState(0);
 	const handleSave = () => {};
+	const [ca, setCa] = useState(5.6);
+	const [cb, setCb] = useState(43);
+	const [cc, setCc] = useState(12);
+	const [cd, setCd] = useState(75);
 
 	const guideDomains = [
 		"Machine Learning",
@@ -37,19 +41,19 @@ const PgAnalytics = () => {
 					<div className='h5'>Student/Guide Ratio</div>
 					<div className='d-flex align-items-baseline'>
 						<div style={{ fontSize: "2.5rem", fontWeight: "600" }}>
-							5.6
+							{ca}
 						</div>
-						<div className='ms-3'>1.4 less than Maximum</div>
+						<div className='ms-3'>{7 - ca} less than Maximum</div>
 					</div>
 					<div className='mt-2'>Recommended Maximum 7</div>
 				</div>
 				<div style={card}>
 					<div className='h5'>Student Allocation</div>
 					<div className='d-flex align-items-baseline '>
-						<h3 className='me-3'>43</h3> Students Allocated
+						<h3 className='me-3'>{cb}</h3> Students Allocated
 					</div>
 					<div className='d-flex align-items-baseline '>
-						<h3 className='me-3'>12</h3> Students Remaining
+						<h3 className='me-3'>{cc}</h3> Students Remaining
 					</div>
 					<div
 						className='btn d-flex justify-content-center'

@@ -8,7 +8,7 @@ export const data = [
 ];
 
 export const options = {
-	title: "Domains Choosen By Student",
+	title: "Deadlines Maintained",
 	legend: "none",
 	pieSliceText: "label",
 	slices: {
