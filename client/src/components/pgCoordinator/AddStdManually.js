@@ -5,10 +5,11 @@ import CoordinatorContext from "../../Context/Coordinator/CoordinatorContext";
 const AddStdManually = () => {
 	const { addStudent } = useContext(CoordinatorContext);
 	const dropdowns = [0, 1];
-	const branch = ["Computer Science", "Information Technology", "Mechanical Engg", "Civil Engineering", "Artificial Intelligence", "Data Science",]; // fetch all branchs set by pg coordinator
+	const branch = ["Computer Science", "Information Technology", "Mechanical Engg", "Civil Engineering", "Artificial Intelligence", "Data Science"]; // fetch all branchs set by pg coordinator
 	const batch = ["2023-24", "2024-25"]; // fetch all branchs set by pg coordinator
 	var [tempStudent, setTempStudent] = useState([]);
 	const header = ["#", "PRN", "Email Address", "Branch", "Batch"];
+
 	const handleSave = () => {
 		// console.log(tempStudent);
 		addStudent(tempStudent);
@@ -21,8 +22,6 @@ const AddStdManually = () => {
 		let AddStudentBatch = document.getElementById("AddStudentBatch");
 		// let i = 1;
 		setTempStudent((prevTempStudent) => [...prevTempStudent, [prn.value, studentemail.value, AddStudentBranch.value, AddStudentBatch.value]]);
-
-		// console.log(tempStudent);
 	};
 	const inputstyle = {
 		textAlign: "center",
@@ -65,13 +64,17 @@ const AddStdManually = () => {
 						</label>
 						<select className='form-select' id={`AddStudentBatch`}>
 							{batch.map((opt) => {
-								return <option value={opt}>{opt}</option>;
+								return (
+									<option key={opt} value={opt}>
+										{opt}
+									</option>
+								);
 							})}
 						</select>
 					</div>
 
 					<div className='d-flex justify-content-center col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing '>
-						<button type='button' class='btn btn-primary' style={{ background: "#004256" }}>
+						<button type='button' class='btn btn-primary' style={{ background: "#004256" }} onClick={handleAddStudent}>
 							Preview
 						</button>
 					</div>
@@ -86,7 +89,7 @@ const AddStdManually = () => {
 					marginBottom: "20px",
 				}}
 			>
-				<button type='button' class='btn btn-primary' style={{ background: "#004256" }}>
+				<button type='button' class='btn btn-primary' onClick={handleSave} style={{ background: "#004256" }}>
 					Confirm
 				</button>
 			</div>

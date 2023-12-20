@@ -29,7 +29,7 @@ const CoordinatorState = (props) => {
 	const addStudent = async (student) => {
 		// console.log(students);
 		if (localStorage.getItem("token") === null) return { status: 400, message: "Please login first" };
-		const response = await fetch(`${host}/api/coordinator/auth/addstudent`, {
+		const response = await fetch(`${host}/api/coordinator/add/student`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -42,7 +42,7 @@ const CoordinatorState = (props) => {
 	const addGuide = async (guide) => {
 		// console.log(students);
 		if (localStorage.getItem("token") === null) return { status: 400, message: "Please login first" };
-		const response = await fetch(`${host}/api/coordinator/auth/addstudent`, {
+		const response = await fetch(`${host}/api/coordinator/add/guide`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
