@@ -1,8 +1,6 @@
 # ResearchHouse
-
-A Platform for tracking and managing dissertations for pg students
-
-# ResearchHouse
+This is project has been reimplemented in Nextjs 
+https://github.com/metallus/Disertationy
 
 A Platform for tracking and managing dissertations for pg students
 
@@ -20,7 +18,10 @@ Features:
 
 Tech Stack:
 
-1.
+a. React
+b. Nodejs
+c. Python
+d. Mysql
 
 To Run the server
 
